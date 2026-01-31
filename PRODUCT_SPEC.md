@@ -1,4 +1,4 @@
-# QuizzMe – Product Specification
+# QuissMe – Product Specification
 
 > "Entertainment first. Connection always."
 
@@ -6,7 +6,7 @@
 
 ## 1. Product Vision
 
-**QuizzMe** (Anlehnung an "Kiss Me") ist eine Entertainment-App für Paare, die durch Quizzes, Horoskop-Kompatibilität und spielerische Challenges die Beziehung stärkt – ohne jemals als Therapie oder Diagnose aufzutreten.
+**QuissMe** (Anlehnung an "Kiss Me") ist eine Entertainment-App für Paare, die durch Quizzes, Horoskop-Kompatibilität und spielerische Challenges die Beziehung stärkt – ohne jemals als Therapie oder Diagnose aufzutreten.
 
 ### Core Promise
 > "Wir helfen euch, euch besser zu verstehen – mit Spaß, nicht mit Vorwürfen."
@@ -262,7 +262,7 @@ Temporäre Boost für die Beziehung, basierend auf:
 ### 4.2 UI Components
 
 ```
-QuizzMe Components:
+QuissMe Components:
 - 🃏 Quiz-Card (Quiz-Einblendung)
 - 💞 Couple-Avatar (Visual Twin der Beziehung)
 - 🏆 Achievement-Badges (erworbene Buffs)
@@ -422,7 +422,7 @@ State:         Zustand + React Query
 Auth:          Clerk (einfach, sicher)
 Animations:    Framer Motion (smooth transitions)
 Charts:        Recharts (Relationship scores)
-Deployment:    Vercel (wie QuizzMe bestehend)
+Deployment:    Vercel (wie QuissMe bestehend)
 ```
 
 ### 6.2 Backend
@@ -476,7 +476,7 @@ Tertiary: Gift Codes (5%)
 
 ```
 Month 1-2: MVP Launch
-- Soft launch to existing QuizzMe/Bazodiac users
+- Soft launch to existing QuissMe/Bazodiac users
 - Product Hunt launch
 - Partner with relationship podcasters
 
@@ -499,7 +499,7 @@ Month 6-12: Monetize
 
 ```
 Week 1-2: Foundation
-- [ ] QuizzMe UI Design (Dark Cosmos + Gold)
+- [ ] QuissMe UI Design (Dark Cosmos + Gold)
 - [ ] Clerk Auth Integration
 - [ ] Basic Quiz Engine (5 Quizzes)
 - [ ] Couple Creation Flow
@@ -585,7 +585,7 @@ Weekly Active Couples (WAC) × Average Quizzes per Couple
 ### Prompt 1: Landing Page Design
 
 ```
-Design a landing page for "QuizzMe" - a couple entertainment app featuring quizzes, astrology compatibility checks, and playful challenges.
+Design a landing page for "QuissMe" - a couple entertainment app featuring quizzes, astrology compatibility checks, and playful challenges.
 
 Brand: Dark cosmos aesthetic with gold accents, mysterious and elegant
 Target: Couples 25-40 who want to strengthen their relationship through fun activities
@@ -602,7 +602,7 @@ Style: Dark background (#05060A), gold accents (#D6B25E), glassmorphism cards, m
 ### Prompt 2: App UI Design
 
 ```
-Design mobile app UI for "QuizzMe" - couple relationship app with:
+Design mobile app UI for "QuissMe" - couple relationship app with:
 - Dashboard with relationship score
 - Quiz cards with couple animations
 - Challenge notifications with gold glow effects
@@ -631,7 +631,7 @@ Components: Bottom navigation, glassmorphism cards, subtle glow effects, cosmic 
 ### Decisions Needed
 
 ```
-1. Build as separate app or feature in QuizzMe?
+1. Build as separate app or feature in QuissMe?
 2. Backend: Next.js API Routes or separate FastAPI?
 3. Timeline: Target launch date?
 4. Budget: Marketing spend for launch?
