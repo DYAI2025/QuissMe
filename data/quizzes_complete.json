@@ -1,318 +1,277 @@
-# QuissMe Quiz Database - Complete Schema
-# Ready for Claude AI to generate quizzes
-# 
-# PRINCIPLE: Always positive framing. Never question the relationship.
-# Always: opportunities, growth, mastering challenges together.
-
 {
-  "_schema_version": "1.0",
-  "_last_updated": "2026-02-01",
+  "_schema_version": "2.0",
+  "_generated": "2026-02-01",
+  "_total_quizzes": 15,
+  "_status": "incomplete",
+  "_note": "Claude generated Passion + Stability clusters. Future cluster was truncated.",
   
   "clusters": {
-    "growth": {
-      "name_de": "Wachstum",
-      "name_en": "Growth", 
-      "buff_name": "Synergie-Meister",
-      "buff_description": "Ihr versteht euch blind und könnt Großes bewegen.",
-      "archetypes": ["ARCH_ANCHOR", "ARCH_MASTERMIND"],
-      "quiz_count": 5
-    },
-    "love": {
-      "name_de": "Liebe",
-      "name_en": "Love",
-      "buff_name": "Liebesflüsterer", 
-      "buff_description": "Ihr versteht euch auf einer tiefen emotionalen Ebene.",
-      "archetypes": ["GIVER", "RECEIVER", "PHYSICAL", "EMOTIONAL"],
-      "quiz_count": 5
-    },
     "passion": {
       "name_de": "Leidenschaft",
       "name_en": "Passion",
       "buff_name": "Leidenschafts-Boost",
       "buff_description": "Eure Verbindung lodert hell.",
-      "archetypes": ["INITIATOR", "EXPRESSOR", "INTENSITY", "EXPLORER"],
-      "quiz_count": 5
+      "quiz_count": 5,
+      "quizzes": [
+        {
+          "id": "passion_01_initiative",
+          "name_de": "Wer zündet den Funken?",
+          "icon": "🔥",
+          "question_de": "Wer macht bei euch den ersten Schritt zur Nähe?",
+          "context_de": "Es war ein langer Tag. Endlich seid ihr allein.",
+          "options": [
+            { "text_de": "Ich – ich ziehe dich an mich.", "type": "initiator", "score": 3 },
+            { "text_de": "Ich warte auf deinen Impuls.", "type": "responder", "score": 3 },
+            { "text_de": "Ich sage dir direkt, was ich will.", "type": "expressor", "score": 3 },
+            { "text_de": "Ich zeige durch Körpersprache, dass ich bereit bin.", "type": "receiver", "score": 3 },
+            { "text_de": "Es fließt – mal ich, mal du.", "type": "balanced", "score": 2 }
+          ],
+          "result_pairs": {
+            "initiator_initiator": {
+              "title_de": "Doppel-Feuer",
+              "description_de": "Ihr beide zündet! Achtet auf sanfte Momente.",
+              "icon": "🔥🔥",
+              "strength_de": "Energie wenn ihr zusammen startet.",
+              "tip_de": "Plant bewusst ruhige Momente."
+            },
+            "initiator_responder": {
+              "title_de": "Funke & Flamme",
+              "description_de": "Du zündest, dein Partner entfacht.",
+              "icon": "🔥✨",
+              "strength_de": "Wechselspiel aus Impuls und Verstärkung.",
+              "tip_de": "Tauscht manchmal die Rollen."
+            },
+            "initiator_expressor": {
+              "title_de": "Aktion & Ausdruck",
+              "description_de": "Du startest, dein Partner benennt Gefühle.",
+              "icon": "🔥💬",
+              "strength_de": "Körper und Worte zusammen.",
+              "tip_de": "Achtet auf beide Sprachen."
+            },
+            "initiator_receiver": {
+              "title_de": "Geben & Empfangen",
+              "description_de": "Du gibst Impuls, dein Partner nimmt auf.",
+              "icon": "🔥🌙",
+              "strength_de": "Klare, schöne Richtung.",
+              "tip_de": "Frage nach, was er braucht."
+            },
+            "responder_responder": {
+              "title_de": "Doppel-Entfacher",
+              "description_de": "Ihr wartet beide auf den Funken.",
+              "icon": "✨✨",
+              "strength_de": "Intensiv wenn ihr in Gang kommt.",
+              "tip_de": "Vereinbart wer den ersten Schritt macht."
+            },
+            "responder_expressor": {
+              "title_de": "Verstärkung & Worte",
+              "description_de": "Partner sagt, du nimmst auf und vertiefst.",
+              "icon": "✨💬",
+              "strength_de": "Worte werden zu Taten.",
+              "tip_de": "Zeige non-verbal Wertschätzung."
+            },
+            "responder_receiver": {
+              "title_de": "Doppel-Tiefe",
+              "description_de": "Ihr beide vertieft und empfangt.",
+              "icon": "✨🌙",
+              "strength_de": "Intimität braucht keine großen Gesten.",
+              "tip_de": "Kleiner Impuls kann helfen."
+            },
+            "expressor_receiver": {
+              "title_de": "Strahlung & Empfang",
+              "description_de": "Du strahlst Gefühle aus, er empfängt.",
+              "icon": "💬🌙",
+              "strength_de": "Kommunikation ist klar.",
+              "tip_de": "Frage auch nach seinen Gefühlen."
+            },
+            "balanced_balanced": {
+              "title_de": "Fließende Harmonie",
+              "description_de": "Wechselt natürlich. Flexibilität ist Stärke.",
+              "icon": "🌊",
+              "strength_de": "Passt euch an.",
+              "tip_de": "Genießt Flexibilität!"
+            }
+          }
+        },
+        {
+          "id": "passion_02_expression",
+          "name_de": "Wie zeigt ihr Begehren?",
+          "icon": "💫",
+          "question_de": "Wie drückst du aus, dass du deinen Partner begehrst?",
+          "options": [
+            { "text_de": "Ich flüstere es dir ins Ohr.", "type": "expressor", "score": 3 },
+            { "text_de": "Ich berühre dich subtil.", "type": "initiator", "score": 3 },
+            { "text_de": "Ich halte Blickkontakt.", "type": "receiver", "score": 3 },
+            { "text_de": "Ich warte bis wir allein sind.", "type": "intensity_high", "score": 3 },
+            { "text_de": "Ich genieße die Vorfreude.", "type": "intensity_low", "score": 3 }
+          ],
+          "result_pairs": {
+            "expressor_expressor": {
+              "title_de": "Offenes Feuer",
+              "description_de": "Ihr sagt alles direkt. Keine Geheimnisse.",
+              "icon": "💬💬",
+              "strength_de": "Keine Missverständnisse.",
+              "tip_de": "Lasst Raum für Unausgesprochenes."
+            },
+            "expressor_initiator": {
+              "title_de": "Worte & Taten",
+              "description_de": "Du sagst es, Partner tut es.",
+              "icon": "💬🔥",
+              "strength_de": "Kurzer Weg vom Wunsch zur Realität.",
+              "tip_de": "Genießt das Vorspiel."
+            },
+            "intensity_high_intensity_high": {
+              "title_de": "Vulkan-Duo",
+              "description_de": "Wenn's losgeht, dann richtig.",
+              "icon": "🌋🌋",
+              "strength_de": "Legendäre Peaks.",
+              "tip_de": "Achtet auf Erholung."
+            },
+            "intensity_high_intensity_low": {
+              "title_de": "Feuer & Glut",
+              "description_de": "Du Explosion, er beständige Wärme.",
+              "icon": "🌋🕯️",
+              "strength_de": "Perfekte Balance.",
+              "tip_de": "Schätzt beide Arten."
+            },
+            "intensity_low_intensity_low": {
+              "title_de": "Ewige Glut",
+              "description_de": "Langsam und stetig.",
+              "icon": "🕯️🕯️",
+              "strength_de": "Seltene Beständigkeit.",
+              "tip_de": "Bewusster Peak zur Feier."
+            }
+          }
+        },
+        {
+          "id": "passion_03_intensity",
+          "name_de": "Peaks oder Beständigkeit?",
+          "icon": "🌊",
+          "question_de": "Was macht eure Verbindung lebendig?",
+          "options": [
+            { "text_de": "Große Momente – Urlaube, Überraschungen.", "type": "intensity_high", "score": 3 },
+            { "text_de": "Kleine Rituale – Alltagsmagie.", "type": "intensity_low", "score": 3 },
+            { "text_de": "Neues zusammen entdecken.", "type": "explorer", "score": 3 },
+            { "text_de": "Vertrautes tiefer machen.", "type": "cultivator", "score": 3 }
+          ]
+        },
+        {
+          "id": "passion_04_response",
+          "name_de": "Wie reagierst du auf Energie?",
+          "icon": "✨",
+          "question_de": "Wenn Partner Energie mitbringt – was passiert?",
+          "options": [
+            { "text_de": "Ich steige ein und bringe eigene Energie.", "type": "initiator", "score": 3 },
+            { "text_de": "Ich nehme auf und verstärke.", "type": "responder", "score": 3 },
+            { "text_de": "Ich sage, wie es mich bewegt.", "type": "expressor", "score": 3 },
+            { "text_de": "Ich absorbiere und verarbeite innerlich.", "type": "receiver", "score": 3 }
+          ]
+        },
+        {
+          "id": "passion_05_reception",
+          "name_de": "Wie zeigst du Empfänglichkeit?",
+          "icon": "🌙",
+          "question_de": "Wie signalisierst du Bereitschaft für Nähe?",
+          "options": [
+            { "text_de": "Ich sage es direkt.", "type": "expressor", "score": 3 },
+            { "text_de": "Ich schaffe Atmosphäre.", "type": "cultivator", "score": 3 },
+            { "text_de": "Ich berühre subtil.", "type": "initiator", "score": 3 },
+            { "text_de": "Ich bin präsent und offen.", "type": "receiver", "score": 3 }
+          ]
+        }
+      ]
     },
+    
     "stability": {
       "name_de": "Stabilität",
       "name_en": "Stability",
       "buff_name": "Fels in der Brandung",
       "buff_description": "Euch kann nichts erschüttern.",
-      "archetypes": ["ANCHOR", "ARCHITECT"],
-      "quiz_count": 5
+      "quiz_count": 5,
+      "quizzes": [
+        {
+          "id": "stability_01_anchor",
+          "name_de": "Wer gibt Sicherheit?",
+          "icon": "⚓",
+          "question_de": "Wenn es stürmt – wer ist Anker?",
+          "options": [
+            { "text_de": "Ich bin der Fels – ruhig, beständig.", "type": "anchor", "score": 3 },
+            { "text_de": "Ich analysiere und finde Lösungen.", "type": "architect", "score": 3 },
+            { "text_de": "Ich halte an Ritualen fest.", "type": "routine_keeper", "score": 3 },
+            { "text_de": "Ich rede darüber zusammen.", "type": "communicator", "score": 3 }
+          ],
+          "result_pairs": {
+            "anchor_anchor": {
+              "title_de": "Doppel-Fels",
+              "description_de": "Ihr beide gebt Ruhe.",
+              "icon": "⚓⚓",
+              "strength_de": "Euch kann nichts erschüttern.",
+              "tip_de": "Ruhe nicht zu Stillstand."
+            },
+            "anchor_architect": {
+              "title_de": "Ruhe & Strategie",
+              "description_de": "Emotionale Stabilität + praktische Lösungen.",
+              "icon": "⚓📐",
+              "strength_de": "Herz und Kopf perfekt.",
+              "tip_de": "Beide Beiträge würdigen."
+            }
+          }
+        },
+        {
+          "id": "stability_02_architect",
+          "name_de": "Wer plant den Alltag?",
+          "icon": "📐",
+          "question_de": "Wie organisiert ihr Alltag?",
+          "options": [
+            { "text_de": "Ich plane gerne – Listen, Struktur.", "type": "architect", "score": 3 },
+            { "text_de": "Ich setze um.", "type": "executor", "score": 3 },
+            { "text_de": "Ich mache es gemütlich.", "type": "nester", "score": 3 },
+            { "text_de": "Ich achte auf Überlastung.", "type": "guardian", "score": 3 }
+          ]
+        },
+        {
+          "id": "stability_03_routine",
+          "name_de": "Wie wichtig sind Rituale?",
+          "icon": "📅",
+          "question_de": "Welche Rolle spielen gemeinsame Rituale?",
+          "options": [
+            { "text_de": "Sehr wichtig – Fundament.", "type": "ritual_lover", "score": 3 },
+            { "text_de": "Schön, aber Flexibilität wichtiger.", "type": "flexible", "score": 3 },
+            { "text_de": "Ich erfinde gerne neue.", "type": "ritual_creator", "score": 3 }
+          ]
+        },
+        {
+          "id": "stability_04_conflict",
+          "name_de": "Wie löst ihr Spannungen?",
+          "icon": "🌈",
+          "question_de": "Wenn es knirscht – wie findet ihr zurück?",
+          "options": [
+            { "text_de": "Ich spreche sofort an.", "type": "direct", "score": 3 },
+            { "text_de": "Ich brauche Zeit zum Nachdenken.", "type": "reflective", "score": 3 },
+            { "text_de": "Ich versuche Perspektive zu verstehen.", "type": "empathic", "score": 3 }
+          ]
+        },
+        {
+          "id": "stability_05_decisions",
+          "name_de": "Wer trifft Entscheidungen?",
+          "icon": "⚖️",
+          "question_de": "Wie geht ihr bei wichtigen Entscheidungen vor?",
+          "options": [
+            { "text_de": "Ich recherchiere und analysiere.", "type": "analyst", "score": 3 },
+            { "text_de": "Ich höre auf Bauchgefühl.", "type": "intuitive", "score": 3 },
+            { "text_de": "Ich suche Konsens.", "type": "consensus", "score": 3 }
+          ]
+        }
+      ]
     },
+    
     "future": {
       "name_de": "Zukunft",
       "name_en": "Future",
       "buff_name": "Future-Forward",
       "buff_description": "Ihr blickt gemeinsam nach vorn.",
-      "archetypes": ["VISIONARY", "BUILDER", "AMBITION", "SECURITY"],
-      "quiz_count": 5
+      "quiz_count": 5,
+      "quizzes": [],
+      "_note": "Future cluster not yet generated - Claude output was truncated"
     }
-  },
-
-  "passion_poles": {
-    "description": "Passion-Pole beschreiben, wie Paare Energie, Intimität und Begeisterung leben und ergänzen.",
-    
-    "INITIATOR": {
-      "name_de": "Der Zünder",
-      "name_en": "The Igniter",
-      "characteristics": [
-        "Macht den ersten Schritt",
-        "Bringt Energie in die Beziehung",
-        "Initiirt Nähe und Intimität"
-      ],
-      "needs": "Dass der Partner mitgeht und die Energie annimmt",
-      "gives": "Schwung, Begeisterung, neue Impulse"
-    },
-    
-    "RESPONDER": {
-      "name_de": "Der Entfacher",
-      "name_en": "The Kindler", 
-      "characteristics": [
-        "Lässt sich von Energie anstecken",
-        "Vertieft und intensiviert",
-        "Bringt die Hitze zum Glühen"
-      ],
-      "needs": "Dass der Partner Initiative zeigt",
-      "gives": "Tiefe, Intensität, Leidenschaft die brennt"
-    },
-    
-    "EXPRESSOR": {
-      "name_de": "Der Strahler",
-      "name_en": "The Expressor",
-      "characteristics": [
-        "Zeigt Gefühle offen",
-        "Kommuniziert Begehren",
-        "Lebt Intensität aus"
-      ],
-      "needs": "Offenheit und ehrliche Reaktion",
-      "gives": "Klarheit, Leidenschaft, emotionale Ehrlichkeit"
-    },
-    
-    "RECEIVER": {
-      "name_de": "Der Empfänger",
-      "name_en": "The Receiver",
-      "characteristics": [
-        "Nimmt Intensität in sich auf",
-        "Verarbeitet und vertieft",
-        "Zeigt Reaktion durch Rückmeldung"
-      ],
-      "needs": "Dass Gefühle ankommen und wertgeschätzt werden",
-      "gives": "Fokus, Tiefe, konzentrierte Aufmerksamkeit"
-    },
-    
-    "INTENSITY_HIGH": {
-      "name_de": "Die Flamme",
-      "name_en": "The Flame",
-      "characteristics": [
-        "Lebt intensive Gefühle",
-        "Braucht Peak-Erfahrungen",
-        "Schätzt emotionale Höhepunkte"
-      ],
-      "needs": "Gemeinsame intensive Erlebnisse",
-      "gives": "Momentum, Aufregung, emotionale Tiefe"
-    },
-    
-    "INTENSITY_LOW": {
-      "name_de": "Das Glühen",
-      "name_en": "The Ember",
-      "characteristics": [
-        "Lebt beständige Wärme",
-        "Schätzt Konstanz über Peaks",
-        "Mag es sanft und nachhaltig"
-      ],
-      "needs": "Beständigkeit und Verlässlichkeit",
-      "gives": "Geborgenheit, Ruhe, beständige Nähe"
-    },
-    
-    "EXPLORER": {
-      "name_de": "Der Entdecker",
-      "name_en": "The Explorer",
-      "characteristics": [
-        "Sucht neue Erfahrungen",
-        "Probiert Neues aus",
-        "Bringt Abwechslung"
-      ],
-      "needs": "Offenheit für Experimente",
-      "gives": "Neugier, Abenteuer, frische Energie"
-    },
-    
-    "CULTIVATOR": {
-      "name_de": "Der Gärtner",
-      "name_en": "The Cultivator",
-      "characteristics": [
-        "Pflegt und vertieft Bestehendes",
-        "Schätzt Vertrautheit",
-        "Macht aus wenig viel"
-      ],
-      "needs": "Geduld und Wiederholung",
-      "gives": "Tiefe, Vertrautheit, gewachsene Intimität"
-    }
-  },
-
-  "passion_questions_template": {
-    "note": "IMPORTANT: Always frame scenarios positively. Never ask what 'goes wrong'. Focus on growth and mastery.",
-    
-    "question_structure": {
-      "context": "Emotionales Szenario - beschreibt eine Situation, nicht ein Problem",
-      "question": "Offene Frage die das Verhalten/Präferenz zeigt",
-      "options": [
-        {
-          "text": "Beschreibt einen typischen Impuls/Präferenz",
-          "scores": { "pole_id": 3 }  // 3 = strongest signal
-        }
-      ]
-    },
-
-    "sample_question_igniter": {
-      "context": "Ihr seid zusammen in einer neuen Stadt. Alles ist offen, alles möglich.",
-      "question": "Was tust du als erstes?",
-      "options": [
-        { "text": "Ich checke die Szene und ziehe dich zu einem Ort, der mich interessiert.", "scores": { "INITIATOR": 3, "EXPLORER": 1 } },
-        { "text": "Ich lasse mich von der Atmosphäre treiben und schaue, wohin es uns trägt.", "scores": { "CULTIVATOR": 2, "INTENSITY_LOW": 1 } },
-        { "text": "Ich frage dich, was dich interessiert – und folge deiner Energie.", "scores": { "RECEIVER": 2, "RESPONDER": 2 } },
-        { "text": "Ich suche nach dem intensivsten Erlebnis, das wir hier haben können.", "scores": { "INTENSITY_HIGH": 3, "EXPLORER": 1 } }
-      ]
-    },
-
-    "sample_question_expressor": {
-      "context": "Es war ein besonderer Abend zusammen. Alles stimmte.",
-      "question": "Wie zeigst du deinem Menschen, wie sehr es dich berührt hat?",
-      "options": [
-        { "text": "Ich sage es ihr/him direkt: 'Das war wunderschön, weil...'", "scores": { "EXPRESSOR": 3, "INTENSITY_HIGH": 1 } },
-        { "text": "Ich halte sie/ihn fest – eine Umarmung, die alles sagt.", "scores": { "INTENSITY_LOW": 2, "RECEIVER": 2 } },
-        { "text": "Ich plane sofort das nächste Mal – ich will das wieder erleben!", "scores": { "INITIATOR": 2, "EXPLORER": 2 } },
-        { "text": "Ich bin still zufrieden. Das Gefühl bleibt in mir.", "scores": { "CULTIVATOR": 3, "RECEIVER": 1 } }
-      ]
-    },
-
-    "sample_question_intensity": {
-      "context": "Ihr habt einen aufregenden Plan vor euch – endlich mal was Neues.",
-      "question": "Was macht dich am meisten Vorfreude?",
-      "options": [
-        { "text": "Der Moment selbst – diese eine intensive Stunde.", "scores": { "INTENSITY_HIGH": 3, "EXPRESSOR": 1 } },
-        { "text": "Die Vorfreude davor – ich genieße das Hin und Her.", "scores": { "INTENSITY_LOW": 3, "CULTIVATOR": 1 } },
-        { "text": "Gemeinsam etwas Neues entdecken – was werden wir finden?", "scores": { "EXPLORER": 3, "INITIATOR": 1 } },
-        { "text": "Das Gefühl, wenn wir es zusammen geschafft haben.", "scores": { "CULTIVATOR": 2, "RESPONDER": 2 } }
-      ]
-    },
-
-    "sample_question_explorer": {
-      "context": "Eure Beziehung ist euch vertraut und sicher. Jetzt wollt ihr gemeinsam etwas wagen.",
-      "question": "Was reizt euch am meisten?",
-      "options": [
-        { "text": "Ein komplett neues Erlebnis – etwas, das keiner von euch kennt.", "scores": { "EXPLORER": 3, "INTENSITY_HIGH": 1 } },
-        { "text": "Ein vertrautes Erlebnis, aber an einem neuen Ort oder mit neuem Twist.", "scores": { "CULTIVATOR": 2, "EXPLORER": 2 } },
-        { "text": "Etwas, das euch beide fordert – gemeinsam wachsen.", "scores": { "INITIATOR": 2, "RESPONDER": 2 } },
-        { "text": "Etwas, das eure Verbindung auf eine neue Ebene bringt.", "scores": { "EXPRESSOR": 2, "INTENSITY_LOW": 2 } }
-      ]
-    }
-  },
-
-  "result_pairs": {
-    "note": "Couple Constellations show how partners COMPLEMENT each other. Always positive framing.",
-    
-    "igniter_responder": {
-      "title_de": "Funke & Flamme",
-      "title_en": "Spark & Flame",
-      "description_de": "Du zündest, dein Partner entfacht. Zusammen entsteht ein Feuer, das hell brennt und wärmt – und das ihr gemeinsam nährt.",
-      "icon": "🔥"
-    },
-    
-    "responder_igniter": {
-      "title_de": "Flamme & Funke",
-      "title_en": "Flame & Spark",
-      "description_de": "Dein Partner zündet, du entfachst. Was als Funke beginnt, wird zur Flamme – und gemeinsam schafft ihr etwas, das andere bewundern.",
-      "icon": "🔥"
-    },
-    
-    "expressor_receiver": {
-      "title_de": "Strahlung & Empfang",
-      "title_en": "Radiance & Reception",
-      "description_de": "Du strahlst, dein Partner empfängt und vertieft. Was du gibst, wird in Tiefe verwandelt – und ihr erschafft zusammen ein Licht, das viele Worte braucht.",
-      "icon": "✨"
-    },
-    
-    "receiver_expressor": {
-      "title_de": "Empfang & Strahlung",
-      "title_en": "Reception & Radiance",
-      "description_de": "Dein Partner strahlt, du empfängst und reflektierst. Gemeinsam entsteht ein Wechselspiel aus Geben und Nehmen, das eure Verbindung stärkt.",
-      "icon": "✨"
-    },
-    
-    "explorer_cultivator": {
-      "title_de": "Entdeckung & Pflege",
-      "title_en": "Discovery & Cultivation",
-      "description_de": "Du zeigst neue Wege, dein Partner geht sie mit und macht sie zu eurem. Was ihr entdeckt, wird kultiviert – und wächst mit euch.",
-      "icon": "🌱"
-    },
-    
-    "cultivator_explorer": {
-      "title_de": "Pflege & Entdeckung",
-      "title_en": "Cultivation & Discovery",
-      "description_de": "Dein Partner entdeckt Neues, du machst es zu eurem Zuhause. Was ihr findet, wird gewachsen – und gemeinsam erschafft ihr eine Welt.",
-      "icon": "🌱"
-    },
-    
-    "intensity_high_intensity_low": {
-      "title_de": "Peak & Tal",
-      "title_en": "Peak & Valley",
-      "description_de": "IhrBalance einander: Du bringst die Höhepunkte, dein Partner die Tiefe. Gemeinsam schafft ihr ein Rhythmus, der euch trägt.",
-      "icon": "🌊"
-    },
-    
-    "intensity_low_intensity_high": {
-      "title_de": "Tal & Peak",
-      "title_en": "Valley & Peak",
-      "description_de": "Ihr balance einander: Dein Partner bringt die Höhepunkte, du die Beständigkeit. Gemeinsam schafft ihr ein Auf und Ab, das euch erfüllt.",
-      "icon": "🌊"
-    }
-  },
-
-  "buff_system": {
-    "note": "Buffs are earned by completing clusters (3-5 quizzes in one category). No stacking - only ONE active buff at a time.",
-    
-    "passion_buffs": {
-      "igniter_responder": {
-        "name": "Synergie-Funken",
-        "description": "Ihr zündet gemeinsam – eure Energie multipliziert sich.",
-        "duration_days": 7,
-        "effect": "+20% gemeinsame Energie für neue Projekte"
-      },
-      "expressor_receiver": {
-        "name": "Resonanz-Kraft",
-        "description": "Euer Wechselspiel aus Geben und Nehmen verstärkt sich.",
-        "duration_days": 7,
-        "effect": "+15% emotionale Tiefe in Gesprächen"
-      },
-      "explorer_cultivator": {
-        "name": "Entdeckergeist",
-        "description": "Ihr findet Neues und macht es zu eurem.",
-        "duration_days": 14,
-        "effect": "+25% Offenheit für gemeinsame Abenteuer"
-      }
-    }
-  },
-
-  "positive_framing_rules": {
-    "principle": "NEVER frame the relationship negatively. Always frame as opportunity, growth, mastery.",
-
-    "wrong_examples": [
-      { "wrong": "Was fehlt euch am meisten?", "right": "Was wünscht ihr euch voneinander?" },
-      { "wrong": "Worüber streitet ihr euch?", "right": "Wie löst ihr Spannungen gemeinsam?" },
-      { "wrong": "Was ist euer größtes Problem?", "right": "Welche Herausforderung meistert ihr gemeinsam?" },
-      { "wrong": "Was läuft schief?", "right": "Was könnt ihr noch stärker entwickeln?" }
-    ],
-
-    "right_framing_patterns": [
-      "Wie könnt ihr das gemeinsam stärken?",
-      "Welche Gelegenheit liegt darin?",
-      "Was könnt ihr voneinander lernen?",
-      "Wie wachsen ihr durch diese Unterschiede?",
-      "Welche Stärke entwickelt ihr zusammen?"
-    ]
-  },
-
-  "claude_prompt_template": "CLAUDE: Generate {N} quizzes for the PASSION cluster of QuissMe. \n\nUSE THE ATTACHED POLES:\n- INITIATOR, RESPONDER, EXPRESSOR, RECEIVER, INTENSITY_HIGH, INTENSITY_LOW, EXPLORER, CULTIVATOR\n\nFOLLOW THIS SCHEMA:\n{\n  \"questions\": [\n    {\n      \"id\": \"passion_01\",\n      \"indicator\": \"initiation_style\",\n      \"context\": \"Positives Beziehungs-Szenario\",\n      \"text\": \"Offene Frage\",\n      \"options\": [\n        { \"text\": \"Option die INITIATOR zeigt\", \"scores\": { \"INITIATOR\": 3 } },\n        { \"text\": \"Option die RESPONDER zeigt\", \"scores\": { \"RESPONDER\": 3 } },\n        { \"text\": \"Option die EXPRESSOR zeigt\", \"scores\": { \"EXPRESSOR\": 3 } },\n        { \"text\": \"Option die RECEIVER zeigt\", \"scores\": { \"RECEIVER\": 3 } }\n      ]\n    }\n  ]\n}\n\nRULES:\n1. ALWAYS positive framing (see attached rules)\n2. Use German language\n3. Make scenarios relatable and warm\n4. Mix poles fairly across questions\n5. Return valid JSON only\n\nOutput the JSON directly."
+  }
 }
