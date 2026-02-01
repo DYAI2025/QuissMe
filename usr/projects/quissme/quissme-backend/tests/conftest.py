@@ -47,19 +47,19 @@ def client(db):
 
 @pytest.fixture
 def test_user_data():
-    """Test user data"""
+    """Test user data - password must contain uppercase and digit"""
     return {
         "email": "test@example.com",
-        "password": "testpassword123",
+        "password": "TestPassword123",  # Contains uppercase + digit
         "name": "Test User"
     }
 
 
 @pytest.fixture
 def test_partner_data():
-    """Test partner data"""
+    """Test partner data - password must contain uppercase and digit"""
     return {
         "email": "partner@example.com",
-        "password": "partnerpassword123",
+        "password": "PartnerPass456",  # Contains uppercase + digit
         "name": "Test Partner"
     }
