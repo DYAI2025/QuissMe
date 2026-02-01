@@ -1,0 +1,60 @@
+/* PairQuiz Styles */
+.pair-quiz-page {
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+.cluster-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+  color: var(--bg-primary);
+  padding: 6px 16px;
+  border-radius: var(--radius-lg);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.step-badge {
+  display: inline-block;
+  background: var(--bg-elevated);
+  padding: 4px 12px;
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+  margin-left: 12px;
+}
+
+.quiz-footer {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.quiz-footer .hint {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.option-marker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: rgba(212, 175, 55, 0.2);
+  border-radius: 50%;
+  font-weight: 600;
+  color: var(--gold-primary);
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.option-btn:hover .option-marker {
+  background: var(--gold-primary);
+  color: var(--bg-primary);
+}
+
+.option-text {
+  flex: 1;
+  text-align: left;
+}

@@ -1,6 +1,36 @@
+import './Dashboard.css'
 
+function Dashboard({ userBazi, partnerBazi, dailyQuizzes, onQuiz, onBack, compatibility }) {
+  const elementColors = {
+    Wood: '#4CAF50',
+    Fire: '#FF5722',
+    Earth: '#795548',
+    Metal: '#9E9E9E',
+    Water: '#2196F3'
+  }
 
-function Dashboard({ userBazi, partnerBazi, dailyQuizzes, onQuiz, onBack }) {
+  const elementIcons = {
+    Wood: '🌳',
+    Fire: '🔥',
+    Earth: '🏔️',
+    Metal: '⚔️',
+    Water: '🌊'
+  }
+
+  const renderElement = (bazi, label) => {
+    if (!bazi) return null
+    const element = bazi.mainElement
+    return (
+      <div className="bazi-element">
+        <span className="element-icon" style={{ color: elementColors[element] }}>
+          {elementIcons[element]}
+        </span>
+        <span className="element-name">{element}</span>
+        <span className="element-yinyang">{bazi.yinYang}</span>
+      </div>
+    )
+  }
+
   return (
     <div className="dashboard-page">
       <div className="container">
@@ -9,6 +39,7 @@ function Dashboard({ userBazi, partnerBazi, dailyQuizzes, onQuiz, onBack }) {
           <p className="tagline">Entdeckt euch gegenseitig neu</p>
         </header>
 
+        {/* Stats */}
         <div className="stats-row fade-in">
           <div className="stat-card">
             <span className="stat-icon">🎯</span>
@@ -22,31 +53,69 @@ function Dashboard({ userBazi, partnerBazi, dailyQuizzes, onQuiz, onBack }) {
           </div>
           <div className="stat-card">
             <span className="stat-icon">🔮</span>
-            <span className="stat-value">{userBazi ? '✓' : '○'}</span>
+            <span className="stat-value">✓</span>
             <span className="stat-label">Bazi aktiv</span>
           </div>
         </div>
 
+        {/* Bazi Anzeige */}
         {userBazi && partnerBazi && (
-          <div className="couple-info fade-in">
-            <h3>Euer Paar-Profil</h3>
-            <div className="bazi-display">
-              <div className="bazi-card">
-                <span className="bazi-label">Du</span>
-                <span className="bazi-year">{userBazi.year}</span>
+          <div className="bazi-section fade-in">
+            <h3>Eure Bazi-Energie</h3>
+            
+            <div className="couple-bazi">
+              <div className="bazi-card user">
+                <span className="bazi-label">👤 Du</span>
+                <div className="pillars">
+                  {userBazi.pillars.map((p, i) => (
+                    <span key={i} className="pillar">
+                      {p.gan}{p.zhi}
+                    </span>
+                  ))}
+                </div>
+                {renderElement(userBazi, 'Du')}
               </div>
-              <span className="heart-icon">💕</span>
-              <div className="bazi-card">
-                <span className="bazi-label">Partner</span>
-                <span className="bazi-year">{partnerBazi.year}</span>
+              
+              <div className="bazi-connector">
+                <span className="heart-icon">💕</span>
+                {compatibility && (
+                  <span className="compat-badge">{compatibility.element.text}</span>
+                )}
+              </div>
+              
+              <div className="bazi-card partner">
+                <span className="bazi-label">💕 Partner</span>
+                <div className="pillars">
+                  {partnerBazi.pillars.map((p, i) => (
+                    <span key={i} className="pillar">
+                      {p.gan}{p.zhi}
+                    </span>
+                  ))}
+                </div>
+                {renderElement(partnerBazi, 'Partner')}
               </div>
             </div>
+
+            {/* Yin/Yang Balance */}
+            {compatibility && (
+              <div className="yin-yang-balance">
+                <span className="yy-icon">
+                  {compatibility.yinYang.balance === 'balanced' ? '☯️' : 
+                   compatibility.yinYang.balance === 'double-yang' ? '⚡' : '🌙'}
+                </span>
+                <span>{compatibility.yinYang.text}</span>
+              </div>
+            )}
           </div>
         )}
 
         <div className="actions fade-in">
-          <button className="btn btn-primary btn-large" onClick={onQuiz}>
-            🎯 Quiz starten
+          <button 
+            className="btn btn-primary btn-large" 
+            onClick={onQuiz}
+            disabled={dailyQuizzes === 0}
+          >
+            {dailyQuizzes > 0 ? '🎯 Quiz starten' : '🎉 Alle Quizze heute gemacht!'}
           </button>
         </div>
 
@@ -57,7 +126,7 @@ function Dashboard({ userBazi, partnerBazi, dailyQuizzes, onQuiz, onBack }) {
 
         <footer className="footer fade-in">
           <button className="back-link" onClick={onBack}>
-            ← Zurück
+            ← Bazi neu eingeben
           </button>
         </footer>
       </div>

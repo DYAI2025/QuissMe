@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import QuizData from './data/quizzes_complete.json'
 import './App.css'
+import { calculateBazi, getElementCompatibility, getYinYangBalance, combineAnswerTypes } from './utils/bazi'
 
 // Pages
 import BaziInput from './pages/BaziInput'
@@ -8,52 +9,109 @@ import ClusterSelect from './pages/ClusterSelect'
 import QuizSwipe from './pages/QuizSwipe'
 import Results from './pages/Results'
 import Dashboard from './pages/Dashboard'
+import PairQuiz from './pages/PairQuiz'
 
 function App() {
-  const [page, setPage] = useState('bazi') // bazi, clusters, quiz, results, dashboard
+  const [page, setPage] = useState('bazi')
   const [userBazi, setUserBazi] = useState(null)
   const [partnerBazi, setPartnerBazi] = useState(null)
   const [selectedCluster, setSelectedCluster] = useState(null)
   const [currentQuiz, setCurrentQuiz] = useState(0)
-  const [quizAnswers, setQuizAnswers] = useState({})
-  const [dailyQuizzes, setDailyQuizzes] = useState(2)
+  const [dailyQuizzes, setDailyQuizzes] = useState(3)
+  
+  // Paar-Quiz State
+  const [coupleAnswers, setCoupleAnswers] = useState({})
+  const [quizStep, setQuizStep] = useState('user') // 'user' oder 'partner'
 
-  // Load quiz data from JSON
   const quizzes = QuizData.clusters
 
-  const handleBaziSubmit = (baziData, isPartner = false) => {
+  // Bazi berechnen beim Absenden
+  const handleBaziSubmit = (data, isPartner = false) => {
+    const bazi = calculateBazi(data.year, data.month, data.day, data.hour)
+    
     if (isPartner) {
-      setPartnerBazi(baziData)
-      setPage('clusters')
+      setPartnerBazi(bazi)
+      setPage('dashboard')
     } else {
-      setUserBazi(baziData)
+      setUserBazi(bazi)
       setPage('bazi-partner')
     }
   }
 
-  const handleQuizAnswer = (questionIndex, answer) => {
-    setQuizAnswers(prev => ({
+  // Paar-Quiz starten
+  const startPairQuiz = (clusterId) => {
+    setSelectedCluster(clusterId)
+    setCurrentQuiz(0)
+    setCoupleAnswers({})
+    setQuizStep('user')
+    setPage('pair-quiz')
+  }
+
+  // Antwort speichern
+  const handlePairAnswer = (questionIndex, answerType, isUser = true) => {
+    const key = `${selectedCluster}_${questionIndex}`
+    setCoupleAnswers(prev => ({
       ...prev,
-      [`${selectedCluster}_${questionIndex}`]: answer
+      [key]: {
+        ...prev[key],
+        [isUser ? 'user' : 'partner']: answerType
+      }
     }))
   }
 
-  const handleNextQuestion = () => {
+  // Zum nächsten Schritt/Frage
+  const handleNextStep = () => {
     const clusterQuizzes = quizzes[selectedCluster]?.quizzes || []
-    if (currentQuiz < clusterQuizzes.length - 1) {
-      setCurrentQuiz(prev => prev + 1)
+    
+    if (quizStep === 'user') {
+      // Zum Partner wechseln
+      setQuizStep('partner')
     } else {
-      // Quiz completed
-      setDailyQuizzes(prev => Math.max(0, prev - 1))
-      setPage('results')
+      // Frage beantwortet, zur nächsten
+      if (currentQuiz < clusterQuizzes.length - 1) {
+        setCurrentQuiz(prev => prev + 1)
+        setQuizStep('user')
+      } else {
+        // Quiz fertig
+        setDailyQuizzes(prev => Math.max(0, prev - 1))
+        setPage('results')
+      }
     }
   }
 
-  const startQuiz = (clusterId) => {
-    setSelectedCluster(clusterId)
-    setCurrentQuiz(0)
-    setQuizAnswers({})
-    setPage('quiz')
+  // Ergebnisse berechnen
+  const calculateResults = () => {
+    const results = []
+    const clusterQuizzes = quizzes[selectedCluster]?.quizzes || []
+    
+    clusterQuizzes.forEach((quiz, index) => {
+      const key = `${selectedCluster}_${index}`
+      const answers = coupleAnswers[key]
+      
+      if (answers?.user && answers?.partner) {
+        const pairResult = combineAnswerTypes(answers.user, answers.partner, quiz.result_pairs || {})
+        results.push({
+          quizId: quiz.id,
+          quizName: quiz.name_de,
+          question: quiz.question_de,
+          userType: answers.user,
+          partnerType: answers.partner,
+          ...pairResult
+        })
+      }
+    })
+    
+    return results
+  }
+
+  // Bazi-Kompatibilität
+  const getBaziCompatibility = () => {
+    if (!userBazi || !partnerBazi) return null
+    
+    const elementComp = getElementCompatibility(userBazi.mainElement, partnerBazi.mainElement)
+    const yinYang = getYinYangBalance(userBazi, partnerBazi)
+    
+    return { element: elementComp, yinYang }
   }
 
   return (
@@ -72,48 +130,42 @@ function App() {
         />
       )}
       
-      {page === 'clusters' && (
-        <ClusterSelect 
-          quizzes={quizzes}
-          onSelect={startQuiz}
-          dailyLimit={dailyQuizzes}
-          onDashboard={() => setPage('dashboard')}
+      {page === 'dashboard' && (
+        <Dashboard 
+          userBazi={userBazi}
+          partnerBazi={partnerBazi}
+          dailyQuizzes={dailyQuizzes}
+          onQuiz={startPairQuiz}
+          onBack={() => setPage('bazi')}
+          compatibility={getBaziCompatibility()}
         />
       )}
       
-      {page === 'quiz' && (
-        <QuizSwipe 
+      {page === 'pair-quiz' && (
+        <PairQuiz
           quiz={quizzes[selectedCluster]?.quizzes[currentQuiz]}
           quizIndex={currentQuiz}
           totalQuizzes={quizzes[selectedCluster]?.quizzes.length || 0}
-          onAnswer={(answer) => handleQuizAnswer(currentQuiz, answer)}
-          onNext={handleNextQuestion}
-          bazi={userBazi}
-          partnerBazi={partnerBazi}
+          step={quizStep}
+          onAnswer={(type) => handlePairAnswer(currentQuiz, type, quizStep === 'user')}
+          onNext={handleNextStep}
+          clusterName={quizzes[selectedCluster]?.name_de}
         />
       )}
       
       {page === 'results' && (
         <Results 
           clusterId={selectedCluster}
-          answers={quizAnswers}
+          coupleAnswers={coupleAnswers}
+          results={calculateResults()}
           userBazi={userBazi}
           partnerBazi={partnerBazi}
+          compatibility={getBaziCompatibility()}
           onContinue={() => {
             setCurrentQuiz(0)
-            setQuizAnswers({})
-            setPage('clusters')
+            setCoupleAnswers({})
+            setPage('dashboard')
           }}
-        />
-      )}
-      
-      {page === 'dashboard' && (
-        <Dashboard 
-          userBazi={userBazi}
-          partnerBazi={partnerBazi}
-          dailyQuizzes={dailyQuizzes}
-          onQuiz={() => setPage('clusters')}
-          onBack={() => setPage('clusters')}
         />
       )}
     </div>

@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
+import './Results.css'
 
-
-function Results({ clusterId, answers, userBazi, partnerBazi, onContinue }) {
+function Results({ clusterId, coupleAnswers, results, userBazi, partnerBazi, compatibility, onContinue }) {
   const clusterNames = {
     passion: 'Leidenschaft',
     stability: 'Stabilität',
@@ -9,70 +9,124 @@ function Results({ clusterId, answers, userBazi, partnerBazi, onContinue }) {
     love: 'Liebe'
   }
 
-  const result = useMemo(() => {
-    const answersList = Object.values(answers)
-    if (answersList.length === 0) return { score: 0, insight: 'Keine Antworten', recommendation: '' }
-
-    const avgScore = answersList.reduce((sum, a) => sum + (a.score || 0), 0) / answersList.length
-    
-    let insight, recommendation, icon
-    
-    if (avgScore >= 8) {
-      insight = 'Ihr seid ein Traumteam!'
-      recommendation = 'Genießt diese Harmonie und lasst es euch gut gehen.'
-      icon = '🌟'
-    } else if (avgScore >= 6) {
-      insight = 'Ihr versteht euch gut!'
-      recommendation = 'Kleine Aufmerksamkeiten machen eure Beziehung noch stärker.'
-      icon = '💫'
-    } else if (avgScore >= 4) {
-      insight = 'Es gibt Raum für Wachstum.'
-      recommendation = 'Sprecht offen über eure Bedürfnisse und Wünsche.'
-      icon = '🌱'
-    } else {
-      insight = 'Zeit für ein Date!'
-      recommendation = 'Plant quality time together – das stärkt die Verbindung.'
-      icon = '💕'
+  // Berechne Gesamtscore basierend auf Antwort-Paaren
+  const summary = useMemo(() => {
+    if (!results || results.length === 0) {
+      return { 
+        score: 0, 
+        insight: 'Keine Antworten', 
+        recommendation: '',
+        harmony: 'unbekannt'
+      }
     }
 
-    return { score: Math.round(avgScore * 10) / 10, insight, recommendation, icon }
-  }, [answers])
+    // Zähle positive Paar-Kombinationen
+    let positiveCount = 0
+    let balancedCount = 0
+    
+    results.forEach(r => {
+      const icon = r.icon || ''
+      if (icon.includes('🌟') || icon.includes('💫') || icon.includes('🔥') || icon.includes('✨')) {
+        positiveCount++
+      }
+      if (icon.includes('🌊') || icon.includes('⚖️') || icon.includes('🎯')) {
+        balancedCount++
+      }
+    })
+
+    const total = results.length
+    const score = Math.round(((positiveCount * 1 + balancedCount * 0.7) / total) * 10)
+    
+    let insight, recommendation, harmony
+    
+    if (score >= 8) {
+      insight = 'Ihr seid ein Traumteam!'
+      recommendation = 'Genießt diese Harmonie – ihr versteht euch intuitiv.'
+      harmony = 'exzellent'
+    } else if (score >= 6) {
+      insight = 'Ihr harmoniert gut!'
+      recommendation = 'Kleine Anpassungen können eure Verbindung noch stärken.'
+      harmony = 'stark'
+    } else if (score >= 4) {
+      insight = 'Ihr ergänzt euch!'
+      recommendation = 'Akzeptiert eure Unterschiede und lernt voneinander.'
+      harmony = 'mittel'
+    } else {
+      insight = 'Ihr seid unterschiedlich – das ist okay!'
+      recommendation: 'Nutzt eure Verschiedenheit als Stärke.'
+      harmony = 'entwicklungsfähig'
+    }
+
+    return { score: Math.min(10, score), insight, recommendation, harmony }
+  }, [results])
 
   return (
     <div className="results-page">
       <div className="container">
         <header className="header fade-in">
-          <div className="result-icon">{result.icon}</div>
+          <div className="result-icon">
+            {summary.harmony === 'exzellent' ? '🌟' : 
+             summary.harmony === 'stark' ? '💫' : 
+             summary.harmony === 'mittel' ? '🌱' : '💕'}
+          </div>
           <h1>{clusterNames[clusterId] || clusterId}</h1>
         </header>
 
+        {/* Bazi Kompatibilität */}
+        {compatibility && (
+          <div className="compatibility-card fade-in">
+            <h3>🔮 Bazi-Kompatibilität</h3>
+            <div className="compat-grid">
+              <div className="compat-item">
+                <span className="label">Elemente</span>
+                <span className="value">{userBazi?.mainElement} + {partnerBazi?.mainElement}</span>
+                <span className="detail">{compatibility.element.text}</span>
+              </div>
+              <div className="compat-item">
+                <span className="label">Yin/Yang</span>
+                <span className="value">{compatibility.yinYang.text}</span>
+                <span className="detail">{compatibility.yinYang.tip}</span>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Gesamtscore */}
         <div className="result-card fade-in">
-          <div className="score-circle">
-            <span className="score-value">{result.score}</span>
+          <div className="score-circle" style={{ '--score': summary.score * 36 }}>
+            <span className="score-value">{summary.score}</span>
             <span className="score-label">von 10</span>
           </div>
 
-          <h2 className="insight">{result.insight}</h2>
-          <p className="recommendation">{result.recommendation}</p>
-
-          {userBazi && partnerBazi && (
-            <div className="bazi-insight">
-              <h3>🔮 Bazi-Insight</h3>
-              <p>
-                Mit euren Bazi-Konstellationen habt ihr in diesem Bereich 
-                besondere Potenziale. Die Kombination aus {userBazi.year}- und 
-                {partnerBazi.year}-Energie verstärkt eure natürliche Harmonie.
-              </p>
-            </div>
-          )}
+          <h2 className="insight">{summary.insight}</h2>
+          <p className="recommendation">{summary.recommendation}</p>
         </div>
+
+        {/* Einzelne Fragen-Ergebnisse */}
+        {results && results.length > 0 && (
+          <div className="answers-section fade-in">
+            <h3>Eure Antworten</h3>
+            {results.map((r, i) => (
+              <div key={i} className="answer-card">
+                <div className="answer-header">
+                  <span className="answer-icon">{r.icon}</span>
+                  <span className="answer-title">{r.title_de}</span>
+                </div>
+                <p className="answer-desc">{r.description_de}</p>
+                <div className="answer-tip">
+                  💡 {r.tip_de}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
 
         <div className="actions fade-in">
           <button className="btn btn-primary" onClick={onContinue}>
-            Weiter zu den Quizzen →
+            Zurück zur Auswahl →
           </button>
           <button className="btn btn-secondary" onClick={() => window.location.reload()}>
-            Zurück zum Start
+            Neu starten
           </button>
         </div>
       </div>
