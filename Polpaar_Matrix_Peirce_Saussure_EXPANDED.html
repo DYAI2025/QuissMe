@@ -1,0 +1,1453 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Polpaar‑Matrix (Peirce × Saussure) — Wachstum & Liebe</title>
+<style>
+:root {
+  --bg: #0b0c10;
+  --card: #12141a;
+  --card2: #161a22;
+  --text: #e8e8ea;
+  --muted: #a8acb3;
+  --accent: #7dd3fc;
+  --accent2: #a78bfa;
+  --border: #262b36;
+  --good: #34d399;
+  --warn: #fbbf24;
+}
+*{box-sizing:border-box}
+body {
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  background: radial-gradient(1200px 600px at 20% -10%, rgba(125,211,252,.18), transparent 60%),
+              radial-gradient(1000px 700px at 90% 0%, rgba(167,139,250,.14), transparent 55%),
+              var(--bg);
+  color:var(--text);
+}
+a{color:var(--accent)}
+header {
+  padding: 28px 20px 18px;
+  border-bottom:1px solid var(--border);
+  position: sticky;
+  top:0;
+  background: rgba(11,12,16,.85);
+  backdrop-filter: blur(10px);
+  z-index:10;
+}
+h1{margin:0 0 6px; font-size: 22px; letter-spacing:.2px}
+.subtitle{color:var(--muted); font-size: 13px; line-height:1.4}
+.container{max-width: 1100px; margin: 0 auto; padding: 18px 20px 50px}
+.toolbar{display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px}
+input[type="search"]{
+  flex: 1 1 300px;
+  padding: 10px 12px;
+  border:1px solid var(--border);
+  background: rgba(18,20,26,.8);
+  color: var(--text);
+  border-radius: 12px;
+  outline: none;
+}
+.chip{
+  display:inline-flex; align-items:center; gap:8px;
+  padding: 8px 10px;
+  border:1px solid var(--border);
+  background: rgba(18,20,26,.65);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 12px;
+  cursor:pointer;
+  user-select:none;
+}
+.chip[data-active="true"]{border-color: rgba(125,211,252,.7); color: var(--text)}
+.grid{display:grid; grid-template-columns: 1fr; gap: 14px}
+@media (min-width: 920px){ .grid{grid-template-columns: 1fr 1fr} }
+.card{
+  border:1px solid var(--border);
+  background: linear-gradient(180deg, rgba(18,20,26,.92), rgba(18,20,26,.78));
+  border-radius: 18px;
+  padding: 14px 14px 10px;
+}
+.card h2{margin:0 0 6px; font-size: 16px}
+.kmeta{color:var(--muted); font-size: 12px; margin-bottom: 10px; line-height:1.4}
+.badges{display:flex; gap:8px; flex-wrap:wrap; margin: 10px 0 6px}
+.badge{
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border:1px solid var(--border);
+  color: var(--muted);
+  background: rgba(22,26,34,.75);
+}
+.badge.icon{border-color: rgba(125,211,252,.45); color: rgba(125,211,252,.95)}
+.badge.index{border-color: rgba(52,211,153,.45); color: rgba(52,211,153,.95)}
+.badge.symbol{border-color: rgba(251,191,36,.45); color: rgba(251,191,36,.95)}
+details{border-top: 1px dashed rgba(38,43,54,.7); padding-top: 10px}
+summary{cursor:pointer; color: var(--text); font-weight: 600; list-style:none}
+summary::-webkit-details-marker{display:none}
+.section-title{margin-top: 12px; font-size: 13px; color: var(--accent)}
+.columns{display:grid; grid-template-columns: 1fr; gap: 10px}
+@media (min-width: 720px){ .columns{grid-template-columns: 1fr 1fr} }
+.box{background: rgba(22,26,34,.55); border:1px solid rgba(38,43,54,.8); border-radius: 14px; padding: 10px 10px 4px}
+.box h3{margin:0 0 6px; font-size: 13px}
+.box p{margin:0 0 8px; color: var(--muted); font-size: 12px; line-height:1.4}
+ul{margin: 0 0 10px 18px; padding: 0}
+li{margin: 0 0 6px; color: var(--text); font-size: 12px; line-height:1.4}
+hr{border:none; border-top:1px solid var(--border); margin: 18px 0}
+.small{font-size: 12px; color: var(--muted); line-height:1.5}
+table{width:100%; border-collapse: collapse; font-size: 12px}
+th,td{border:1px solid var(--border); padding: 8px; vertical-align: top}
+th{background: rgba(22,26,34,.9); text-align:left}
+footer{margin-top: 26px; color: var(--muted); font-size: 12px}
+</style>
+</head>
+<body>
+<header>
+  <div class="container" style="padding:0 20px;">
+    <h1>Polpaar‑Matrix (Peirce × Saussure) — Wachstum & Liebe</h1>
+    <div class="subtitle">Erweiterte Fassung · 01.02.2026 · inklusive Marker‑Pools & Archetypen (Anchor, Trailblazer, Mastermind, Nurturer)</div>
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Suche nach Pol, Satz, Marker, Archetyp … (z.B. „Abwarten“, „Prototyp“, „Privat“)" />
+      <div class="chip" data-filter="all" data-active="true">Alles</div>
+      <div class="chip" data-filter="WACHSTUM">Wachstum</div>
+      <div class="chip" data-filter="LIEBE">Liebe</div>
+      <div class="chip" data-filter="ARCHETYP">Archetypen</div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <p class="small">
+    <b>Leselogik:</b> Icon = Abbildung, Index = Spur/Häufung, Symbol = Label/Konvention. Ein einzelner Satz ist selten ausreichend – Marker werden belastbar durch Häufung + Kontext + Gegenchecks.
+  </p>
+
+  <h2 style="margin:18px 0 10px; font-size:16px;">Ausgangstabelle (exakt)</h2>
+  <div class="card" style="padding:12px;">
+    <table>
+      <thead>
+        <tr><th>Polpaar</th><th>Icon (exakt)</th><th>Index (exakt)</th><th>Symbol (exakt)</th></tr>
+      </thead>
+      <tbody>
+<tr><td>1) Planer ↔ Macher</td><td>• jemand zeichnet tatsächlich einen detaillierten Zeitplan / Gantt-Chart / Mindmap auf Papier oder Bildschirm<br>• Flowchart, das Planung visuell nachahmt<br>• Icon: Gantt-Chart zeichnen</td><td>• der Schreibtisch ist komplett aufgeräumt + 12 farbige Textmarker liegen in Reih und Glied → fast immer Planer<br>• Kalendereintrag als kausale Spur von Planung<br>• Index: perfekt sortierter Schreibtisch</td><td>• jemand sagt: „Ich bin halt der klassische Planer-Typ“ (reine Selbstzuschreibung ohne sichtbaren Beweis)<br>• In Myers-Briggs symbolisiert &#x27;J&#x27; (Judging) Planung durch Übereinkunft<br>• Symbol: Selbstetikettierung</td></tr><tr><td>2) Risiko ↔ Sicherheit</td><td>• jemand steht wirklich oben auf der Klippe und macht ein Selfie mit dem Abgrund im Hintergrund<br>• Icon-Beispiel: Foto eines Bergsteigers</td><td>• die Person hat 7 offene Kredite / 4 Kreditkarten auf Max / permanent Dispolimit ausgereizt → starke Risiko-Spur<br>• Index-Beispiel: Schweißperlen als Symptom von Angst</td><td>• jemand trägt ein T-Shirt mit der Aufschrift „No risk – no fun“<br>• Beispiel: In Risikopsychologie symbolisiert &#x27;Risikobereitschaft&#x27; nur durch Skalen</td></tr><tr><td>3) Motivation ↔ Stabilisierung</td><td>• jemand steht vor der Gruppe, springt auf einen Tisch und schreit „KOMMT SCHON IHR SCHLAFMÜTZEN!!!“<br>• Icon-Beispiel: Flamme-Ikon</td><td>• die Stimme wird plötzlich 12 dB lauter + schneller + höher, die Gestik wird riesig → Motivations-Index<br>• Index-Beispiel: Herzrasen als Symptom von Erregung</td><td>• jemand sagt von sich: „Ich bin eher der Motivator im Team“<br>• Beispiel: In Motivationspsychologie symbolisiert &#x27;intrinsisch&#x27; durch Definition</td></tr><tr><td>4) Initiative ↔ Vertiefung</td><td>• jemand drückt tatsächlich auf &#x27;Neues Projekt erstellen&#x27; und tippt die ersten 3 Zeilen Code / To-do-Liste<br>• Icon-Beispiel: Startlinie-Bild</td><td>• Ordner &#x27;Projekt XY&#x27; enthält nur Datei &#x27;Idee_v1.docx&#x27; + 0 Follow-ups → starke Initiative-Spur ohne Vertiefung<br>• Index-Beispiel: Erster Entwurf als Spur von Initiative</td><td>• Beispiel: In Projektmanagement symbolisiert &#x27;Initiator&#x27; durch Konvention<br>• (implizit: Selbstetikettierung &#x27;Ich bin ein Macher / Starter&#x27;)</td></tr><tr><td>5) Hinterfragen ↔ Akzeptieren</td><td>• jemand zieht die Augenbrauen hoch + Kopf schräg + sagt &#x27;Moment mal…&#x27;<br>• Icon-Beispiel: Fragezeichen-Ikon</td><td>• in 15-minütigem Meeting 7× &#x27;Warum eigentlich…?&#x27; + &#x27;Belegst du das?&#x27; → klare Hinterfragen-Spur<br>• Index-Beispiel: Stirnrunzeln als Symptom von Zweifel</td><td>• Beispiel: In Kognitionspsychologie symbolisiert &#x27;kritisch&#x27; durch Skalen<br>• (implizit: Selbstetikettierung &#x27;Ich bin der kritische Typ&#x27;)</td></tr><tr><td>6) Geben ↔ Nehmen</td><td>• jemand schiebt der anderen Person wirklich die letzte Gabel Lasagne rüber<br>• Icon-Beispiel: Geschenk-Icon</td><td>• die Person hat 23 ungelesene Nachrichten, aber 187 gesendete in den letzten 4 Tagen → klares Geben-Spur<br>• Index-Beispiel: Umarmung als kausale Geste</td><td>• jemand sagt beim Date: „Ich bin halt ein sehr gebender Mensch“<br>• Beispiel: In Love Languages symbolisiert &#x27;Acts of Service&#x27; durch Übereinkunft</td></tr><tr><td>7) Körperlich ↔ Emotional</td><td>• jemand greift sofort nach der Hand / legt den Arm um die Hüfte / küsst den Hals<br>• Icon-Beispiel: Herz-Icon für Emotionales</td><td>• nach 20 Minuten Gespräch hat die Person schon 9-mal die andere Person berührt (Schulter, Unterarm, Knie, Rücken…)<br>• Index-Beispiel: Berührung als Symptom von Nähe</td><td>• jemand sagt: „Für mich ist Nähe vor allem eine emotionale Sache“<br>• Beispiel: In Bindungstheorie symbolisiert &#x27;physisch&#x27; durch Kategorien</td></tr><tr><td>8) Qualität ↔ Quantität</td><td>• jemand schaut der anderen Person 45 Sekunden tief in die Augen ohne Handy<br>• Icon-Beispiel: Uhr mit Herz</td><td>• in 3 Tagen 2× 4-Stunden-Nebeneinander-TV + 1× 20-minütiges tiefes Gespräch → gemischte Spur, aber Quantität dominiert<br>• Index-Beispiel: Stoppuhr als Spur von Dauer</td><td>• (implizit: Selbstetikettierung &#x27;Ich brauche Qualität&#x27;)</td></tr><tr><td>9) Öffentlich ↔ Privat</td><td>• jemand postet ein Kuss-Foto mit Partner auf Instagram Story<br>• Icon-Beispiel: Herz in der Öffentlichkeit</td><td>• in 2 Wochen 0× Händchenhalten in der Öffentlichkeit, aber zu Hause 12× Umarmungen → klare Privat-Spur<br>• Index-Beispiel: Social-Media-Post als Spur</td><td>• (implizit: Selbstetikettierung &#x27;Ich zeige Liebe nur privat&#x27;)</td></tr><tr><td>10) Ansprechen ↔ Abwarten</td><td>• die Person nimmt das Handy, tippt direkt drauf los: „Hey, das von gestern hat mich echt gestört…“<br>• Icon-Beispiel: Sprechblase</td><td>• die Person atmet 3× tief durch, schluckt sichtbar, die Finger trommeln nervös → Abwarten-Spur<br>• Index-Beispiel: Rotes Gesicht als Symptom von Ärger</td><td>• jemand sagt: „Ich bin halt eher der Typ, der Dinge erstmal sacken lässt“<br>• Beispiel: In Konfliktpsychologie symbolisiert &#x27;direkt&#x27; durch Typen</td></tr>      </tbody>
+    </table>
+  </div>
+
+  <hr/>
+
+  <h2 style="margin:0 0 10px; font-size:16px;">Detailkarten (Marker‑Pools & Verdichtung)</h2>
+  <div id="cards" class="grid">
+
+    <div class="card" data-kind="PAIR" data-category="WACHSTUM" data-search="1) planer ↔ macher wachstum wer macht den ersten schritt, wenn etwas getan werden muss? „erst ordnung im kopf, dann tempo in der welt.“ „bewegung erzeugt klarheit.“ „bevor wir starten: was ist das ziel?“ „lass uns kurz die schritte definieren.“ „wer ist wofür verantwortlich?“ „was sind die abhängigkeiten?“ „ich schreibe das als plan runter.“ „ohne scope laufen wir auseinander.“ „was ist die definition von ‚fertig‘?“ „lass uns priorisieren.“ „wir brauchen einen zeitplan.“ „erst klären, dann bauen.“ „ich fang einfach mal an.“ „wir sehen’s, wenn wir’s bauen.“ „gib mir 30 minuten für einen prototyp.“ „testen schlägt diskutieren.“ „lass uns eine version 1 shippen.“ „zu viel planen ist auch aufschub.“ „ich mach’s kurz vor.“ „ich klär das unterwegs.“ „ich brauch nur das minimum an infos.“ „let’s go.“ erstellt agenda/protokoll/to-do-liste. baut checklisten, templates, sops. fragt nach zuständigkeiten und deadlines. denkt in risiken/abhängigkeiten (blocker-liste). macht vorab-recherche, bevor er entscheidet. setzt meilensteine und kontrolliert fortschritt. hält dokumentation aktuell. plant puffer ein. reduziert variablen (standardisierung). kommuniziert strukturiert (zusammenfassung am ende). startet sofort mit einer ersten version. erstellt schnelle demos/skizzen/prototypen. trifft entscheidungen mit unvollständiger information. sucht frühes feedback (show, don’t tell). arbeitet in kurzen zyklen (iterationen). bevorzugt mündliche abstimmung statt lange doku. kann mehrere dinge parallel anstoßen. mag sichtbare fortschrittsmarker (done-items). optimiert nachträglich (refine after ship). nutzt improvisation, wenn etwas klemmt. fels in der brandung katalysator präzisions-architekt empathischer verbinder">
+      <h2>1) Planer ↔ Macher</h2>
+      <div class="kmeta"><b>Kategorie:</b> WACHSTUM · <b>Aufhänger:</b> Wer macht den ersten Schritt, wenn etwas getan werden muss?</div>
+      <div class="badges">
+        <span class="badge icon">Icon</span>
+        <span class="badge index">Index</span>
+        <span class="badge symbol">Symbol</span>
+      </div>
+
+      <details>
+        <summary>Icon / Index / Symbol (exakt) + Verdichtung öffnen</summary>
+
+        <div class="columns" style="margin-top:10px;">
+          <div class="box">
+            <h3>Icon (exakt)</h3>
+            <ul><li>jemand zeichnet tatsächlich einen detaillierten Zeitplan / Gantt-Chart / Mindmap auf Papier oder Bildschirm</li><li>Flowchart, das Planung visuell nachahmt</li><li>Icon: Gantt-Chart zeichnen</li></ul>
+          </div>
+          <div class="box">
+            <h3>Index (exakt)</h3>
+            <ul><li>der Schreibtisch ist komplett aufgeräumt + 12 farbige Textmarker liegen in Reih und Glied → fast immer Planer</li><li>Kalendereintrag als kausale Spur von Planung</li><li>Index: perfekt sortierter Schreibtisch</li></ul>
+          </div>
+          <div class="box">
+            <h3>Symbol (exakt)</h3>
+            <ul><li>jemand sagt: „Ich bin halt der klassische Planer-Typ“ (reine Selbstzuschreibung ohne sichtbaren Beweis)</li><li>In Myers-Briggs symbolisiert &#x27;J&#x27; (Judging) Planung durch Übereinkunft</li><li>Symbol: Selbstetikettierung</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Semantische Verdichtung (Saussure)</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Planer</h3>
+            <p>Vorstrukturierung, Sequenzierung und Risikoreduktion: erst Klarheit schaffen (Ziel/Scope/Schritte), dann handeln.</p>
+            <p><b>Leitmotiv:</b> „Erst Ordnung im Kopf, dann Tempo in der Welt.“</p>
+            <p><b>Paradigma:</b> Stratege, Organisator, Strukturierer, Vorausdenker, Koordinator</p>
+          </div>
+
+          <div class="box">
+            <h3>Macher</h3>
+            <p>Handlungsorientierung, Iteration und Lernen durch Tun: erst starten, dann anhand von Feedback verbessern.</p>
+            <p><b>Leitmotiv:</b> „Bewegung erzeugt Klarheit.“</p>
+            <p><b>Paradigma:</b> Executor, Umsetzer, Praktiker, Prototyper, Starter</p>
+          </div>
+        </div>
+
+        <div class="section-title">Marker‑Pool: Sprachsignale</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Planer — Formulierungen</h3>
+            <ul><li>„Bevor wir starten: Was ist das Ziel?“</li><li>„Lass uns kurz die Schritte definieren.“</li><li>„Wer ist wofür verantwortlich?“</li><li>„Was sind die Abhängigkeiten?“</li><li>„Ich schreibe das als Plan runter.“</li><li>„Ohne Scope laufen wir auseinander.“</li><li>„Was ist die Definition von ‚fertig‘?“</li><li>„Lass uns priorisieren.“</li><li>„Wir brauchen einen Zeitplan.“</li><li>„Erst klären, dann bauen.“</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Macher — Formulierungen</h3>
+            <ul><li>„Ich fang einfach mal an.“</li><li>„Wir sehen’s, wenn wir’s bauen.“</li><li>„Gib mir 30 Minuten für einen Prototyp.“</li><li>„Testen schlägt Diskutieren.“</li><li>„Lass uns eine Version 1 shippen.“</li><li>„Zu viel Planen ist auch Aufschub.“</li><li>„Ich mach’s kurz vor.“</li><li>„Ich klär das unterwegs.“</li><li>„Ich brauch nur das Minimum an Infos.“</li><li>„Let’s go.“</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Marker‑Pool: Verhaltensspuren</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Planer — Spuren</h3>
+            <ul><li>Erstellt Agenda/Protokoll/To-do-Liste.</li><li>Baut Checklisten, Templates, SOPs.</li><li>Fragt nach Zuständigkeiten und Deadlines.</li><li>Denkt in Risiken/Abhängigkeiten (Blocker-Liste).</li><li>Macht Vorab-Recherche, bevor er entscheidet.</li><li>Setzt Meilensteine und kontrolliert Fortschritt.</li><li>Hält Dokumentation aktuell.</li><li>Plant Puffer ein.</li><li>Reduziert Variablen (Standardisierung).</li><li>Kommuniziert strukturiert (Zusammenfassung am Ende).</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Macher — Spuren</h3>
+            <ul><li>Startet sofort mit einer ersten Version.</li><li>Erstellt schnelle Demos/Skizzen/Prototypen.</li><li>Trifft Entscheidungen mit unvollständiger Information.</li><li>Sucht frühes Feedback (show, don’t tell).</li><li>Arbeitet in kurzen Zyklen (Iterationen).</li><li>Bevorzugt mündliche Abstimmung statt lange Doku.</li><li>Kann mehrere Dinge parallel anstoßen.</li><li>Mag sichtbare Fortschrittsmarker (Done-Items).</li><li>Optimiert nachträglich (Refine after ship).</li><li>Nutzt Improvisation, wenn etwas klemmt.</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Mikro‑Szenen</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Planer — Projekt · Beziehung · Krise</h3>
+            <ul><li>Projekt: Vor dem Kickoff schickt Planer eine Agenda + ein 1‑Pager‑Briefing; im Meeting klärt er Rollen und Definition‑of‑Done.</li><li>Beziehung: Plant gemeinsame Woche (Termine/Erledigungen), damit „Kopf frei“ für Nähe wird.</li><li>Krise: Stoppt Aktionismus, sammelt Fakten, formuliert 3 Optionen inkl. Risiken.</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Macher — Projekt · Beziehung · Krise</h3>
+            <ul><li>Projekt: Während andere noch diskutieren, baut Macher eine klickbare Demo und teilt den Link.</li><li>Beziehung: Statt lange zu analysieren, macht er eine konkrete Geste (kocht, organisiert Ausflug) und schaut, wie es wirkt.</li><li>Krise: Handelt schnell zur Schadensbegrenzung und passt danach den Plan an.</li></ul>
+          </div>
+
+        </div>
+
+        <div class="section-title">Verbindungen & Klassifikation</div>
+        <div class="columns">
+          <div class="box">
+            <h3>Synergien / Gegengewichte</h3>
+            <p><b>Synergien:</b> Risiko, Initiative, Öffentlich</p>
+            <p><b>Gegengewichte:</b> Sicherheit, Vertiefung, Qualität</p>
+          </div>
+          <div class="box">
+            <h3>Peirce‑Layer im Feld</h3>
+            <ul><li>Wenn du primär Labels/Selbstzuschreibungen hörst → Symbol.</li><li>Wenn du Artefakte siehst (Board, Plan, Demo) → Icon.</li><li>Wenn du Häufungen/Spuren erkennst (Checklisten, viele Iterationen) → Index.</li></ul>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <div class="card" data-kind="PAIR" data-category="WACHSTUM" data-search="2) risiko ↔ sicherheit wachstum wer schlägt neue wege vor, wer prüft erst die gefahren? „lieber mutig lernen als sicher stehen bleiben.“ „stabilität ist die voraussetzung für freiheit.“ „warum nicht?“ „wir probieren’s einfach.“ „worst case: wir lernen.“ „das ist eine chance.“ „wir launchen und iterieren.“ „schnell raus damit.“ „das risiko ist es wert.“ „ich geh vor.“ „no risk, no fun.“ „wenn’s klappt, sind wir weit vorn.“ „was ist das worst‑case‑szenario?“ „welche risiken sehen wir?“ „gibt es einen plan b?“ „bitte erst prüfen.“ „das muss abgesichert sein.“ „ich brauche klare zusagen.“ „welche daten haben wir?“ „wir sollten qa/legal einbeziehen.“ „erst wenn’s stabil ist, gehen wir live.“ „safety first.“ testet neue wege/tools ohne lange freigaben. akzeptiert unsicherheit, entscheidet schneller. nimmt bewusst exposure (bühne, verantwortung) in kauf. denkt in upside/optionen statt nur in vermeidung. macht experimente/a‑b‑tests. scheut nicht vor unpopulären entscheidungen zurück. kann regeln/prozesse als hindernis sehen. wechselt schneller richtung, wenn feedback kommt. investiert in neues (zeit/geld) früher. sucht herausforderungen als energiequelle. baut backups, redundanzen, notfallpläne. prüft verträge/compliance/qualitätssicherung. fragt nach daten, tests, belegen. schützt ressourcen (budget, zeit, energie). macht risiken sichtbar (risk register). vermeidet unnötige abhängigkeiten. setzt klare grenzen und regeln. priorisiert stabilität vor tempo. fordert freigaben/reviews ein. kommuniziert vorsichtig und überprüfbar. fels in der brandung katalysator präzisions-architekt empathischer verbinder">
+      <h2>2) Risiko ↔ Sicherheit</h2>
+      <div class="kmeta"><b>Kategorie:</b> WACHSTUM · <b>Aufhänger:</b> Wer schlägt neue Wege vor, wer prüft erst die Gefahren?</div>
+      <div class="badges">
+        <span class="badge icon">Icon</span>
+        <span class="badge index">Index</span>
+        <span class="badge symbol">Symbol</span>
+      </div>
+
+      <details>
+        <summary>Icon / Index / Symbol (exakt) + Verdichtung öffnen</summary>
+
+        <div class="columns" style="margin-top:10px;">
+          <div class="box">
+            <h3>Icon (exakt)</h3>
+            <ul><li>jemand steht wirklich oben auf der Klippe und macht ein Selfie mit dem Abgrund im Hintergrund</li><li>Icon-Beispiel: Foto eines Bergsteigers</li></ul>
+          </div>
+          <div class="box">
+            <h3>Index (exakt)</h3>
+            <ul><li>die Person hat 7 offene Kredite / 4 Kreditkarten auf Max / permanent Dispolimit ausgereizt → starke Risiko-Spur</li><li>Index-Beispiel: Schweißperlen als Symptom von Angst</li></ul>
+          </div>
+          <div class="box">
+            <h3>Symbol (exakt)</h3>
+            <ul><li>jemand trägt ein T-Shirt mit der Aufschrift „No risk – no fun“</li><li>Beispiel: In Risikopsychologie symbolisiert &#x27;Risikobereitschaft&#x27; nur durch Skalen</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Semantische Verdichtung (Saussure)</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Risiko</h3>
+            <p>Exploration, Chance‑Orientierung, Fehlertoleranz – Wachstum durch Wagnis.</p>
+            <p><b>Leitmotiv:</b> „Lieber mutig lernen als sicher stehen bleiben.“</p>
+            <p><b>Paradigma:</b> Pionier, Experimentierer, Abenteurer, Innovator</p>
+          </div>
+
+          <div class="box">
+            <h3>Sicherheit</h3>
+            <p>Absicherung, Stabilität, Schutz – Wachstum durch robuste Basis und Risiko-Minimierung.</p>
+            <p><b>Leitmotiv:</b> „Stabilität ist die Voraussetzung für Freiheit.“</p>
+            <p><b>Paradigma:</b> Sicherer Hafen, Prüfer, Guardian, Risikomanager</p>
+          </div>
+        </div>
+
+        <div class="section-title">Marker‑Pool: Sprachsignale</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Risiko — Formulierungen</h3>
+            <ul><li>„Warum nicht?“</li><li>„Wir probieren’s einfach.“</li><li>„Worst case: wir lernen.“</li><li>„Das ist eine Chance.“</li><li>„Wir launchen und iterieren.“</li><li>„Schnell raus damit.“</li><li>„Das Risiko ist es wert.“</li><li>„Ich geh vor.“</li><li>„No risk, no fun.“</li><li>„Wenn’s klappt, sind wir weit vorn.“</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Sicherheit — Formulierungen</h3>
+            <ul><li>„Was ist das Worst‑Case‑Szenario?“</li><li>„Welche Risiken sehen wir?“</li><li>„Gibt es einen Plan B?“</li><li>„Bitte erst prüfen.“</li><li>„Das muss abgesichert sein.“</li><li>„Ich brauche klare Zusagen.“</li><li>„Welche Daten haben wir?“</li><li>„Wir sollten QA/Legal einbeziehen.“</li><li>„Erst wenn’s stabil ist, gehen wir live.“</li><li>„Safety first.“</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Marker‑Pool: Verhaltensspuren</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Risiko — Spuren</h3>
+            <ul><li>Testet neue Wege/Tools ohne lange Freigaben.</li><li>Akzeptiert Unsicherheit, entscheidet schneller.</li><li>Nimmt bewusst Exposure (Bühne, Verantwortung) in Kauf.</li><li>Denkt in Upside/Optionen statt nur in Vermeidung.</li><li>Macht Experimente/A‑B‑Tests.</li><li>Scheut nicht vor unpopulären Entscheidungen zurück.</li><li>Kann Regeln/Prozesse als Hindernis sehen.</li><li>Wechselt schneller Richtung, wenn Feedback kommt.</li><li>Investiert in Neues (Zeit/Geld) früher.</li><li>Sucht Herausforderungen als Energiequelle.</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Sicherheit — Spuren</h3>
+            <ul><li>Baut Backups, Redundanzen, Notfallpläne.</li><li>Prüft Verträge/Compliance/Qualitätssicherung.</li><li>Fragt nach Daten, Tests, Belegen.</li><li>Schützt Ressourcen (Budget, Zeit, Energie).</li><li>Macht Risiken sichtbar (Risk Register).</li><li>Vermeidet unnötige Abhängigkeiten.</li><li>Setzt klare Grenzen und Regeln.</li><li>Priorisiert Stabilität vor Tempo.</li><li>Fordert Freigaben/Reviews ein.</li><li>Kommuniziert vorsichtig und überprüfbar.</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Mikro‑Szenen</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Risiko — Projekt · Beziehung · Krise</h3>
+            <ul><li>Projekt: Schlägt MVP‑Launch vor, obwohl nicht alles perfekt ist.</li><li>Beziehung: Spricht Wunsch nach einem neuen Schritt (Reise, Zusammenziehen) früh an, ohne perfekte Sicherheit.</li><li>Krise: Entscheidet, eine mutige Maßnahme zu testen, statt zu warten.</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Sicherheit — Projekt · Beziehung · Krise</h3>
+            <ul><li>Projekt: Blockt Launch ohne Monitoring/Backout‑Plan.</li><li>Beziehung: Will Klarheit über Erwartungen, bevor große Schritte gemacht werden.</li><li>Krise: Stabilisiert zuerst (Schäden begrenzen), dann Optionen prüfen.</li></ul>
+          </div>
+
+        </div>
+
+        <div class="section-title">Verbindungen & Klassifikation</div>
+        <div class="columns">
+          <div class="box">
+            <h3>Synergien / Gegengewichte</h3>
+            <p><b>Synergien:</b> Planer, Stabilisierung, Privat</p>
+            <p><b>Gegengewichte:</b> Risiko, Öffentlich, Initiative</p>
+          </div>
+          <div class="box">
+            <h3>Peirce‑Layer im Feld</h3>
+            <ul><li>Index‑Signale sind häufig: Versicherungen/Backups/Frageketten vs. spontane Wagnisse/Exposure.</li></ul>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <div class="card" data-kind="PAIR" data-category="WACHSTUM" data-search="3) motivation ↔ stabilisierung wachstum wer feuert an, wenn die luft dünn wird? „wir drehen das – zusammen.“ „langsam ist manchmal schneller.“ „wir packen das!“ „noch ein sprint!“ „ich glaub an dich.“ „das ist unsere chance.“ „let’s go!“ „wir sind näher dran als wir denken.“ „das wird richtig gut.“ „komm, wir ziehen durch.“ „ich seh deinen fortschritt.“ „nicht aufgeben.“ „erstmal durchatmen.“ „wir müssen nicht alles heute lösen.“ „was ist der kleinste nächste schritt?“ „wie halten wir das nachhaltig?“ „wir brauchen pausen.“ „das ist gerade zu viel.“ „lass uns sortieren.“ „wir priorisieren neu.“ „ich halte den rahmen.“ „stabilität zuerst.“ hebt stimmung durch anerkennung/lob. erzeugt richtung (vision, zielbild). macht fortschritt sichtbar (wins feiern). steigert tempo/intensität (kurze deadlines). nutzt energie-rituale (kickoff, musik, countdown). übernimmt die bühne, um andere mitzunehmen. sucht aktive lösungen statt grübeln. kommuniziert mit emotion/drive. kann risiko eingehen, um momentum zu halten. wirkt als „zündfunke“ in gruppen. reduziert überlastung (pausen, grenzen). schafft struktur, ohne zu pushen. deeskaliert konflikte (ton, tempo runter). schützt ressourcen (energie, zeit, fokus). stellt regeln/rituale her (routine). fängt andere emotional auf. sorgt für kontinuität und wiederholbarkeit. macht „stop“ möglich, bevor schaden entsteht. hält stillstände aus, ohne zu flüchten. bevorzugt robuste prozesse. fels in der brandung katalysator präzisions-architekt empathischer verbinder">
+      <h2>3) Motivation ↔ Stabilisierung</h2>
+      <div class="kmeta"><b>Kategorie:</b> WACHSTUM · <b>Aufhänger:</b> Wer feuert an, wenn die Luft dünn wird?</div>
+      <div class="badges">
+        <span class="badge icon">Icon</span>
+        <span class="badge index">Index</span>
+        <span class="badge symbol">Symbol</span>
+      </div>
+
+      <details>
+        <summary>Icon / Index / Symbol (exakt) + Verdichtung öffnen</summary>
+
+        <div class="columns" style="margin-top:10px;">
+          <div class="box">
+            <h3>Icon (exakt)</h3>
+            <ul><li>jemand steht vor der Gruppe, springt auf einen Tisch und schreit „KOMMT SCHON IHR SCHLAFMÜTZEN!!!“</li><li>Icon-Beispiel: Flamme-Ikon</li></ul>
+          </div>
+          <div class="box">
+            <h3>Index (exakt)</h3>
+            <ul><li>die Stimme wird plötzlich 12 dB lauter + schneller + höher, die Gestik wird riesig → Motivations-Index</li><li>Index-Beispiel: Herzrasen als Symptom von Erregung</li></ul>
+          </div>
+          <div class="box">
+            <h3>Symbol (exakt)</h3>
+            <ul><li>jemand sagt von sich: „Ich bin eher der Motivator im Team“</li><li>Beispiel: In Motivationspsychologie symbolisiert &#x27;intrinsisch&#x27; durch Definition</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Semantische Verdichtung (Saussure)</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Motivation</h3>
+            <p>Aktivierung, Sinnstiftung, Momentum – Energie in Bewegung umsetzen.</p>
+            <p><b>Leitmotiv:</b> „Wir drehen das – zusammen.“</p>
+            <p><b>Paradigma:</b> Antreiber, Cheerleader, Energizer, Spark</p>
+          </div>
+
+          <div class="box">
+            <h3>Stabilisierung</h3>
+            <p>Regulation, Halten, Entlasten – System in einen tragfähigen Zustand bringen.</p>
+            <p><b>Leitmotiv:</b> „Langsam ist manchmal schneller.“</p>
+            <p><b>Paradigma:</b> Anker, Regulator, Rahmenhalter, Balancer</p>
+          </div>
+        </div>
+
+        <div class="section-title">Marker‑Pool: Sprachsignale</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Motivation — Formulierungen</h3>
+            <ul><li>„Wir packen das!“</li><li>„Noch ein Sprint!“</li><li>„Ich glaub an dich.“</li><li>„Das ist unsere Chance.“</li><li>„Let’s go!“</li><li>„Wir sind näher dran als wir denken.“</li><li>„Das wird richtig gut.“</li><li>„Komm, wir ziehen durch.“</li><li>„Ich seh deinen Fortschritt.“</li><li>„Nicht aufgeben.“</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Stabilisierung — Formulierungen</h3>
+            <ul><li>„Erstmal durchatmen.“</li><li>„Wir müssen nicht alles heute lösen.“</li><li>„Was ist der kleinste nächste Schritt?“</li><li>„Wie halten wir das nachhaltig?“</li><li>„Wir brauchen Pausen.“</li><li>„Das ist gerade zu viel.“</li><li>„Lass uns sortieren.“</li><li>„Wir priorisieren neu.“</li><li>„Ich halte den Rahmen.“</li><li>„Stabilität zuerst.“</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Marker‑Pool: Verhaltensspuren</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Motivation — Spuren</h3>
+            <ul><li>Hebt Stimmung durch Anerkennung/Lob.</li><li>Erzeugt Richtung (Vision, Zielbild).</li><li>Macht Fortschritt sichtbar (Wins feiern).</li><li>Steigert Tempo/Intensität (kurze Deadlines).</li><li>Nutzt Energie-Rituale (Kickoff, Musik, Countdown).</li><li>Übernimmt die Bühne, um andere mitzunehmen.</li><li>Sucht aktive Lösungen statt Grübeln.</li><li>Kommuniziert mit Emotion/Drive.</li><li>Kann Risiko eingehen, um Momentum zu halten.</li><li>Wirkt als „Zündfunke“ in Gruppen.</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Stabilisierung — Spuren</h3>
+            <ul><li>Reduziert Überlastung (Pausen, Grenzen).</li><li>Schafft Struktur, ohne zu pushen.</li><li>Deeskaliert Konflikte (Ton, Tempo runter).</li><li>Schützt Ressourcen (Energie, Zeit, Fokus).</li><li>Stellt Regeln/Rituale her (Routine).</li><li>Fängt andere emotional auf.</li><li>Sorgt für Kontinuität und Wiederholbarkeit.</li><li>Macht „Stop“ möglich, bevor Schaden entsteht.</li><li>Hält Stillstände aus, ohne zu flüchten.</li><li>Bevorzugt robuste Prozesse.</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Mikro‑Szenen</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Motivation — Projekt · Beziehung · Krise</h3>
+            <ul><li>Projekt: Motivator macht aus Blockern ein gemeinsames Ziel („heute lösen wir 3 Dinge“).</li><li>Beziehung: Ermutigt, wenn der andere zweifelt, und erinnert an gemeinsame Vision.</li><li>Krise: Sammelt Team/Partner, bündelt Energie, initiiert Handlung.</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Stabilisierung — Projekt · Beziehung · Krise</h3>
+            <ul><li>Projekt: Stoppt „noch schnell“-Requests, ordnet Prioritäten, verhindert Burnout.</li><li>Beziehung: Schlägt Pause vor, wenn Streit hochkocht.</li><li>Krise: Stabilisiert Grundbedürfnisse (Schlaf, Essen, Ruhe), bevor Entscheidungen fallen.</li></ul>
+          </div>
+
+        </div>
+
+        <div class="section-title">Verbindungen & Klassifikation</div>
+        <div class="columns">
+          <div class="box">
+            <h3>Synergien / Gegengewichte</h3>
+            <p><b>Synergien:</b> Sicherheit, Privat, Quantität</p>
+            <p><b>Gegengewichte:</b> Motivation, Öffentlich, Risiko</p>
+          </div>
+          <div class="box">
+            <h3>Peirce‑Layer im Feld</h3>
+            <ul><li>Achte auf Tempo/Stimmlage als Index: schneller/lauter = Motivation; langsamer/beruhigend = Stabilisierung.</li></ul>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <div class="card" data-kind="PAIR" data-category="WACHSTUM" data-search="4) initiative ↔ vertiefung wachstum wer startet projekte, wer macht sie fertig? „wenn niemand anfängt, passiert nichts.“ „die letzten 20% sind die qualität.“ „ich stoß das an.“ „ich mach den ersten schritt.“ „ich setz das auf.“ „ich schreibe die erste version.“ „ich ruf da an.“ „lass uns starten und lernen.“ „ich übernehme das kickoff.“ „wir brauchen jetzt einen anfang.“ „ich bring das ins rollen.“ „heute noch version 0.1.“ „das ist noch nicht sauber.“ „wir müssen das testen.“ „lass uns die details klären.“ „ich will das wirklich fertig machen.“ „das muss wartbar sein.“ „wir brauchen doku.“ „edge‑cases fehlen.“ „das ist noch fragil.“ „wir polieren das.“ „qualität vor tempo.“ eröffnet tickets/boards/threads. setzt erstes meeting/kickoff auf. schickt erste mail/dm, macht den ersten call. erstellt erste skizze/gliederung/prototyp. übernimmt frühe unsicherheit (steht vorne). baut „startenergie“ im team. klarer ownership‑move („ich mach’s“). kann mehrere starts parallel machen. hat viele angefangene artefakte (index). sucht frühe sichtbarkeit (demo). schließt offene enden, räumt nach. schreibt tests, dokumentation, guidelines. refactoring/polishing. macht reviews/qa gründlich. denkt an wartbarkeit/skalierung. sammelt feedback und integriert systematisch. baut stabile routinen/prozesse um die arbeit. kümmert sich um übergaben und nachhaltigkeit. reduziert technische/soziale schulden. kann start verzögern, wenn perfektion dominiert. fels in der brandung katalysator präzisions-architekt empathischer verbinder">
+      <h2>4) Initiative ↔ Vertiefung</h2>
+      <div class="kmeta"><b>Kategorie:</b> WACHSTUM · <b>Aufhänger:</b> Wer startet Projekte, wer macht sie fertig?</div>
+      <div class="badges">
+        <span class="badge icon">Icon</span>
+        <span class="badge index">Index</span>
+        <span class="badge symbol">Symbol</span>
+      </div>
+
+      <details>
+        <summary>Icon / Index / Symbol (exakt) + Verdichtung öffnen</summary>
+
+        <div class="columns" style="margin-top:10px;">
+          <div class="box">
+            <h3>Icon (exakt)</h3>
+            <ul><li>jemand drückt tatsächlich auf &#x27;Neues Projekt erstellen&#x27; und tippt die ersten 3 Zeilen Code / To-do-Liste</li><li>Icon-Beispiel: Startlinie-Bild</li></ul>
+          </div>
+          <div class="box">
+            <h3>Index (exakt)</h3>
+            <ul><li>Ordner &#x27;Projekt XY&#x27; enthält nur Datei &#x27;Idee_v1.docx&#x27; + 0 Follow-ups → starke Initiative-Spur ohne Vertiefung</li><li>Index-Beispiel: Erster Entwurf als Spur von Initiative</li></ul>
+          </div>
+          <div class="box">
+            <h3>Symbol (exakt)</h3>
+            <ul><li>Beispiel: In Projektmanagement symbolisiert &#x27;Initiator&#x27; durch Konvention</li><li>(implizit: Selbstetikettierung &#x27;Ich bin ein Macher / Starter&#x27;)</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Semantische Verdichtung (Saussure)</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Initiative</h3>
+            <p>Startimpuls, Ownership am Anfang, Schwelle überwinden – Dinge in Bewegung bringen.</p>
+            <p><b>Leitmotiv:</b> „Wenn niemand anfängt, passiert nichts.“</p>
+            <p><b>Paradigma:</b> Starter, Initiator, Kickstarter, Pionier</p>
+          </div>
+
+          <div class="box">
+            <h3>Vertiefung</h3>
+            <p>Ausarbeitung, Meisterschaft, Finish – Tiefe und Robustheit herstellen.</p>
+            <p><b>Leitmotiv:</b> „Die letzten 20% sind die Qualität.“</p>
+            <p><b>Paradigma:</b> Finisher, Craftsperson, Detailarbeiter, Perfektionierer</p>
+          </div>
+        </div>
+
+        <div class="section-title">Marker‑Pool: Sprachsignale</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Initiative — Formulierungen</h3>
+            <ul><li>„Ich stoß das an.“</li><li>„Ich mach den ersten Schritt.“</li><li>„Ich setz das auf.“</li><li>„Ich schreibe die erste Version.“</li><li>„Ich ruf da an.“</li><li>„Lass uns starten und lernen.“</li><li>„Ich übernehme das Kickoff.“</li><li>„Wir brauchen jetzt einen Anfang.“</li><li>„Ich bring das ins Rollen.“</li><li>„Heute noch Version 0.1.“</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Vertiefung — Formulierungen</h3>
+            <ul><li>„Das ist noch nicht sauber.“</li><li>„Wir müssen das testen.“</li><li>„Lass uns die Details klären.“</li><li>„Ich will das wirklich fertig machen.“</li><li>„Das muss wartbar sein.“</li><li>„Wir brauchen Doku.“</li><li>„Edge‑Cases fehlen.“</li><li>„Das ist noch fragil.“</li><li>„Wir polieren das.“</li><li>„Qualität vor Tempo.“</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Marker‑Pool: Verhaltensspuren</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Initiative — Spuren</h3>
+            <ul><li>Eröffnet Tickets/Boards/Threads.</li><li>Setzt erstes Meeting/Kickoff auf.</li><li>Schickt erste Mail/DM, macht den ersten Call.</li><li>Erstellt erste Skizze/Gliederung/Prototyp.</li><li>Übernimmt frühe Unsicherheit (steht vorne).</li><li>Baut „Startenergie“ im Team.</li><li>Klarer Ownership‑Move („ich mach’s“).</li><li>Kann mehrere Starts parallel machen.</li><li>Hat viele angefangene Artefakte (Index).</li><li>Sucht frühe Sichtbarkeit (Demo).</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Vertiefung — Spuren</h3>
+            <ul><li>Schließt offene Enden, räumt nach.</li><li>Schreibt Tests, Dokumentation, Guidelines.</li><li>Refactoring/Polishing.</li><li>Macht Reviews/QA gründlich.</li><li>Denkt an Wartbarkeit/Skalierung.</li><li>Sammelt Feedback und integriert systematisch.</li><li>Baut stabile Routinen/Prozesse um die Arbeit.</li><li>Kümmert sich um Übergaben und Nachhaltigkeit.</li><li>Reduziert technische/soziale Schulden.</li><li>Kann Start verzögern, wenn Perfektion dominiert.</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Mikro‑Szenen</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Initiative — Projekt · Beziehung · Krise</h3>
+            <ul><li>Projekt: Niemand traut sich – Initiator macht ersten Draft und bittet um Feedback.</li><li>Beziehung: Spricht ersten Schritt an („lass uns ein Ritual starten“).</li><li>Krise: Startet Sofortmaßnahmen (Kontakte, Termine, Ersthilfe).</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Vertiefung — Projekt · Beziehung · Krise</h3>
+            <ul><li>Projekt: Vertiefer nimmt Prototyp und macht daraus ein robustes Produkt (Tests, Doku, Monitoring).</li><li>Beziehung: Hält an Ritualen fest, pflegt Beziehung täglich – nicht nur in Peaks.</li><li>Krise: Arbeitet Probleme methodisch ab, statt nur zu reagieren.</li></ul>
+          </div>
+
+        </div>
+
+        <div class="section-title">Verbindungen & Klassifikation</div>
+        <div class="columns">
+          <div class="box">
+            <h3>Synergien / Gegengewichte</h3>
+            <p><b>Synergien:</b> Planer, Qualität, Privat</p>
+            <p><b>Gegengewichte:</b> Initiative, Öffentlich, Risiko</p>
+          </div>
+          <div class="box">
+            <h3>Peirce‑Layer im Feld</h3>
+            <ul><li>Index: Viele angefangene Artefakte vs. wenige, aber sehr ausgearbeitete Artefakte.</li></ul>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <div class="card" data-kind="PAIR" data-category="WACHSTUM" data-search="5) hinterfragen ↔ akzeptieren wachstum wer stellt alles in frage, wer vertraut einfach? „zeig mir die grundlage.“ „ich entscheide mich für vertrauen.“ „warum?“ „woran machen wir das fest?“ „welche annahme steckt dahinter?“ „gibt’s daten?“ „wie testest du das?“ „was wäre das gegenargument?“ „das ist nicht konsistent.“ „beleg das bitte.“ „ich sehe hier eine lücke.“ „was übersehen wir?“ „okay.“ „passt für mich.“ „ich vertraue dir.“ „lass es uns einfach versuchen.“ „nicht alles zerdenken.“ „ich geh da mit.“ „wir finden das schon.“ „ich nehm das so an.“ „das muss nicht perfekt sein.“ „frieden ist mir wichtig.“ stellt rückfragen in schleifen. prüft quellen, zitiert, verlinkt. macht gegenchecks/reviews. testet hypothesen statt zu glauben. erkennt logikfehler/inkonsistenzen früh. kann diskussionen verlängern. schützt vor fehlentscheidungen. trennt meinung/fakt klarer. nutzen von checklisten/standards. kann vertrauen erodieren, wenn ton hart ist. geht schneller mit entscheidungen mit. reduziert reibung, schafft flow. validiert statt zu challengen. hält unsicherheit aus, ohne sofort zu prüfen. kann konflikte beruhigen. kann relevante risiken übersehen. vertraut auf beziehungen/intuition. unterstützt, statt zu kontrollieren. setzt auf erfahrung („hat schon geklappt“). kann passiv werden, wenn angst vor konflikt da ist. fels in der brandung katalysator präzisions-architekt empathischer verbinder">
+      <h2>5) Hinterfragen ↔ Akzeptieren</h2>
+      <div class="kmeta"><b>Kategorie:</b> WACHSTUM · <b>Aufhänger:</b> Wer stellt alles in Frage, wer vertraut einfach?</div>
+      <div class="badges">
+        <span class="badge icon">Icon</span>
+        <span class="badge index">Index</span>
+        <span class="badge symbol">Symbol</span>
+      </div>
+
+      <details>
+        <summary>Icon / Index / Symbol (exakt) + Verdichtung öffnen</summary>
+
+        <div class="columns" style="margin-top:10px;">
+          <div class="box">
+            <h3>Icon (exakt)</h3>
+            <ul><li>jemand zieht die Augenbrauen hoch + Kopf schräg + sagt &#x27;Moment mal…&#x27;</li><li>Icon-Beispiel: Fragezeichen-Ikon</li></ul>
+          </div>
+          <div class="box">
+            <h3>Index (exakt)</h3>
+            <ul><li>in 15-minütigem Meeting 7× &#x27;Warum eigentlich…?&#x27; + &#x27;Belegst du das?&#x27; → klare Hinterfragen-Spur</li><li>Index-Beispiel: Stirnrunzeln als Symptom von Zweifel</li></ul>
+          </div>
+          <div class="box">
+            <h3>Symbol (exakt)</h3>
+            <ul><li>Beispiel: In Kognitionspsychologie symbolisiert &#x27;kritisch&#x27; durch Skalen</li><li>(implizit: Selbstetikettierung &#x27;Ich bin der kritische Typ&#x27;)</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Semantische Verdichtung (Saussure)</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Hinterfragen</h3>
+            <p>Kritisches Prüfen: Belege, Logik, Annahmen; Fehler finden, bevor sie wirken.</p>
+            <p><b>Leitmotiv:</b> „Zeig mir die Grundlage.“</p>
+            <p><b>Paradigma:</b> Kritiker, Prüfer, Analytiker, Skeptiker</p>
+          </div>
+
+          <div class="box">
+            <h3>Akzeptieren</h3>
+            <p>Annehmen und mitgehen: Vertrauen, Entlastung, Harmonie; nicht alles muss kontrolliert werden.</p>
+            <p><b>Leitmotiv:</b> „Ich entscheide mich für Vertrauen.“</p>
+            <p><b>Paradigma:</b> Vertrauender, Flow‑Typ, Harmonisierer, Annehmer</p>
+          </div>
+        </div>
+
+        <div class="section-title">Marker‑Pool: Sprachsignale</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Hinterfragen — Formulierungen</h3>
+            <ul><li>„Warum?“</li><li>„Woran machen wir das fest?“</li><li>„Welche Annahme steckt dahinter?“</li><li>„Gibt’s Daten?“</li><li>„Wie testest du das?“</li><li>„Was wäre das Gegenargument?“</li><li>„Das ist nicht konsistent.“</li><li>„Beleg das bitte.“</li><li>„Ich sehe hier eine Lücke.“</li><li>„Was übersehen wir?“</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Akzeptieren — Formulierungen</h3>
+            <ul><li>„Okay.“</li><li>„Passt für mich.“</li><li>„Ich vertraue dir.“</li><li>„Lass es uns einfach versuchen.“</li><li>„Nicht alles zerdenken.“</li><li>„Ich geh da mit.“</li><li>„Wir finden das schon.“</li><li>„Ich nehm das so an.“</li><li>„Das muss nicht perfekt sein.“</li><li>„Frieden ist mir wichtig.“</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Marker‑Pool: Verhaltensspuren</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Hinterfragen — Spuren</h3>
+            <ul><li>Stellt Rückfragen in Schleifen.</li><li>Prüft Quellen, zitiert, verlinkt.</li><li>Macht Gegenchecks/Reviews.</li><li>Testet Hypothesen statt zu glauben.</li><li>Erkennt Logikfehler/Inkonsistenzen früh.</li><li>Kann Diskussionen verlängern.</li><li>Schützt vor Fehlentscheidungen.</li><li>Trennt Meinung/Fakt klarer.</li><li>Nutzen von Checklisten/Standards.</li><li>Kann Vertrauen erodieren, wenn Ton hart ist.</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Akzeptieren — Spuren</h3>
+            <ul><li>Geht schneller mit Entscheidungen mit.</li><li>Reduziert Reibung, schafft Flow.</li><li>Validiert statt zu challengen.</li><li>Hält Unsicherheit aus, ohne sofort zu prüfen.</li><li>Kann Konflikte beruhigen.</li><li>Kann relevante Risiken übersehen.</li><li>Vertraut auf Beziehungen/Intuition.</li><li>Unterstützt, statt zu kontrollieren.</li><li>Setzt auf Erfahrung („hat schon geklappt“).</li><li>Kann passiv werden, wenn Angst vor Konflikt da ist.</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Mikro‑Szenen</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Hinterfragen — Projekt · Beziehung · Krise</h3>
+            <ul><li>Projekt: Stoppt Feature, weil KPIs/Annahmen unklar sind.</li><li>Beziehung: Fragt nach dem „eigentlichen Bedürfnis“ hinter einem Konflikt.</li><li>Krise: Sammelt Fakten, bevor gehandelt wird (wenn Zeit da ist).</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Akzeptieren — Projekt · Beziehung · Krise</h3>
+            <ul><li>Projekt: Unterstützt eine Richtung, um Momentum zu halten.</li><li>Beziehung: Lässt Eigenheiten stehen, ohne zu korrigieren.</li><li>Krise: Beruhigt durch Annahme, statt durch Analyse.</li></ul>
+          </div>
+
+        </div>
+
+        <div class="section-title">Verbindungen & Klassifikation</div>
+        <div class="columns">
+          <div class="box">
+            <h3>Synergien / Gegengewichte</h3>
+            <p><b>Synergien:</b> Qualität, Vertiefung, Planer</p>
+            <p><b>Gegengewichte:</b> Akzeptieren, Stabilisierung, Abwarten</p>
+          </div>
+          <div class="box">
+            <h3>Peirce‑Layer im Feld</h3>
+            <ul><li>Index: Zählbare Fragehäufung, Quellen/Checks vs. schnelle Zustimmung/Flow‑Moves.</li></ul>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <div class="card" data-kind="PAIR" data-category="LIEBE" data-search="6) geben ↔ nehmen liebe wer zeigt liebe durch taten, wer durch worte – und wer kann empfangen? „ich trage meinen teil – und mehr, wenn du fällst.“ „ich darf raum einnehmen.“ „was brauchst du?“ „ich mach das für dich.“ „ich regel das.“ „ich hab an dich gedacht.“ „ich übernehme.“ „ich helf dir.“ „ich will dir das leichter machen.“ „ich kümmere mich.“ „du musst das nicht alleine machen.“ „ich bring dir was mit.“ „kannst du mir helfen?“ „ich brauche dich.“ „ich wünsche mir…“ „bitte hör mir zu.“ „ich will gehalten werden.“ „ich möchte, dass du…“ „kannst du das übernehmen?“ „ich kann das gerade nicht allein.“ „ich nehme das angebot an.“ „danke, das tut mir gut.“ organisiert/plant für andere. hilft proaktiv, ohne gefragt zu werden. schenkt praktische unterstützung. merkt sich details (termine, vorlieben). springt ein, wenn jemand überfordert ist. kann eigene bedürfnisse hinten anstellen. gibt struktur/care als liebe. übernimmt verantwortung im alltag. zeigt zuneigung durch service. kann sich ausgenutzt fühlen, wenn nehmen fehlt. bittet konkret um hilfe. nimmt angebote an ohne rechtfertigung. kann bedürfnisse klar benennen. setzt grenzen („das ist mir zu viel“). übt empfangen (auch komplimente). kann als anspruchsvoll gelesen werden. zeigt vertrauen durch annehmen. schafft balance, wenn geben stark ist. kann unterstützung aktiv einfordern. kann abhängigkeit erzeugen, wenn übermaß. fels in der brandung katalysator präzisions-architekt empathischer verbinder">
+      <h2>6) Geben ↔ Nehmen</h2>
+      <div class="kmeta"><b>Kategorie:</b> LIEBE · <b>Aufhänger:</b> Wer zeigt Liebe durch Taten, wer durch Worte – und wer kann empfangen?</div>
+      <div class="badges">
+        <span class="badge icon">Icon</span>
+        <span class="badge index">Index</span>
+        <span class="badge symbol">Symbol</span>
+      </div>
+
+      <details>
+        <summary>Icon / Index / Symbol (exakt) + Verdichtung öffnen</summary>
+
+        <div class="columns" style="margin-top:10px;">
+          <div class="box">
+            <h3>Icon (exakt)</h3>
+            <ul><li>jemand schiebt der anderen Person wirklich die letzte Gabel Lasagne rüber</li><li>Icon-Beispiel: Geschenk-Icon</li></ul>
+          </div>
+          <div class="box">
+            <h3>Index (exakt)</h3>
+            <ul><li>die Person hat 23 ungelesene Nachrichten, aber 187 gesendete in den letzten 4 Tagen → klares Geben-Spur</li><li>Index-Beispiel: Umarmung als kausale Geste</li></ul>
+          </div>
+          <div class="box">
+            <h3>Symbol (exakt)</h3>
+            <ul><li>jemand sagt beim Date: „Ich bin halt ein sehr gebender Mensch“</li><li>Beispiel: In Love Languages symbolisiert &#x27;Acts of Service&#x27; durch Übereinkunft</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Semantische Verdichtung (Saussure)</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Geben</h3>
+            <p>Fürsorge durch Beitrag: Zeit, Hilfe, Service, Aufmerksamkeit – Liebe als Handlung.</p>
+            <p><b>Leitmotiv:</b> „Ich trage meinen Teil – und mehr, wenn du fällst.“</p>
+            <p><b>Paradigma:</b> Fürsorger, Supporter, Giver, Caretaker</p>
+          </div>
+
+          <div class="box">
+            <h3>Nehmen</h3>
+            <p>Empfangen und Bedürfnisse ausdrücken: Unterstützung annehmen, bitten, sich versorgen lassen.</p>
+            <p><b>Leitmotiv:</b> „Ich darf Raum einnehmen.“</p>
+            <p><b>Paradigma:</b> Empfänger, Requester, Bedürfnis‑Klarer, Receiver</p>
+          </div>
+        </div>
+
+        <div class="section-title">Marker‑Pool: Sprachsignale</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Geben — Formulierungen</h3>
+            <ul><li>„Was brauchst du?“</li><li>„Ich mach das für dich.“</li><li>„Ich regel das.“</li><li>„Ich hab an dich gedacht.“</li><li>„Ich übernehme.“</li><li>„Ich helf dir.“</li><li>„Ich will dir das leichter machen.“</li><li>„Ich kümmere mich.“</li><li>„Du musst das nicht alleine machen.“</li><li>„Ich bring dir was mit.“</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Nehmen — Formulierungen</h3>
+            <ul><li>„Kannst du mir helfen?“</li><li>„Ich brauche dich.“</li><li>„Ich wünsche mir…“</li><li>„Bitte hör mir zu.“</li><li>„Ich will gehalten werden.“</li><li>„Ich möchte, dass du…“</li><li>„Kannst du das übernehmen?“</li><li>„Ich kann das gerade nicht allein.“</li><li>„Ich nehme das Angebot an.“</li><li>„Danke, das tut mir gut.“</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Marker‑Pool: Verhaltensspuren</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Geben — Spuren</h3>
+            <ul><li>Organisiert/plant für andere.</li><li>Hilft proaktiv, ohne gefragt zu werden.</li><li>Schenkt praktische Unterstützung.</li><li>Merkt sich Details (Termine, Vorlieben).</li><li>Springt ein, wenn jemand überfordert ist.</li><li>Kann eigene Bedürfnisse hinten anstellen.</li><li>Gibt Struktur/Care als Liebe.</li><li>Übernimmt Verantwortung im Alltag.</li><li>Zeigt Zuneigung durch Service.</li><li>Kann sich ausgenutzt fühlen, wenn Nehmen fehlt.</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Nehmen — Spuren</h3>
+            <ul><li>Bittet konkret um Hilfe.</li><li>Nimmt Angebote an ohne Rechtfertigung.</li><li>Kann Bedürfnisse klar benennen.</li><li>Setzt Grenzen („das ist mir zu viel“).</li><li>Übt Empfangen (auch Komplimente).</li><li>Kann als anspruchsvoll gelesen werden.</li><li>Zeigt Vertrauen durch Annehmen.</li><li>Schafft Balance, wenn Geben stark ist.</li><li>Kann Unterstützung aktiv einfordern.</li><li>Kann Abhängigkeit erzeugen, wenn Übermaß.</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Mikro‑Szenen</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Geben — Projekt · Beziehung · Krise</h3>
+            <ul><li>Beziehung: Macht den Abwasch, weil der andere müde ist – ohne Drama.</li><li>Freundschaft: Schickt Essen vorbei, wenn jemand krank ist.</li><li>Konflikt: Versucht durch Handeln zu reparieren statt zu reden.</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Nehmen — Projekt · Beziehung · Krise</h3>
+            <ul><li>Beziehung: Sagt: „Ich brauche heute Nähe/Zeit“ statt still zu leiden.</li><li>Team: Bittet um Review/Support, statt allein zu kämpfen.</li><li>Konflikt: Formuliert Wunsch klar statt indirekt zu testen.</li></ul>
+          </div>
+
+        </div>
+
+        <div class="section-title">Verbindungen & Klassifikation</div>
+        <div class="columns">
+          <div class="box">
+            <h3>Synergien / Gegengewichte</h3>
+            <p><b>Synergien:</b> Emotional, Quantität, Akzeptieren</p>
+            <p><b>Gegengewichte:</b> Qualität, Ansprechen</p>
+          </div>
+          <div class="box">
+            <h3>Peirce‑Layer im Feld</h3>
+            <ul><li>Index: Verhältnis von geleisteter Care‑Arbeit vs. geäußerten Bitten/Empfangen.</li></ul>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <div class="card" data-kind="PAIR" data-category="LIEBE" data-search="7) körperlich ↔ emotional liebe was bedeutet nähe – dabeisein/anfassen oder verstehen/gefühle? „wenn ich dich spüre, bin ich verbunden.“ „wenn du mich verstehst, bin ich dir nah.“ „komm her.“ „ich brauch eine umarmung.“ „setz dich zu mir.“ „nur kurz halten.“ „ich will dich spüren.“ „gib mir deine hand.“ „küss mich.“ „nähe beruhigt mich.“ „nicht so weit weg.“ „bleib bei mir.“ „was fühlst du gerade?“ „was macht das mit dir?“ „ich will dich verstehen.“ „sag mir, was du brauchst.“ „ich sehe dich.“ „das klingt schwer.“ „ich bin bei dir.“ „kannst du’s mir erklären?“ „wie geht’s dir wirklich?“ „ich brauche emotionale präsenz.“ sucht berührung bei stress oder freude. hält händchen, kuschelt, körperkontakt im alltag. reguliert emotionen über körperliche nähe. zeigt zuneigung durch gesten/touch. kann worte weniger brauchen. kann bei distanz schnell unsicherheit fühlen. mag gemeinsame körperliche rituale (kuss, umarmung). sitzt näher, sucht blickkontakt. nutzen von nähe als repair. kann grenzen anderer übersehen, wenn ungeklärt. stellt empathische fragen. spiegelt/validiert gefühle. erinnert sich an emotionale details. sucht gespräch als repair. kann berührung ohne gespräch als „leer“ erleben. baut bindung über offenheit. setzt auf perspektivwechsel. kann konflikte früh verbalisieren. braucht „gesehen werden“ als sicherheitsanker. kann überanalysieren, wenn unsicher. fels in der brandung katalysator präzisions-architekt empathischer verbinder">
+      <h2>7) Körperlich ↔ Emotional</h2>
+      <div class="kmeta"><b>Kategorie:</b> LIEBE · <b>Aufhänger:</b> Was bedeutet Nähe – Dabeisein/Anfassen oder Verstehen/Gefühle?</div>
+      <div class="badges">
+        <span class="badge icon">Icon</span>
+        <span class="badge index">Index</span>
+        <span class="badge symbol">Symbol</span>
+      </div>
+
+      <details>
+        <summary>Icon / Index / Symbol (exakt) + Verdichtung öffnen</summary>
+
+        <div class="columns" style="margin-top:10px;">
+          <div class="box">
+            <h3>Icon (exakt)</h3>
+            <ul><li>jemand greift sofort nach der Hand / legt den Arm um die Hüfte / küsst den Hals</li><li>Icon-Beispiel: Herz-Icon für Emotionales</li></ul>
+          </div>
+          <div class="box">
+            <h3>Index (exakt)</h3>
+            <ul><li>nach 20 Minuten Gespräch hat die Person schon 9-mal die andere Person berührt (Schulter, Unterarm, Knie, Rücken…)</li><li>Index-Beispiel: Berührung als Symptom von Nähe</li></ul>
+          </div>
+          <div class="box">
+            <h3>Symbol (exakt)</h3>
+            <ul><li>jemand sagt: „Für mich ist Nähe vor allem eine emotionale Sache“</li><li>Beispiel: In Bindungstheorie symbolisiert &#x27;physisch&#x27; durch Kategorien</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Semantische Verdichtung (Saussure)</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Körperlich</h3>
+            <p>Nähe über Berührung, Präsenz, Sinnlichkeit; Körper als Bindungskanal.</p>
+            <p><b>Leitmotiv:</b> „Wenn ich dich spüre, bin ich verbunden.“</p>
+            <p><b>Paradigma:</b> Tactile, Körper‑Nähe‑Typ, Somatic connector</p>
+          </div>
+
+          <div class="box">
+            <h3>Emotional</h3>
+            <p>Nähe über innere Welt: Worte, Verständnis, Empathie, Validierung.</p>
+            <p><b>Leitmotiv:</b> „Wenn du mich verstehst, bin ich dir nah.“</p>
+            <p><b>Paradigma:</b> Empath, Inner‑world connector, Dialog‑Nähe‑Typ</p>
+          </div>
+        </div>
+
+        <div class="section-title">Marker‑Pool: Sprachsignale</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Körperlich — Formulierungen</h3>
+            <ul><li>„Komm her.“</li><li>„Ich brauch eine Umarmung.“</li><li>„Setz dich zu mir.“</li><li>„Nur kurz halten.“</li><li>„Ich will dich spüren.“</li><li>„Gib mir deine Hand.“</li><li>„Küss mich.“</li><li>„Nähe beruhigt mich.“</li><li>„Nicht so weit weg.“</li><li>„Bleib bei mir.“</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Emotional — Formulierungen</h3>
+            <ul><li>„Was fühlst du gerade?“</li><li>„Was macht das mit dir?“</li><li>„Ich will dich verstehen.“</li><li>„Sag mir, was du brauchst.“</li><li>„Ich sehe dich.“</li><li>„Das klingt schwer.“</li><li>„Ich bin bei dir.“</li><li>„Kannst du’s mir erklären?“</li><li>„Wie geht’s dir wirklich?“</li><li>„Ich brauche emotionale Präsenz.“</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Marker‑Pool: Verhaltensspuren</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Körperlich — Spuren</h3>
+            <ul><li>Sucht Berührung bei Stress oder Freude.</li><li>Hält Händchen, kuschelt, Körperkontakt im Alltag.</li><li>Reguliert Emotionen über körperliche Nähe.</li><li>Zeigt Zuneigung durch Gesten/Touch.</li><li>Kann Worte weniger brauchen.</li><li>Kann bei Distanz schnell Unsicherheit fühlen.</li><li>Mag gemeinsame körperliche Rituale (Kuss, Umarmung).</li><li>Sitzt näher, sucht Blickkontakt.</li><li>Nutzen von Nähe als Repair.</li><li>Kann Grenzen anderer übersehen, wenn ungeklärt.</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Emotional — Spuren</h3>
+            <ul><li>Stellt empathische Fragen.</li><li>Spiegelt/validiert Gefühle.</li><li>Erinnert sich an emotionale Details.</li><li>Sucht Gespräch als Repair.</li><li>Kann Berührung ohne Gespräch als „leer“ erleben.</li><li>Baut Bindung über Offenheit.</li><li>Setzt auf Perspektivwechsel.</li><li>Kann Konflikte früh verbalisieren.</li><li>Braucht „gesehen werden“ als Sicherheitsanker.</li><li>Kann überanalysieren, wenn unsicher.</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Mikro‑Szenen</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Körperlich — Projekt · Beziehung · Krise</h3>
+            <ul><li>Beziehung: Nach Streit kommt Körperlich‑Typ zuerst über Umarmung zurück in Verbindung.</li><li>Alltag: Berührt im Vorbeigehen Schulter/Rücken als Zuneigung.</li><li>Krise: Braucht Co‑Regulation über Körpernähe.</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Emotional — Projekt · Beziehung · Krise</h3>
+            <ul><li>Beziehung: Nach Streit will Emotional‑Typ erst reden, bevor Berührung stimmt.</li><li>Alltag: Schickt lange Nachricht, um Gefühle zu sortieren.</li><li>Krise: Sucht Sinn und gemeinsame Sprache für das Erlebte.</li></ul>
+          </div>
+
+        </div>
+
+        <div class="section-title">Verbindungen & Klassifikation</div>
+        <div class="columns">
+          <div class="box">
+            <h3>Synergien / Gegengewichte</h3>
+            <p><b>Synergien:</b> Ansprechen, Qualität, Privat</p>
+            <p><b>Gegengewichte:</b> Öffentlich, Abwarten</p>
+          </div>
+          <div class="box">
+            <h3>Peirce‑Layer im Feld</h3>
+            <ul><li>Index: Häufigkeit von Touch vs. Häufigkeit von Gefühlsfragen/Validierungen.</li></ul>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <div class="card" data-kind="PAIR" data-category="LIEBE" data-search="8) qualität ↔ quantität liebe lieber 1 stunde volle aufmerksamkeit oder 5 stunden nebeneinander? „ohne präsenz ist zeit nur kulisse.“ „verbindung entsteht durch wiederholung.“ „handys weg – nur wir.“ „ich will dich wirklich sehen.“ „lass uns richtig reden.“ „ich brauche fokus.“ „nur 30 minuten, aber echt.“ „ich will tiefe.“ „ich will mich verbunden fühlen.“ „nicht nebenbei.“ „das ist mir wichtig.“ „ich brauche diese aufmerksamkeit.“ „hauptsache zusammen.“ „auch nebeneinander ist schön.“ „ich mag den alltag mit dir.“ „ich will dich oft sehen.“ „es tut mir gut, wenn du da bist.“ „komm einfach mit.“ „bleib noch.“ „lass uns zusammen kochen.“ „ich mag routine.“ „zeit = liebe.“ plant „deep dates“ ohne ablenkung. legt geräte weg, hält blickkontakt. macht rituale (check‑ins). sucht bedeutung/intimität in interaktion. kann bei nebeneinander‑zeit unzufrieden sein. spürt feinheiten in stimmung. bevorzugt gespräch/resonanz. kann wenig zeit tolerieren, wenn sie intensiv ist. nutzt qualität als repair‑strategie. kann sich zurückziehen, wenn präsenz fehlt. sucht häufigen kontakt/anwesenheit. baut routinen (gemeinsame abende, essen). mag ko‑aktivität (nebeneinander arbeiten). braucht weniger intensive gesprächsphasen. fühlt sich sicher durch regelmäßigkeit. kann qualität unterschätzen („ist doch genug zeit“). hält beziehung über kontinuität stabil. ist oft zuverlässig verfügbar. nutzen von alltagsnähe als bindung. kann klammern, wenn unsicher. fels in der brandung katalysator präzisions-architekt empathischer verbinder">
+      <h2>8) Qualität ↔ Quantität</h2>
+      <div class="kmeta"><b>Kategorie:</b> LIEBE · <b>Aufhänger:</b> Lieber 1 Stunde volle Aufmerksamkeit oder 5 Stunden nebeneinander?</div>
+      <div class="badges">
+        <span class="badge icon">Icon</span>
+        <span class="badge index">Index</span>
+        <span class="badge symbol">Symbol</span>
+      </div>
+
+      <details>
+        <summary>Icon / Index / Symbol (exakt) + Verdichtung öffnen</summary>
+
+        <div class="columns" style="margin-top:10px;">
+          <div class="box">
+            <h3>Icon (exakt)</h3>
+            <ul><li>jemand schaut der anderen Person 45 Sekunden tief in die Augen ohne Handy</li><li>Icon-Beispiel: Uhr mit Herz</li></ul>
+          </div>
+          <div class="box">
+            <h3>Index (exakt)</h3>
+            <ul><li>in 3 Tagen 2× 4-Stunden-Nebeneinander-TV + 1× 20-minütiges tiefes Gespräch → gemischte Spur, aber Quantität dominiert</li><li>Index-Beispiel: Stoppuhr als Spur von Dauer</li></ul>
+          </div>
+          <div class="box">
+            <h3>Symbol (exakt)</h3>
+            <ul><li>(implizit: Selbstetikettierung &#x27;Ich brauche Qualität&#x27;)</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Semantische Verdichtung (Saussure)</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Qualität</h3>
+            <p>Tiefe Präsenz: ungeteilte Aufmerksamkeit, „wirklicher Kontakt“.</p>
+            <p><b>Leitmotiv:</b> „Ohne Präsenz ist Zeit nur Kulisse.“</p>
+            <p><b>Paradigma:</b> Deep‑Time‑Typ, Präsenz‑Typ, Intensitäts‑Sucher</p>
+          </div>
+
+          <div class="box">
+            <h3>Quantität</h3>
+            <p>Kontinuität: viel gemeinsame Zeit, Ko‑Präsenz, Alltag als Bindung.</p>
+            <p><b>Leitmotiv:</b> „Verbindung entsteht durch Wiederholung.“</p>
+            <p><b>Paradigma:</b> Routine‑Typ, Ko‑Präsenz‑Typ, Dauer‑Bindung</p>
+          </div>
+        </div>
+
+        <div class="section-title">Marker‑Pool: Sprachsignale</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Qualität — Formulierungen</h3>
+            <ul><li>„Handys weg – nur wir.“</li><li>„Ich will dich wirklich sehen.“</li><li>„Lass uns richtig reden.“</li><li>„Ich brauche Fokus.“</li><li>„Nur 30 Minuten, aber echt.“</li><li>„Ich will Tiefe.“</li><li>„Ich will mich verbunden fühlen.“</li><li>„Nicht nebenbei.“</li><li>„Das ist mir wichtig.“</li><li>„Ich brauche diese Aufmerksamkeit.“</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Quantität — Formulierungen</h3>
+            <ul><li>„Hauptsache zusammen.“</li><li>„Auch nebeneinander ist schön.“</li><li>„Ich mag den Alltag mit dir.“</li><li>„Ich will dich oft sehen.“</li><li>„Es tut mir gut, wenn du da bist.“</li><li>„Komm einfach mit.“</li><li>„Bleib noch.“</li><li>„Lass uns zusammen kochen.“</li><li>„Ich mag Routine.“</li><li>„Zeit = Liebe.“</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Marker‑Pool: Verhaltensspuren</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Qualität — Spuren</h3>
+            <ul><li>Plant „Deep Dates“ ohne Ablenkung.</li><li>Legt Geräte weg, hält Blickkontakt.</li><li>Macht Rituale (Check‑ins).</li><li>Sucht Bedeutung/Intimität in Interaktion.</li><li>Kann bei Nebeneinander‑Zeit unzufrieden sein.</li><li>Spürt Feinheiten in Stimmung.</li><li>Bevorzugt Gespräch/Resonanz.</li><li>Kann wenig Zeit tolerieren, wenn sie intensiv ist.</li><li>Nutzt Qualität als Repair‑Strategie.</li><li>Kann sich zurückziehen, wenn Präsenz fehlt.</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Quantität — Spuren</h3>
+            <ul><li>Sucht häufigen Kontakt/Anwesenheit.</li><li>Baut Routinen (gemeinsame Abende, Essen).</li><li>Mag Ko‑Aktivität (nebeneinander arbeiten).</li><li>Braucht weniger intensive Gesprächsphasen.</li><li>Fühlt sich sicher durch Regelmäßigkeit.</li><li>Kann Qualität unterschätzen („ist doch genug Zeit“).</li><li>Hält Beziehung über Kontinuität stabil.</li><li>Ist oft zuverlässig verfügbar.</li><li>Nutzen von Alltagsnähe als Bindung.</li><li>Kann klammern, wenn unsicher.</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Mikro‑Szenen</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Qualität — Projekt · Beziehung · Krise</h3>
+            <ul><li>Beziehung: Lieber kurzer Spaziergang mit echtem Gespräch als langer TV‑Abend.</li><li>Freundschaft: 20 Minuten tiefes Telefonat statt endloser Chat.</li><li>Konflikt: Will „klären“, nicht „ausweichen“.</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Quantität — Projekt · Beziehung · Krise</h3>
+            <ul><li>Beziehung: Will einfach zusammen sein – selbst wenn jeder sein Ding macht.</li><li>Freundschaft: Viele kurze Kontakte statt seltene lange Gespräche.</li><li>Konflikt: Beruhigt durch Anwesenheit, nicht durch Analyse.</li></ul>
+          </div>
+
+        </div>
+
+        <div class="section-title">Verbindungen & Klassifikation</div>
+        <div class="columns">
+          <div class="box">
+            <h3>Synergien / Gegengewichte</h3>
+            <p><b>Synergien:</b> Privat, Stabilisierung, Akzeptieren</p>
+            <p><b>Gegengewichte:</b> Qualität, Ansprechen</p>
+          </div>
+          <div class="box">
+            <h3>Peirce‑Layer im Feld</h3>
+            <ul><li>Index: Zeit-Häufung vs. Präsenz-Häufung (Handy weg, Blickkontakt, Deep Talk).</li></ul>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <div class="card" data-kind="PAIR" data-category="LIEBE" data-search="9) öffentlich ↔ privat liebe zeigst du liebe offen oder nur im privaten? „liebe darf sichtbar sein.“ „was heilig ist, braucht keinen applaus.“ „posten wir das!“ „ich will, dass man’s sieht.“ „ich nehme dich gerne mit.“ „ich steh zu uns.“ „ich erzähle das offen.“ „komm, wir gehen zusammen hin.“ „ich zeig das gern.“ „das ist nichts peinliches.“ „warum verstecken?“ „ich bin stolz auf uns.“ „das ist zwischen uns.“ „bitte nicht posten.“ „nicht vor anderen.“ „ich mag keine bühne.“ „ich will das schützen.“ „ich zeig das lieber zu hause.“ „das geht niemanden was an.“ „privat ist mir wichtiger.“ „ich brauche diesen raum.“ „lass uns das unter uns klären.“ pda (händchenhalten, umarmung) in öffentlichkeit. gemeinsame posts/status. stellt partner in freundeskreis/familie vor. spricht offen über beziehung. sucht soziale bestätigung/einbettung. kann privaten raum unterschätzen. nutzen von sichtbarkeit als sicherheit („wir sind real“). macht komplimente vor anderen. zeigt zugehörigkeit (fotos, symbole). kann druck erzeugen („zeige es mehr“). wenig social‑media‑sichtbarkeit. zuneigung eher in privaten settings. hält konflikte/intimes intern. setzt grenzen gegenüber dritten. schützt beziehung vor kommentaren/urteilen. kann öffentlich distanziert wirken, privat sehr warm. nutzen von privatheit als sicherheit. vermeidet „paar‑performanz“. wählt wenige vertrauenspersonen. kann als „geheim“ missverstanden werden, wenn nicht erklärt. fels in der brandung katalysator präzisions-architekt empathischer verbinder">
+      <h2>9) Öffentlich ↔ Privat</h2>
+      <div class="kmeta"><b>Kategorie:</b> LIEBE · <b>Aufhänger:</b> Zeigst du Liebe offen oder nur im Privaten?</div>
+      <div class="badges">
+        <span class="badge icon">Icon</span>
+        <span class="badge index">Index</span>
+        <span class="badge symbol">Symbol</span>
+      </div>
+
+      <details>
+        <summary>Icon / Index / Symbol (exakt) + Verdichtung öffnen</summary>
+
+        <div class="columns" style="margin-top:10px;">
+          <div class="box">
+            <h3>Icon (exakt)</h3>
+            <ul><li>jemand postet ein Kuss-Foto mit Partner auf Instagram Story</li><li>Icon-Beispiel: Herz in der Öffentlichkeit</li></ul>
+          </div>
+          <div class="box">
+            <h3>Index (exakt)</h3>
+            <ul><li>in 2 Wochen 0× Händchenhalten in der Öffentlichkeit, aber zu Hause 12× Umarmungen → klare Privat-Spur</li><li>Index-Beispiel: Social-Media-Post als Spur</li></ul>
+          </div>
+          <div class="box">
+            <h3>Symbol (exakt)</h3>
+            <ul><li>(implizit: Selbstetikettierung &#x27;Ich zeige Liebe nur privat&#x27;)</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Semantische Verdichtung (Saussure)</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Öffentlich</h3>
+            <p>Sichtbarkeit, Stolz, soziale Verankerung: Liebe als öffentliches Statement.</p>
+            <p><b>Leitmotiv:</b> „Liebe darf sichtbar sein.“</p>
+            <p><b>Paradigma:</b> Display‑Typ, Stolz‑Zeiger, Public connector</p>
+          </div>
+
+          <div class="box">
+            <h3>Privat</h3>
+            <p>Schutz, Exklusivität, Intimität: Liebe als Innenraum ohne Publikum.</p>
+            <p><b>Leitmotiv:</b> „Was heilig ist, braucht keinen Applaus.“</p>
+            <p><b>Paradigma:</b> Boundary‑Typ, Inner‑Circle‑Typ, Private connector</p>
+          </div>
+        </div>
+
+        <div class="section-title">Marker‑Pool: Sprachsignale</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Öffentlich — Formulierungen</h3>
+            <ul><li>„Posten wir das!“</li><li>„Ich will, dass man’s sieht.“</li><li>„Ich nehme dich gerne mit.“</li><li>„Ich steh zu uns.“</li><li>„Ich erzähle das offen.“</li><li>„Komm, wir gehen zusammen hin.“</li><li>„Ich zeig das gern.“</li><li>„Das ist nichts Peinliches.“</li><li>„Warum verstecken?“</li><li>„Ich bin stolz auf uns.“</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Privat — Formulierungen</h3>
+            <ul><li>„Das ist zwischen uns.“</li><li>„Bitte nicht posten.“</li><li>„Nicht vor anderen.“</li><li>„Ich mag keine Bühne.“</li><li>„Ich will das schützen.“</li><li>„Ich zeig das lieber zu Hause.“</li><li>„Das geht niemanden was an.“</li><li>„Privat ist mir wichtiger.“</li><li>„Ich brauche diesen Raum.“</li><li>„Lass uns das unter uns klären.“</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Marker‑Pool: Verhaltensspuren</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Öffentlich — Spuren</h3>
+            <ul><li>PDA (Händchenhalten, Umarmung) in Öffentlichkeit.</li><li>Gemeinsame Posts/Status.</li><li>Stellt Partner in Freundeskreis/Familie vor.</li><li>Spricht offen über Beziehung.</li><li>Sucht soziale Bestätigung/Einbettung.</li><li>Kann privaten Raum unterschätzen.</li><li>Nutzen von Sichtbarkeit als Sicherheit („wir sind real“).</li><li>Macht Komplimente vor anderen.</li><li>Zeigt Zugehörigkeit (Fotos, Symbole).</li><li>Kann Druck erzeugen („zeige es mehr“).</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Privat — Spuren</h3>
+            <ul><li>Wenig Social‑Media‑Sichtbarkeit.</li><li>Zuneigung eher in privaten Settings.</li><li>Hält Konflikte/Intimes intern.</li><li>Setzt Grenzen gegenüber Dritten.</li><li>Schützt Beziehung vor Kommentaren/Urteilen.</li><li>Kann öffentlich distanziert wirken, privat sehr warm.</li><li>Nutzen von Privatheit als Sicherheit.</li><li>Vermeidet „Paar‑Performanz“.</li><li>Wählt wenige Vertrauenspersonen.</li><li>Kann als „geheim“ missverstanden werden, wenn nicht erklärt.</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Mikro‑Szenen</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Öffentlich — Projekt · Beziehung · Krise</h3>
+            <ul><li>Beziehung: Macht gerne Fotos zusammen, zeigt Zuneigung im Freundeskreis.</li><li>Konflikt: Will klären, ob Beziehung „offiziell“ ist.</li><li>Krise: Sucht Support im Außen (Freunde, Community).</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Privat — Projekt · Beziehung · Krise</h3>
+            <ul><li>Beziehung: Keine Posts, aber intensive Rituale zu Hause.</li><li>Konflikt: Keine Diskussion vor Freunden – erst privat.</li><li>Krise: Zieht sich zurück, um nicht exponiert zu sein.</li></ul>
+          </div>
+
+        </div>
+
+        <div class="section-title">Verbindungen & Klassifikation</div>
+        <div class="columns">
+          <div class="box">
+            <h3>Synergien / Gegengewichte</h3>
+            <p><b>Synergien:</b> Privat, Sicherheit, Qualität</p>
+            <p><b>Gegengewichte:</b> Öffentlich, Motivation, Risiko</p>
+          </div>
+          <div class="box">
+            <h3>Peirce‑Layer im Feld</h3>
+            <ul><li>Index: Sichtbarkeits-Häufung (Posts/PDA) vs. Boundary‑Signale („nicht posten“).</li></ul>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <div class="card" data-kind="PAIR" data-category="LIEBE" data-search="10) ansprechen ↔ abwarten liebe wenn etwas stört – direkt ansprechen oder erst sacken lassen? „wenn wir reden, bleibt es klein.“ „erst ruhig werden – dann fair reden.“ „ich will das kurz klären.“ „das hat mich verletzt.“ „können wir reden?“ „ich brauche klarheit.“ „ich sag’s dir direkt.“ „ich möchte, dass du…“ „wie meinst du das?“ „lass uns das nicht aufschieben.“ „ich will nicht, dass es wächst.“ „ich will ehrlich sein.“ „ich muss erst runterkommen.“ „lass mich drüber schlafen.“ „nicht jetzt.“ „ich sortiere das erst.“ „später, wenn ich klarer bin.“ „ich will nichts falsches sagen.“ „gib mir zeit.“ „ich brauche abstand.“ „ich melde mich, wenn’s sich gesetzt hat.“ „ich will fair bleiben.“ spricht spannungen früh an. nutzt ich‑botschaften. stellt klärende fragen. sucht gespräch statt rückzug. kann als „zu direkt“ wirken, wenn andere erst regulieren müssen. repariert schnell nach konflikten. hat niedrige toleranz für „elefanten im raum“. macht bedürfnisse explizit. kann überforderung erzeugen, wenn timing falsch. braucht antworten als sicherheit. zieht sich bei hoher emotion zurück. braucht zeitfenster/setting fürs gespräch. reguliert körperlich (atmen, laufen). kann konflikte verschieben. kann als „kalt“ wirken, obwohl es selbstschutz ist. hat oft später sehr klare aussagen. vermeidet eskalation in hitze. kann dinge auch aussitzen, wenn angst vor konflikt da ist. nutzt schrift statt gespräch, wenn ruhiger. braucht sicherheit, um zu öffnen. fels in der brandung katalysator präzisions-architekt empathischer verbinder">
+      <h2>10) Ansprechen ↔ Abwarten</h2>
+      <div class="kmeta"><b>Kategorie:</b> LIEBE · <b>Aufhänger:</b> Wenn etwas stört – direkt ansprechen oder erst sacken lassen?</div>
+      <div class="badges">
+        <span class="badge icon">Icon</span>
+        <span class="badge index">Index</span>
+        <span class="badge symbol">Symbol</span>
+      </div>
+
+      <details>
+        <summary>Icon / Index / Symbol (exakt) + Verdichtung öffnen</summary>
+
+        <div class="columns" style="margin-top:10px;">
+          <div class="box">
+            <h3>Icon (exakt)</h3>
+            <ul><li>die Person nimmt das Handy, tippt direkt drauf los: „Hey, das von gestern hat mich echt gestört…“</li><li>Icon-Beispiel: Sprechblase</li></ul>
+          </div>
+          <div class="box">
+            <h3>Index (exakt)</h3>
+            <ul><li>die Person atmet 3× tief durch, schluckt sichtbar, die Finger trommeln nervös → Abwarten-Spur</li><li>Index-Beispiel: Rotes Gesicht als Symptom von Ärger</li></ul>
+          </div>
+          <div class="box">
+            <h3>Symbol (exakt)</h3>
+            <ul><li>jemand sagt: „Ich bin halt eher der Typ, der Dinge erstmal sacken lässt“</li><li>Beispiel: In Konfliktpsychologie symbolisiert &#x27;direkt&#x27; durch Typen</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Semantische Verdichtung (Saussure)</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Ansprechen</h3>
+            <p>Direktheit, frühe Reparatur, Transparenz; Konflikt als Kontaktform.</p>
+            <p><b>Leitmotiv:</b> „Wenn wir reden, bleibt es klein.“</p>
+            <p><b>Paradigma:</b> Direkt‑Klärer, Repair‑Typ, Konfrontations‑Kompetenz</p>
+          </div>
+
+          <div class="box">
+            <h3>Abwarten</h3>
+            <p>Timing, Selbstregulation, De‑Eskalation; manchmal Vermeidung, manchmal Hygiene.</p>
+            <p><b>Leitmotiv:</b> „Erst ruhig werden – dann fair reden.“</p>
+            <p><b>Paradigma:</b> Sacken‑Lasser, Timing‑Typ, Pause‑Klärer</p>
+          </div>
+        </div>
+
+        <div class="section-title">Marker‑Pool: Sprachsignale</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Ansprechen — Formulierungen</h3>
+            <ul><li>„Ich will das kurz klären.“</li><li>„Das hat mich verletzt.“</li><li>„Können wir reden?“</li><li>„Ich brauche Klarheit.“</li><li>„Ich sag’s dir direkt.“</li><li>„Ich möchte, dass du…“</li><li>„Wie meinst du das?“</li><li>„Lass uns das nicht aufschieben.“</li><li>„Ich will nicht, dass es wächst.“</li><li>„Ich will ehrlich sein.“</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Abwarten — Formulierungen</h3>
+            <ul><li>„Ich muss erst runterkommen.“</li><li>„Lass mich drüber schlafen.“</li><li>„Nicht jetzt.“</li><li>„Ich sortiere das erst.“</li><li>„Später, wenn ich klarer bin.“</li><li>„Ich will nichts Falsches sagen.“</li><li>„Gib mir Zeit.“</li><li>„Ich brauche Abstand.“</li><li>„Ich melde mich, wenn’s sich gesetzt hat.“</li><li>„Ich will fair bleiben.“</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Marker‑Pool: Verhaltensspuren</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Ansprechen — Spuren</h3>
+            <ul><li>Spricht Spannungen früh an.</li><li>Nutzt Ich‑Botschaften.</li><li>Stellt klärende Fragen.</li><li>Sucht Gespräch statt Rückzug.</li><li>Kann als „zu direkt“ wirken, wenn andere erst regulieren müssen.</li><li>Repariert schnell nach Konflikten.</li><li>Hat niedrige Toleranz für „Elefanten im Raum“.</li><li>Macht Bedürfnisse explizit.</li><li>Kann Überforderung erzeugen, wenn Timing falsch.</li><li>Braucht Antworten als Sicherheit.</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Abwarten — Spuren</h3>
+            <ul><li>Zieht sich bei hoher Emotion zurück.</li><li>Braucht Zeitfenster/Setting fürs Gespräch.</li><li>Reguliert körperlich (atmen, laufen).</li><li>Kann Konflikte verschieben.</li><li>Kann als „kalt“ wirken, obwohl es Selbstschutz ist.</li><li>Hat oft später sehr klare Aussagen.</li><li>Vermeidet Eskalation in Hitze.</li><li>Kann Dinge auch aussitzen, wenn Angst vor Konflikt da ist.</li><li>Nutzt Schrift statt Gespräch, wenn ruhiger.</li><li>Braucht Sicherheit, um zu öffnen.</li></ul>
+          </div>
+        </div>
+
+        <div class="section-title">Mikro‑Szenen</div>
+        <div class="columns">
+
+          <div class="box">
+            <h3>Ansprechen — Projekt · Beziehung · Krise</h3>
+            <ul><li>Beziehung: Spricht Irritation am gleichen Tag an.</li><li>Team: Klärt Missverständnis direkt, bevor es eskaliert.</li><li>Krise: Kommuniziert offen, um Chaos zu reduzieren.</li></ul>
+          </div>
+
+          <div class="box">
+            <h3>Abwarten — Projekt · Beziehung · Krise</h3>
+            <ul><li>Beziehung: Schlägt Pause vor und kommt am nächsten Tag mit ruhigerem Gespräch zurück.</li><li>Team: Vertagt heikles Thema auf Retro/1:1 statt im Plenum.</li><li>Krise: Erst stabilisieren, dann kommunizieren.</li></ul>
+          </div>
+
+        </div>
+
+        <div class="section-title">Verbindungen & Klassifikation</div>
+        <div class="columns">
+          <div class="box">
+            <h3>Synergien / Gegengewichte</h3>
+            <p><b>Synergien:</b> Emotional, Qualität, Akzeptieren</p>
+            <p><b>Gegengewichte:</b> Abwarten, Stabilisierung, Privat</p>
+          </div>
+          <div class="box">
+            <h3>Peirce‑Layer im Feld</h3>
+            <ul><li>Index: Sofortige Klärungsversuche vs. Pause-/Timing‑Signale.</li></ul>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <hr/>
+
+  <h2 style="margin:0 0 10px; font-size:16px;">Archetypen (Kreuzkombinationen)</h2>
+  <div class="grid">
+
+    <div class="card" data-kind="ARCHETYP" data-category="ARCHETYP" data-search="fels in der brandung the anchor sicherheit stabilisierung akzeptieren abwarten privat „in der ruhe liegt die kraft.“ „lass uns erst mal tief durchatmen, bevor wir das rad neu erfinden.“ „erstmal runterfahren.“ „wir klären das in ruhe.“ „lass uns das unter uns halten.“ „ich brauche einen sicheren rahmen.“ „schritt für schritt.“ „heute reicht das.“ „ich halte das aus.“ „wir müssen nicht überreagieren.“ reduziert tempo/lautstärke, macht pausen möglich. schützt ressourcen: schlaf, essen, ruhe, klare zeitfenster. hält grenzen gegenüber außen (privatheit). baut backups/notfallpläne (systemschutz). moderiert konflikte: deeskaliert, strukturiert. stützt andere durch präsenz ohne drama. bevorzugt bewährte lösungen und routinen. kann veränderung verzögern, wenn sicherheit dominiert.">
+      <h2>Fels in der Brandung <span style="color:var(--muted); font-weight:600; font-size:12px;">(The Anchor)</span></h2>
+      <div class="kmeta"><b>Kombination:</b> Sicherheit, Stabilisierung, Akzeptieren, Abwarten, Privat<br><b>Kern‑Spirit:</b> „In der Ruhe liegt die Kraft.“</div>
+      <div class="box" style="margin-top:10px;">
+        <h3>Kurzbild</h3>
+        <p>Emotionales und strukturelles Fundament: bringt Ruhe rein, bewahrt Bewährtes, schützt Ressourcen.</p>
+        <p><b>Typischer Satz:</b> „Lass uns erst mal tief durchatmen, bevor wir das Rad neu erfinden.“</p>
+      </div>
+
+      <details style="margin-top:10px;">
+        <summary>Stärken · Herausforderungen · Marker öffnen</summary>
+        <div class="columns" style="margin-top:10px;">
+          <div class="box">
+            <h3>Stärken</h3>
+            <ul><li>Erzeugt psychologische Sicherheit und senkt Stresspegel.</li><li>Stabilisiert Systeme in Krisen (deeskaliert, ordnet).</li><li>Loyal, beständig, verlässlich – hält Versprechen.</li><li>Verhindert Überlastung/Burnout durch Rhythmus und Grenzen.</li></ul>
+          </div>
+          <div class="box">
+            <h3>Herausforderungen</h3>
+            <ul><li>Kann defensiv wirken oder Veränderung aussitzen.</li><li>Kann zu spät eskalieren („zu lange ruhig bleiben“).</li><li>Kann Chancen verpassen, wenn Sicherheit zum Selbstzweck wird.</li></ul>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="box">
+            <h3>Marker‑Set: Sprachsignale</h3>
+            <ul><li>„Erstmal runterfahren.“</li><li>„Wir klären das in Ruhe.“</li><li>„Lass uns das unter uns halten.“</li><li>„Ich brauche einen sicheren Rahmen.“</li><li>„Schritt für Schritt.“</li><li>„Heute reicht das.“</li><li>„Ich halte das aus.“</li><li>„Wir müssen nicht überreagieren.“</li></ul>
+          </div>
+          <div class="box">
+            <h3>Marker‑Set: Verhaltensspuren</h3>
+            <ul><li>Reduziert Tempo/Lautstärke, macht Pausen möglich.</li><li>Schützt Ressourcen: Schlaf, Essen, Ruhe, klare Zeitfenster.</li><li>Hält Grenzen gegenüber Außen (Privatheit).</li><li>Baut Backups/Notfallpläne (Systemschutz).</li><li>Moderiert Konflikte: deeskaliert, strukturiert.</li><li>Stützt andere durch Präsenz ohne Drama.</li><li>Bevorzugt bewährte Lösungen und Routinen.</li><li>Kann Veränderung verzögern, wenn Sicherheit dominiert.</li></ul>
+          </div>
+        </div>
+        <div class="box">
+          <h3>Peirce‑Layer (typisch)</h3>
+          <ul>
+            <li><b>Icon:</b> sichtbare Szene/Handlung (Prototyp zeigen; ruhig deeskalieren; Doku/Diagramm; empathischer Check‑in).</li>
+            <li><b>Index:</b> Häufungen/Spuren (viele Launches; viele Backups; viele Reviews; viele Check‑ins).</li>
+            <li><b>Symbol:</b> Selbstlabel („Ruhepol“, „Execution“, „Exzellenz“, „Beziehung ist alles“).</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <div class="card" data-kind="ARCHETYP" data-category="ARCHETYP" data-search="katalysator the trailblazer macher risiko motivation initiative öffentlich „einfach mal machen – entschuldigen können wir uns später.“ „wer nicht wagt, der nicht gewinnt – ich hab den prototyp schon mal online gestellt!“ „ich hab schon angefangen.“ „wir testen das live.“ „das wird groß.“ „komm, wir gehen raus damit.“ „wir brauchen sichtbarkeit.“ „ich übernehme den ersten schritt.“ „fehler sind okay – hauptsache bewegung.“ „let’s ship.“ startet sofort (prototyp, pitch, demo). sucht bühne/netzwerk, teilt updates öffentlich. erhöht energie im team (push, motivation). nimmt risiken in kauf, entscheidet schnell. stößt mehrere dinge parallel an. kann details/vertiefung liegen lassen. treibt iterationen über feedback. kann andere überrollen, wenn keine stabilisierung vorhanden ist.">
+      <h2>Katalysator <span style="color:var(--muted); font-weight:600; font-size:12px;">(The Trailblazer)</span></h2>
+      <div class="kmeta"><b>Kombination:</b> Macher, Risiko, Motivation, Initiative, Öffentlich<br><b>Kern‑Spirit:</b> „Einfach mal machen – Entschuldigen können wir uns später.“</div>
+      <div class="box" style="margin-top:10px;">
+        <h3>Kurzbild</h3>
+        <p>Motor und Beschleuniger: liebt ersten Schritt, Bühne, schnelle Iteration, erzeugt Sichtbarkeit.</p>
+        <p><b>Typischer Satz:</b> „Wer nicht wagt, der nicht gewinnt – ich hab den Prototyp schon mal online gestellt!“</p>
+      </div>
+
+      <details style="margin-top:10px;">
+        <summary>Stärken · Herausforderungen · Marker öffnen</summary>
+        <div class="columns" style="margin-top:10px;">
+          <div class="box">
+            <h3>Stärken</h3>
+            <ul><li>Reißt andere mit, überwindet Starre, schafft Momentum.</li><li>Sorgt für schnelle Fortschritte (0→1) und sichtbare Resultate.</li><li>Kann Systeme öffnen: neue Wege, neue Kontakte, neue Optionen.</li><li>Hohe Energie in Startphasen, Pitch, Launch, Aktivierung.</li></ul>
+          </div>
+          <div class="box">
+            <h3>Herausforderungen</h3>
+            <ul><li>Hinterlässt Baustellen (Details, Vertiefung, Tests).</li><li>Kann Risiken/Belastung anderer unterschätzen.</li><li>Kann zu viel gleichzeitig anstoßen (Fragmentierung).</li></ul>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="box">
+            <h3>Marker‑Set: Sprachsignale</h3>
+            <ul><li>„Ich hab schon angefangen.“</li><li>„Wir testen das live.“</li><li>„Das wird groß.“</li><li>„Komm, wir gehen raus damit.“</li><li>„Wir brauchen Sichtbarkeit.“</li><li>„Ich übernehme den ersten Schritt.“</li><li>„Fehler sind okay – Hauptsache Bewegung.“</li><li>„Let’s ship.“</li></ul>
+          </div>
+          <div class="box">
+            <h3>Marker‑Set: Verhaltensspuren</h3>
+            <ul><li>Startet sofort (Prototyp, Pitch, Demo).</li><li>Sucht Bühne/Netzwerk, teilt Updates öffentlich.</li><li>Erhöht Energie im Team (Push, Motivation).</li><li>Nimmt Risiken in Kauf, entscheidet schnell.</li><li>Stößt mehrere Dinge parallel an.</li><li>Kann Details/Vertiefung liegen lassen.</li><li>Treibt Iterationen über Feedback.</li><li>Kann andere überrollen, wenn keine Stabilisierung vorhanden ist.</li></ul>
+          </div>
+        </div>
+        <div class="box">
+          <h3>Peirce‑Layer (typisch)</h3>
+          <ul>
+            <li><b>Icon:</b> sichtbare Szene/Handlung (Prototyp zeigen; ruhig deeskalieren; Doku/Diagramm; empathischer Check‑in).</li>
+            <li><b>Index:</b> Häufungen/Spuren (viele Launches; viele Backups; viele Reviews; viele Check‑ins).</li>
+            <li><b>Symbol:</b> Selbstlabel („Ruhepol“, „Execution“, „Exzellenz“, „Beziehung ist alles“).</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <div class="card" data-kind="ARCHETYP" data-category="ARCHETYP" data-search="präzisions-architekt the mastermind planer vertiefung hinterfragen qualität privat „wenn es sich nicht lohnt, es richtig zu machen, lohnt es sich gar nicht.“ „ich habe die logikfehler im plan gefunden – wir müssen das erst im detail lösen.“ „welche annahme ist hier falsch?“ „das ist nicht robust genug.“ „wir brauchen tests.“ „ich will das sauber lösen.“ „hier ist ein edge‑case.“ „bitte erst intern klären.“ „das ist logisch inkonsistent.“ „qualität spart später zeit.“ schreibt spezifikationen, doku, standards. findet logikfehler/inkonsistenzen im plan. baut tests/monitoring; denkt an wartbarkeit. vermeidet halbgare releases. arbeitet lieber im ruhigen setting (privat/deep work). kann entscheidungen verzögern (overanalysis). gibt präzises feedback (manchmal hart im ton). schafft langfristige stabilität durch exzellenz.">
+      <h2>Präzisions-Architekt <span style="color:var(--muted); font-weight:600; font-size:12px;">(The Mastermind)</span></h2>
+      <div class="kmeta"><b>Kombination:</b> Planer, Vertiefung, Hinterfragen, Qualität, Privat<br><b>Kern‑Spirit:</b> „Wenn es sich nicht lohnt, es richtig zu machen, lohnt es sich gar nicht.“</div>
+      <div class="box" style="margin-top:10px;">
+        <h3>Kurzbild</h3>
+        <p>Tiefe und Substanz: analytisch, detailstark, perfektionistisch im besten Sinne – Feind des Halbgaren.</p>
+        <p><b>Typischer Satz:</b> „Ich habe die Logikfehler im Plan gefunden – wir müssen das erst im Detail lösen.“</p>
+      </div>
+
+      <details style="margin-top:10px;">
+        <summary>Stärken · Herausforderungen · Marker öffnen</summary>
+        <div class="columns" style="margin-top:10px;">
+          <div class="box">
+            <h3>Stärken</h3>
+            <ul><li>Extrem hohe Ergebnisqualität und Nachhaltigkeit.</li><li>Erkennt Risiken und Logikfehler früh (präventiv).</li><li>Schafft robuste Strukturen, Doku, Standards, Wartbarkeit.</li><li>Sehr gut in Skalierung/Komplexität: Systeme, Architektur, Prozesse.</li></ul>
+          </div>
+          <div class="box">
+            <h3>Herausforderungen</h3>
+            <ul><li>Neigt zu Overthinking/Analysis Paralysis.</li><li>Wirkt manchmal distanziert oder kritisch (Ton-/Beziehungsrisiko).</li><li>Kann Start verzögern, wenn Perfektion Priorität wird.</li></ul>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="box">
+            <h3>Marker‑Set: Sprachsignale</h3>
+            <ul><li>„Welche Annahme ist hier falsch?“</li><li>„Das ist nicht robust genug.“</li><li>„Wir brauchen Tests.“</li><li>„Ich will das sauber lösen.“</li><li>„Hier ist ein Edge‑Case.“</li><li>„Bitte erst intern klären.“</li><li>„Das ist logisch inkonsistent.“</li><li>„Qualität spart später Zeit.“</li></ul>
+          </div>
+          <div class="box">
+            <h3>Marker‑Set: Verhaltensspuren</h3>
+            <ul><li>Schreibt Spezifikationen, Doku, Standards.</li><li>Findet Logikfehler/Inkonsistenzen im Plan.</li><li>Baut Tests/Monitoring; denkt an Wartbarkeit.</li><li>Vermeidet halbgare Releases.</li><li>Arbeitet lieber im ruhigen Setting (Privat/Deep Work).</li><li>Kann Entscheidungen verzögern (Overanalysis).</li><li>Gibt präzises Feedback (manchmal hart im Ton).</li><li>Schafft langfristige Stabilität durch Exzellenz.</li></ul>
+          </div>
+        </div>
+        <div class="box">
+          <h3>Peirce‑Layer (typisch)</h3>
+          <ul>
+            <li><b>Icon:</b> sichtbare Szene/Handlung (Prototyp zeigen; ruhig deeskalieren; Doku/Diagramm; empathischer Check‑in).</li>
+            <li><b>Index:</b> Häufungen/Spuren (viele Launches; viele Backups; viele Reviews; viele Check‑ins).</li>
+            <li><b>Symbol:</b> Selbstlabel („Ruhepol“, „Execution“, „Exzellenz“, „Beziehung ist alles“).</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <div class="card" data-kind="ARCHETYP" data-category="ARCHETYP" data-search="empathischer verbinder the nurturer geben emotional quantität ansprechen akzeptieren „wir sind nur so stark wie unsere verbindung.“ „ich spüre, dass hier dicke luft ist – wollen wir kurz drüber reden, wie es uns gerade geht?“ „wie geht es dir wirklich?“ „ich merke spannung.“ „wollen wir kurz einchecken?“ „ich bin da.“ „ich verstehe dich.“ „lass uns das aussprechen.“ „danke, dass du das teilst.“ „was brauchst du von mir?“ macht regelmäßige check‑ins (quantität/kontinuität). validiert gefühle, spiegelt, hört aktiv zu. spricht konflikte früh an (repair). gibt viel care/support, übernimmt emotionalen raum. schafft wärme und zugehörigkeit. kann eigene bedürfnisse hinten anstellen. kann harte sachthemen weichzeichnen, um harmonie zu halten. stärkt vertrauen durch akzeptieren und präsenz.">
+      <h2>Empathischer Verbinder <span style="color:var(--muted); font-weight:600; font-size:12px;">(The Nurturer)</span></h2>
+      <div class="kmeta"><b>Kombination:</b> Geben, Emotional, Quantität, Ansprechen, Akzeptieren<br><b>Kern‑Spirit:</b> „Wir sind nur so stark wie unsere Verbindung.“</div>
+      <div class="box" style="margin-top:10px;">
+        <h3>Kurzbild</h3>
+        <p>Klebstoff zwischen Menschen: hohe Resonanz, klärt früh, schafft Wärme und Vertrauen.</p>
+        <p><b>Typischer Satz:</b> „Ich spüre, dass hier dicke Luft ist – wollen wir kurz drüber reden, wie es uns gerade geht?“</p>
+      </div>
+
+      <details style="margin-top:10px;">
+        <summary>Stärken · Herausforderungen · Marker öffnen</summary>
+        <div class="columns" style="margin-top:10px;">
+          <div class="box">
+            <h3>Stärken</h3>
+            <ul><li>Hohe emotionale Intelligenz, erkennt Stimmungen früh.</li><li>Klärt Konflikte zeitnah und repariert Beziehungen.</li><li>Schafft Vertrauen, Zugehörigkeit und psychologische Sicherheit (warm).</li><li>Gibt Kontinuität: Beziehungspflege als Routine.</li></ul>
+          </div>
+          <div class="box">
+            <h3>Herausforderungen</h3>
+            <ul><li>Vergisst eigene Bedürfnisse (Geben→Selbstverlust).</li><li>Scheut manchmal harte sachliche Kante oder klare Grenzen.</li><li>Kann zu viel Verantwortung für Stimmung übernehmen.</li></ul>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="box">
+            <h3>Marker‑Set: Sprachsignale</h3>
+            <ul><li>„Wie geht es dir wirklich?“</li><li>„Ich merke Spannung.“</li><li>„Wollen wir kurz einchecken?“</li><li>„Ich bin da.“</li><li>„Ich verstehe dich.“</li><li>„Lass uns das aussprechen.“</li><li>„Danke, dass du das teilst.“</li><li>„Was brauchst du von mir?“</li></ul>
+          </div>
+          <div class="box">
+            <h3>Marker‑Set: Verhaltensspuren</h3>
+            <ul><li>Macht regelmäßige Check‑ins (Quantität/Kontinuität).</li><li>Validiert Gefühle, spiegelt, hört aktiv zu.</li><li>Spricht Konflikte früh an (Repair).</li><li>Gibt viel Care/Support, übernimmt emotionalen Raum.</li><li>Schafft Wärme und Zugehörigkeit.</li><li>Kann eigene Bedürfnisse hinten anstellen.</li><li>Kann harte Sachthemen weichzeichnen, um Harmonie zu halten.</li><li>Stärkt Vertrauen durch Akzeptieren und Präsenz.</li></ul>
+          </div>
+        </div>
+        <div class="box">
+          <h3>Peirce‑Layer (typisch)</h3>
+          <ul>
+            <li><b>Icon:</b> sichtbare Szene/Handlung (Prototyp zeigen; ruhig deeskalieren; Doku/Diagramm; empathischer Check‑in).</li>
+            <li><b>Index:</b> Häufungen/Spuren (viele Launches; viele Backups; viele Reviews; viele Check‑ins).</li>
+            <li><b>Symbol:</b> Selbstlabel („Ruhepol“, „Execution“, „Exzellenz“, „Beziehung ist alles“).</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+  </div>
+
+  <hr/>
+
+  <div class="card">
+    <h2>Interaktionsmuster (Synergien & Konfliktachsen)</h2>
+    <div class="small">
+      <b>Tempo vs Schutz:</b> Trailblazer ↔ Anchor · <b>Logik vs Resonanz:</b> Mastermind ↔ Nurturer ·
+      <b>Start vs Finish:</b> Initiative/Macher ↔ Vertiefung/Qualität · <b>Innenraum vs Bühne:</b> Privat ↔ Öffentlich ·
+      <b>Sofort klären vs Timing:</b> Ansprechen ↔ Abwarten
+    </div>
+    <details style="margin-top:10px;">
+      <summary>Konfliktskripte & Brücken‑Moves öffnen</summary>
+      <div class="columns" style="margin-top:10px;">
+        <div class="box">
+          <h3>Typische Konfliktskripte</h3>
+          <ul>
+            <li><b>„Du bist zu schnell“</b> ↔ <b>„Du blockierst“</b></li>
+            <li><b>„Du kritisierst immer“</b> ↔ <b>„Du willst keine Fakten“</b></li>
+            <li><b>„Du zeigst uns nie“</b> ↔ <b>„Bitte nicht vor anderen“</b></li>
+            <li><b>„Sag’s doch direkt“</b> ↔ <b>„Gib mir Zeit“</b></li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>Brücken‑Moves (Repair‑Marker)</h3>
+          <ul>
+            <li><b>Katalysator → Architekt:</b> „Hier ist v0.1. Kannst du es robust machen?“</li>
+            <li><b>Architekt → Katalysator:</b> „Wenn du diese 2 Checks einbaust, kannst du launchen.“</li>
+            <li><b>Ansprechen → Abwarten:</b> „Ich will’s klären, aber ich gebe dir 2 Stunden und dann reden wir.“</li>
+            <li><b>Privat ↔ Öffentlich:</b> „Für uns privat intensiv – und draußen nur so viel, wie sich sicher anfühlt.“</li>
+            <li><b>Geben ↔ Nehmen:</b> „Ich gebe gern – aber ich brauche auch, dass du X übernimmst.“</li>
+          </ul>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <div class="card" style="margin-top:14px;">
+    <h2>Arbeitsblatt: Marker‑Annotation (Text)</h2>
+    <div class="small">Kopiere einen Textabschnitt und markiere Symbol‑, Index‑ und Icon‑Signale. Dann prüfe Gegenmarker.</div>
+    <div class="columns" style="margin-top:10px;">
+      <div class="box">
+        <h3>Mini‑Schema</h3>
+        <ul>
+          <li><b>Kontext:</b> Projekt / Beziehung / Krise</li>
+          <li><b>Marker (Zitat/Handlung):</b> …</li>
+          <li><b>Zuordnung (Pol + Peirce‑Typ):</b> …</li>
+          <li><b>Gegenmarker:</b> …</li>
+          <li><b>Verdichtung (1 Satz):</b> …</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Marker‑Paket (für Dataset)</h3>
+        <ul>
+          <li>Leitmotiv</li>
+          <li>8 Sprachsignale</li>
+          <li>8 Verhaltensspuren</li>
+          <li>3 Icon‑Beispiele</li>
+          <li>3 Index‑Beispiele</li>
+          <li>3 Symbol‑Beispiele</li>
+          <li>Stress‑Drift (wie kippt es?)</li>
+          <li>Gegenmarker</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Ausgangsdaten: Icon/Index/Symbol‑Tabelle aus den anliegenden Dateien (CSV/MD/HTML). Diese Seite ist eine erweiterte, strukturierte Darstellung für Marker‑Arbeit.
+  </footer>
+</div>
+
+<script>
+(function(){
+  const search = document.getElementById('search');
+  const chips = Array.from(document.querySelectorAll('.chip'));
+  const cards = Array.from(document.querySelectorAll('[data-kind]'));
+
+  let activeFilter = 'all';
+
+  function setChip(filter){
+    activeFilter = filter;
+    chips.forEach(c => c.dataset.active = (c.dataset.filter === filter) ? 'true' : 'false');
+    apply();
+  }
+
+  function apply(){
+    const q = (search.value || '').trim().toLowerCase();
+    cards.forEach(card => {
+      const cat = card.dataset.category || '';
+      const kind = card.dataset.kind || '';
+      const hay = card.dataset.search || '';
+      const matchText = !q || hay.includes(q);
+      let matchFilter = true;
+      if(activeFilter === 'WACHSTUM' || activeFilter === 'LIEBE'){
+        matchFilter = (cat === activeFilter);
+      } else if(activeFilter === 'ARCHETYP'){
+        matchFilter = (kind === 'ARCHETYP');
+      }
+      card.style.display = (matchText && matchFilter) ? '' : 'none';
+    });
+  }
+
+  chips.forEach(ch => ch.addEventListener('click', () => setChip(ch.dataset.filter)));
+  search.addEventListener('input', apply);
+})();
+</script>
+</body>
+</html>
