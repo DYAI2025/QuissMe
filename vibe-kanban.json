@@ -1,0 +1,57 @@
+{
+  "version": "1.0",
+  "name": "QuissMe",
+  "description": "Entertainment app for couples with quizzes, BaZi compatibility, and playful challenges",
+  "agents": {
+    "frontend-lead": {
+      "command": "claude",
+      "role": "Senior Frontend Developer",
+      "capabilities": ["react", "nextjs", "typescript", "tailwindcss", "zustand"],
+      "focus": ["pages", "components", "hooks", "ui"],
+      "mcp": ["supabase", "stripe"]
+    },
+    "backend-lead": {
+      "command": "gemini",
+      "role": "Backend & AI Engineer", 
+      "capabilities": ["python", "fastapi", "baZi", "supabase"],
+      "focus": ["api", "baZiEngine", "patterns", "auth"],
+      "mcp": ["supabase"]
+    },
+    "design-dev": {
+      "command": "claude",
+      "role": "UI/UX Designer & Animator",
+      "capabilities": ["framer-motion", "shadcn", "css", "animations"],
+      "focus": ["design-system", "components", "visual"],
+      "mcp": []
+    },
+    "qa-engineer": {
+      "command": "qwen",
+      "role": "Testing & Quality Assurance",
+      "capabilities": ["testing", "playwright", "vitest", "typescript"],
+      "focus": ["tests", "bugs", "performance", "security"],
+      "mcp": []
+    }
+  },
+  "workflows": {
+    "create-feature": {
+      "steps": [
+        "backend-lead: Create API endpoint",
+        "frontend-lead: Create component", 
+        "design-dev: Add styles & animations",
+        "qa-engineer: Write tests"
+      ]
+    },
+    "fix-bug": {
+      "steps": [
+        "qa-engineer: Reproduce issue",
+        "frontend-lead or backend-lead: Fix",
+        "qa-engineer: Verify fix"
+      ]
+    }
+  },
+  "settings": {
+    "autoReview": true,
+    "parallelAgents": 3,
+    "maxTokensPerRun": 100000
+  }
+}

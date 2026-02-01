@@ -1,0 +1,268 @@
+# QuissMe Quiz Database
+# Based on ARCH_ANCHOR and ARCH_MASTERMIND concepts
+# Plus complementary couple dynamics
+
+{
+  "clusters": [
+    {
+      "id": "growth",
+      "name_de": "Wachstum",
+      "name_en": "Growth",
+      "buff": "Synergie-Meister",
+      "buff_description": "Ihr versteht euch blind und könnt Großes bewegen.",
+      "quiz_count": 5,
+      "quizzes": [
+        {
+          "id": "growth_01_planner_maker",
+          "name_de": "Der Planer & Der Macher",
+          "name_en": "The Planner & The Doer",
+          "question_de": "Wenn ein Projekt ansteht, wer...",
+          "options": [
+            {
+              "text_de": "...erstellt zuerst einen detaillierten Plan mit Zeitrahmen",
+              "type": "planner",
+              "score": 1
+            },
+            {
+              "text_de": "...fängt einfach an und findet unterwegs heraus",
+              "type": "maker", 
+              "score": 1
+            },
+            {
+              "text_de": "...macht beides – aber in unterschiedlichen Phasen",
+              "type": "balanced",
+              "score": 1
+            }
+          ],
+          "result_pairs": {
+            "planner_maker": {
+              "title_de": "Der Architekt & Der Krieger",
+              "title_en": "The Architect & The Warrior",
+              "description_de": "Du siehst das große Bild und schlägt den optimalen Weg vor. Dein Partner setzt ihn in Bewegung. Zusammen seid ihr wie General und Feldherr – keine Schlacht wird verloren.",
+              "description_en": "You see the big picture and propose the optimal path. Your partner executes it. Together you're like general and field commander – no battle is lost.",
+              "icon": "⚔️"
+            },
+            "maker_planner": {
+              "title_de": "Der Krieger & Der Architekt",
+              "title_en": "The Warrior & The Architect",
+              "description_de": "Dein Partner sieht das große Bild und schlägt den Weg vor. Du setzt in Bewegung. Zusammen seid ihr wie Feldherr und General – keine Schlacht wird verloren.",
+              "description_en": "Your partner sees the big picture and proposes the path. You execute. Together you're like field commander and general – no battle is lost.",
+              "icon": "⚔️"
+            },
+            "planner_planner": {
+              "title_de": "Die Strategen",
+              "title_en": "The Strategists",
+              "description_de": "Ihr beide denkt bevor ihr handelt. Perfekte Pläne entstehen, aber manchmal fehlt der erste Schritt. Erinnert euch: Bewegung entsteht durch Tun.",
+              "description_en": "You both think before acting. Perfect plans emerge, but sometimes the first step is missing. Remember: movement comes from doing.",
+              "icon": "♟️"
+            },
+            "maker_maker": {
+              "title_de": "Die Macher",
+              "title_en": "The Doers",
+              "description_de": "Ihr beide handelt einfach. Energie und Momentum sind eure Stärken. Aber manchmal rennt ihr in die falsche Richtung. Sprecht mehr über das Ziel.",
+              "description_en": "You both just act. Energy and momentum are your strengths. But sometimes you run in the wrong direction. Talk more about the goal.",
+              "icon": "🚀"
+            },
+            "balanced_balanced": {
+              "title_de": "Die Allrounder",
+              "title_en": "The All-Rounders",
+              "description_de": "Ihr könnt beides – planen und handeln. Das macht euch flexibel. Achtet nur darauf, nicht zu lange zu diskutieren statt zu handeln.",
+              "description_en": "You can do both – plan and act. That makes you flexible. Just watch out for debating too long instead of doing.",
+              "icon": "⚖️"
+            }
+          }
+        },
+        {
+          "id": "growth_02_risk_security",
+          "name_de": "Der Risiko & Die Sicherheit",
+          "name_en": "Risk & Security",
+          "question_de": "Bei einer großen Entscheidung...",
+          "options": [
+            {
+              "text_de": "...fragst du: Was kann schiefgehen?",
+              "type": "security",
+              "score": 1
+            },
+            {
+              "text_de": "...fragst du: Was können wir gewinnen?",
+              "type": "risk",
+              "score": 1
+            },
+            {
+              "text_de": "...machst du beides, aber in unterschiedlicher Gewichtung",
+              "type": "balanced",
+              "score": 1
+            }
+          ],
+          "result_pairs": {
+            "risk_security": {
+              "title_de": "Der Entdecker & Der Anker",
+              "title_en": "The Explorer & The Anchor",
+              "description_de": "Dein Partner sieht Chancen und zieht dich mit. Du zeigst die Risiken und schützt vor Fallstricken. Zusammen findet ihr den goldenen Weg.",
+              "description_en": "Your partner sees opportunities and pulls you along. You show risks and protect from pitfalls. Together you find the golden path.",
+              "icon": "🧭"
+            },
+            "security_risk": {
+              "title_de": "Der Anker & Der Entdecker",
+              "title_en": "The Anchor & The Explorer",
+              "description_de": "Du siehst Risiken und schützt. Dein Partner sieht Chancen und zieht dich mit. Zusammen findet ihr den goldenen Weg.",
+              "description_en": "You see risks and protect. Your partner sees opportunities and pulls you along. Together you find the golden path.",
+              "icon": "🧭"
+            },
+            "risk_risk": {
+              "title_de": "Die Abenteurer",
+              "title_en": "The Adventurers",
+              "description_de": "Ihr beide liebt den Nervenkitzel. Spannung ist euer Treibstoff. Aber manchmal vergesst ihr die Landung. Achtet auf eure Sicherheitsnetze.",
+              "description_en": "You both love the thrill. Excitement is your fuel. But sometimes you forget the landing. Watch out for your safety nets.",
+              "icon": "🎢"
+            },
+            "security_security": {
+              "title_de": "Die Beschützer",
+              "title_en": "The Protectors",
+              "description_de": "Ihr beide denkt an alles was schiefgehen könnte. Nichts wird dem Zufall überlassen. Aber manchmal verpasst ihr großartige Gelegenheiten.",
+              "description_en": "You both think about everything that could go wrong. Nothing is left to chance. But sometimes you miss great opportunities.",
+              "icon": "🛡️"
+            },
+            "balanced_balanced": {
+              "title_de": "Die Kalkulierer",
+              "title_en": "The Calculators",
+              "description_de": "Ihr wiegt ab und findet euren eigenen Rhythmus. Weder zu wild noch zu ängstlich.",
+              "description_en": "You weigh and find your own rhythm. Neither too wild nor too fearful.",
+              "icon": "⚖️"
+            }
+          }
+        },
+        {
+          "id": "growth_03_motivation_stabilization",
+          "name_de": "Der Antrieb & Der Anker",
+          "name_en": "Motivation & Stabilization",
+          "question_de": "Wenn die Luft dünn wird...",
+          "options": [
+            {
+              "text_de": "...feuerst du an und motivierst",
+              "type": "motivation",
+              "score": 1
+            },
+            {
+              "text_de": "...hältst du die Stellung und gibst Ruhe",
+              "type": "stabilization",
+              "score": 1
+            },
+            {
+              "text_de": "...kommt auf die Situation an",
+              "type": "balanced",
+              "score": 1
+            }
+          ],
+          "result_pairs": {
+            "motivation_stabilization": {
+              "title_de": "Das Duo",
+              "title_en": "The Duo",
+              "description_de": "Du gibst den Schub, dein Partner gibt die Stabilität. Zusammen seid ihr unverwüstlich.",
+              "description_en": "You give the push, your partner gives stability. Together you're unstoppable.",
+              "icon": "🔥"
+            },
+            "stabilization_motivation": {
+              "title_de": "Das Duo",
+              "title_en": "The Duo",
+              "description_de": "Dein Partner gibt den Schub, du gibst Stabilität. Zusammen seid ihr unverwüstlich.",
+              "description_en": "Your partner gives the push, you give stability. Together you're unstoppable.",
+              "icon": "🔥"
+            },
+            "motivation_motivation": {
+              "title_de": "Die Turbo-Kombo",
+              "title_en": "The Turbo Combo",
+              "description_de": "Ihr beide feuert an! Extreme Energie, aber manchmal verbrennt ihr euch. Achtet auf Pausen.",
+              "description_en": "You both cheer on! Extreme energy, but sometimes you burn out. Watch out for breaks.",
+              "icon": "⚡"
+            },
+            "stabilization_stabilization": {
+              "title_de": "Die Felsen",
+              "title_en": "The Rocks",
+              "description_de": "Ihr beide haltet ruhig die Stellung. Extrem stabil, aber manchmal fehlt der Schwung.",
+              "description_en": "You both hold steady quietly. Extremely stable, but sometimes momentum is missing.",
+              "icon": "🪨"
+            },
+            "balanced_balanced": {
+              "title_de": "Die Anpasser",
+              "title_en": "The Adapters",
+              "description_de": "Ihr findet für jede Situation den richtigen Modus.",
+              "description_en": "You find the right mode for every situation.",
+              "icon": "🎯"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "love",
+      "name_de": "Liebe",
+      "name_en": "Love",
+      "buff": "Liebesflüsterer",
+      "buff_description": "Ihr versteht euch auf einer tiefen emotionalen Ebene.",
+      "quiz_count": 5,
+      "quizzes": []
+    },
+    {
+      "id": "passion",
+      "name_de": "Leidenschaft",
+      "name_en": "Passion",
+      "buff": "Leidenschafts-Boost",
+      "buff_description": "Eure Verbindung lodert hell.",
+      "quiz_count": 5,
+      "quizzes": []
+    },
+    {
+      "id": "stability",
+      "name_de": "Stabilität",
+      "name_en": "Stability",
+      "buff": "Fels in der Brandung",
+      "buff_description": "Euch kann nichts erschüttern.",
+      "quiz_count": 5,
+      "quizzes": []
+    },
+    {
+      "id": "future",
+      "name_de": "Zukunft",
+      "name_en": "Future",
+      "buff": "Future-Forward",
+      "buff_description": "Ihr blickt gemeinsam nach vorn.",
+      "quiz_count": 5,
+      "quizzes": []
+    }
+  ],
+  "archetypes": {
+    "ARCH_ANCHOR": {
+      "name_de": "Fels in der Brandung",
+      "name_en": "The Anchor",
+      "characteristics": [
+        "Erst Ruhe, dann Handlung",
+        "Schützt Ressourcen und Privatheit",
+        "Deeskaliert Konflikte",
+        "Braucht Vorhersehbarkeit"
+      ],
+      "speech_signals": [
+        "Erstmal runterfahren",
+        "Lass uns kurz durchatmen",
+        "Nicht jetzt – später in Ruhe",
+        "Wir klären das unter uns"
+      ]
+    },
+    "ARCH_MASTERMIND": {
+      "name_de": "Präzisions-Architekt",
+      "name_en": "The Mastermind",
+      "characteristics": [
+        "Präzise Planung und Prüfung",
+        "Hoher Qualitätsanspruch",
+        "Findet Inkonsistenzen früh",
+        "Schützt Deep Work"
+      ],
+      "speech_signals": [
+        "Welche Annahme steckt dahinter?",
+        "Das ist logisch inkonsistent",
+        "Wir brauchen Tests",
+        "Definition of Done fehlt"
+      ]
+    }
+  }
+}

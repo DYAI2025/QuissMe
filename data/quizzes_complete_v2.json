@@ -1,0 +1,190 @@
+# QuissMe Quiz Database - Complete Schema v2
+# Based on Love Languages structure from attachment
+# Ready for Claude AI to generate quizzes
+
+{
+  "_schema_version": "2.0",
+  "_last_updated": "2026-02-01",
+  "_based_on": "Love Languages Quiz JSON",
+
+  "design_rules": {
+    "positive_framing": {
+      "principle": "NEVER question the relationship. Always frame as opportunity, growth, mastery.",
+      "wrong_patterns": [
+        "Was fehlt euch?",
+        "Worüber streitet ihr?",
+        "Was läuft schief?",
+        "Was ist euer Problem?"
+      ],
+      "right_patterns": [
+        "Was wünscht ihr euch?",
+        "Wie löst ihr gemeinsam?",
+        "Was könnt ihr stärker entwickeln?",
+        "Welche Herausforderung meistert ihr?"
+      ]
+    },
+    "couple_constellation": {
+      "principle": "Show how partners COMPLEMENT each other, not compare",
+      "timing": "Reveal AFTER both partners completed the quiz",
+      "tone": "Celebratory, not comparative"
+    },
+    "buff_system": {
+      "principle": "1 buff per 5 quizzes in a cluster",
+      "no_stacking": true,
+      "duration": "7-14 days"
+    }
+  },
+
+  "clusters": {
+    "love": {
+      "name_de": "Liebe",
+      "name_en": "Love",
+      "buff_name": "Liebesflüsterer",
+      "buff_description": "Ihr versteht euch auf einer tiefen emotionalen Ebene.",
+      "quiz_count": 5,
+      "dimensions": ["words", "time", "gifts", "service", "touch"]
+    },
+    "growth": {
+      "name_de": "Wachstum",
+      "name_en": "Growth",
+      "buff_name": "Synergie-Meister",
+      "buff_description": "Ihr versteht euch blind und könnt Großes bewegen.",
+      "quiz_count": 5,
+      "dimensions": ["planer", "risk", "motivation", "initiative", "questioning"]
+    },
+    "passion": {
+      "name_de": "Leidenschaft",
+      "name_en": "Passion",
+      "buff_name": "Leidenschafts-Boost",
+      "buff_description": "Eure Verbindung lodert hell.",
+      "quiz_count": 5,
+      "dimensions": ["initiator", "responder", "expressor", "receiver", "intensity"]
+    },
+    "stability": {
+      "name_de": "Stabilität",
+      "name_en": "Stability",
+      "buff_name": "Fels in der Brandung",
+      "buff_description": "Euch kann nichts erschüttern.",
+      "quiz_count": 5,
+      "dimensions": ["anchor", "mastermind", "routine", "conflict", "decisions"]
+    },
+    "future": {
+      "name_de": "Zukunft",
+      "name_en": "Future",
+      "buff_name": "Future-Forward",
+      "buff_description": "Ihr blickt gemeinsam nach vorn.",
+      "quiz_count": 5,
+      "dimensions": ["vision", "ambition", "longterm", "security", "growth"]
+    }
+  },
+
+  "love_languages_schema": {
+    "meta": {
+      "id": "quiz.love.languages.v1",
+      "version": "1.0.0",
+      "title": "Welche Sprache spricht dein Herz?",
+      "engine": "custom",
+      "skin": "botanical-garden",
+      "language": "de-DE",
+      "tone": ["mysterious", "cozy"],
+      "question_count": 12,
+      "estimated_duration_seconds": 180
+    },
+
+    "dimensions": [
+      {
+        "id": "words",
+        "name": "Worte der Bestätigung",
+        "label_ui": "Worte",
+        "pole_low": "still",
+        "pole_high": "verbal"
+      },
+      {
+        "id": "time",
+        "name": "Qualitätszeit",
+        "label_ui": "Präsenz",
+        "pole_low": "unabhängig",
+        "pole_high": "präsent"
+      },
+      {
+        "id": "gifts",
+        "name": "Geschenke",
+        "label_ui": "Symbole",
+        "pole_low": "abstrakt",
+        "pole_high": "symbolisch"
+      },
+      {
+        "id": "service",
+        "name": "Hilfsbereitschaft",
+        "label_ui": "Taten",
+        "pole_low": "passiv",
+        "pole_high": "handelnd"
+      },
+      {
+        "id": "touch",
+        "name": "Zärtlichkeit",
+        "label_ui": "Nähe",
+        "pole_low": "distanziert",
+        "pole_high": "körperlich"
+      }
+    ],
+
+    "questions": [
+      {
+        "id": "q1",
+        "index": 1,
+        "indicator": "verletzung",
+        "context": "Ihr hattet Streit. Jetzt liegt Stille zwischen euch.",
+        "text": "Was vermisst du in diesem Moment am meisten?",
+        "options": [
+          { "text": "Dass Worte die Stille durchbrechen", "scores": { "words": 3, "time": 1 } },
+          { "text": "Einfach zusammen da sein", "scores": { "time": 3, "touch": 1 } },
+          { "text": "Eine kleine Geste der Verbundenheit", "scores": { "gifts": 3, "service": 1 } },
+          { "text": "Dass Taten sprechen", "scores": { "service": 3, "words": 1 } },
+          { "text": "Eine Umarmung, die alles sagt", "scores": { "touch": 3, "time": 1 } }
+        ]
+      }
+    ],
+
+    "profiles": [
+      {
+        "id": "words",
+        "title": "Der Wortschmied",
+        "tagline": "Für dich sind Worte keine Floskeln – sie sind die Währung der Wahrheit.",
+        "compatibility": {
+          "allies": ["time", "touch"],
+          "nemesis": ["service"]
+        }
+      },
+      {
+        "id": "time",
+        "title": "Der Präsenzwächter",
+        "tagline": "Deine Liebe misst man nicht in Geschenken, sondern in ungeteilten Minuten.",
+        "compatibility": {
+          "allies": ["words", "touch"],
+          "nemesis": ["gifts"]
+        }
+      }
+    ]
+  },
+
+  "passion_poles": {
+    "INITIATOR": { "name_de": "Der Zünder", "name_en": "The Igniter" },
+    "RESPONDER": { "name_de": "Der Entfacher", "name_en": "The Kindler" },
+    "EXPRESSOR": { "name_de": "Der Strahler", "name_en": "The Expressor" },
+    "RECEIVER": { "name_de": "Der Empfänger", "name_en": "The Receiver" },
+    "INTENSITY_HIGH": { "name_de": "Die Flamme", "name_en": "The Flame" },
+    "INTENSITY_LOW": { "name_de": "Das Glühen", "name_en": "The Ember" }
+  },
+
+  "couple_constellations": {
+    "words_time": {
+      "title_de": "Wort & Zeit",
+      "description_de": "Ihr verbindet tiefe Gespräche mit ungeteilter Präsenz."
+    },
+    "touch_service": {
+      "title_de": "Nähe & Tat",
+      "description_de": "Ihr zeigt Liebe durch Berührung und praktische Fürsorge."
+    }
+  }
+}
