@@ -1,9 +1,8 @@
 {
   "_schema_version": "2.0",
   "_generated": "2026-02-01",
-  "_total_quizzes": 15,
-  "_status": "incomplete",
-  "_note": "Claude generated Passion + Stability clusters. Future cluster was truncated.",
+  "_total_quizzes": 25,
+  "_status": "complete",
   
   "clusters": {
     "passion": {
@@ -27,69 +26,15 @@
             { "text_de": "Es fließt – mal ich, mal du.", "type": "balanced", "score": 2 }
           ],
           "result_pairs": {
-            "initiator_initiator": {
-              "title_de": "Doppel-Feuer",
-              "description_de": "Ihr beide zündet! Achtet auf sanfte Momente.",
-              "icon": "🔥🔥",
-              "strength_de": "Energie wenn ihr zusammen startet.",
-              "tip_de": "Plant bewusst ruhige Momente."
-            },
-            "initiator_responder": {
-              "title_de": "Funke & Flamme",
-              "description_de": "Du zündest, dein Partner entfacht.",
-              "icon": "🔥✨",
-              "strength_de": "Wechselspiel aus Impuls und Verstärkung.",
-              "tip_de": "Tauscht manchmal die Rollen."
-            },
-            "initiator_expressor": {
-              "title_de": "Aktion & Ausdruck",
-              "description_de": "Du startest, dein Partner benennt Gefühle.",
-              "icon": "🔥💬",
-              "strength_de": "Körper und Worte zusammen.",
-              "tip_de": "Achtet auf beide Sprachen."
-            },
-            "initiator_receiver": {
-              "title_de": "Geben & Empfangen",
-              "description_de": "Du gibst Impuls, dein Partner nimmt auf.",
-              "icon": "🔥🌙",
-              "strength_de": "Klare, schöne Richtung.",
-              "tip_de": "Frage nach, was er braucht."
-            },
-            "responder_responder": {
-              "title_de": "Doppel-Entfacher",
-              "description_de": "Ihr wartet beide auf den Funken.",
-              "icon": "✨✨",
-              "strength_de": "Intensiv wenn ihr in Gang kommt.",
-              "tip_de": "Vereinbart wer den ersten Schritt macht."
-            },
-            "responder_expressor": {
-              "title_de": "Verstärkung & Worte",
-              "description_de": "Partner sagt, du nimmst auf und vertiefst.",
-              "icon": "✨💬",
-              "strength_de": "Worte werden zu Taten.",
-              "tip_de": "Zeige non-verbal Wertschätzung."
-            },
-            "responder_receiver": {
-              "title_de": "Doppel-Tiefe",
-              "description_de": "Ihr beide vertieft und empfangt.",
-              "icon": "✨🌙",
-              "strength_de": "Intimität braucht keine großen Gesten.",
-              "tip_de": "Kleiner Impuls kann helfen."
-            },
-            "expressor_receiver": {
-              "title_de": "Strahlung & Empfang",
-              "description_de": "Du strahlst Gefühle aus, er empfängt.",
-              "icon": "💬🌙",
-              "strength_de": "Kommunikation ist klar.",
-              "tip_de": "Frage auch nach seinen Gefühlen."
-            },
-            "balanced_balanced": {
-              "title_de": "Fließende Harmonie",
-              "description_de": "Wechselt natürlich. Flexibilität ist Stärke.",
-              "icon": "🌊",
-              "strength_de": "Passt euch an.",
-              "tip_de": "Genießt Flexibilität!"
-            }
+            "initiator_initiator": { "title_de": "Doppel-Feuer", "description_de": "Ihr beide zündet!", "icon": "🔥🔥", "strength_de": "Energie", "tip_de": "Ruhe einplanen" },
+            "initiator_responder": { "title_de": "Funke & Flamme", "description_de": "Du zündest, Partner entfacht.", "icon": "🔥✨", "strength_de": "Wechselspiel", "tip_de": "Rollen tauschen" },
+            "initiator_expressor": { "title_de": "Aktion & Ausdruck", "description_de": "Du startest, Partner benennt.", "icon": "🔥💬", "strength_de": "Körper + Worte", "tip_de": "Beide würdigen" },
+            "initiator_receiver": { "title_de": "Geben & Empfangen", "description_de": "Du gibst, er nimmt.", "icon": "🔥🌙", "strength_de": "Klare Richtung", "tip_de": "Nachfragen" },
+            "responder_responder": { "title_de": "Doppel-Entfacher", "description_de": "Ihr wartet beide.", "icon": "✨✨", "strength_de": "Intensiv", "tip_de": "Wer beginnt" },
+            "responder_expressor": { "title_de": "Verstärkung & Worte", "description_de": "Partner sagt, du vertiefst.", "icon": "✨💬", "strength_de": "Worte werden Taten", "tip_de": "Non-verbal würdigen" },
+            "responder_receiver": { "title_de": "Doppel-Tiefe", "description_de": "Ihr beide vertieft.", "icon": "✨🌙", "strength_de": "Keine großen Gesten nötig", "tip_de": "Kleiner Impuls reicht" },
+            "expressor_receiver": { "title_de": "Strahlung & Empfang", "description_de": "Du strahlst, er empfängt.", "icon": "💬🌙", "strength_de": "Klar", "tip_de": "Auch nachfragen" },
+            "balanced_balanced": { "title_de": "Fließende Harmonie", "description_de": "Natürlicher Wechsel.", "icon": "🌊", "strength_de": "Flexibel", "tip_de": "Genießen" }
           }
         },
         {
@@ -105,41 +50,15 @@
             { "text_de": "Ich genieße die Vorfreude.", "type": "intensity_low", "score": 3 }
           ],
           "result_pairs": {
-            "expressor_expressor": {
-              "title_de": "Offenes Feuer",
-              "description_de": "Ihr sagt alles direkt. Keine Geheimnisse.",
-              "icon": "💬💬",
-              "strength_de": "Keine Missverständnisse.",
-              "tip_de": "Lasst Raum für Unausgesprochenes."
-            },
-            "expressor_initiator": {
-              "title_de": "Worte & Taten",
-              "description_de": "Du sagst es, Partner tut es.",
-              "icon": "💬🔥",
-              "strength_de": "Kurzer Weg vom Wunsch zur Realität.",
-              "tip_de": "Genießt das Vorspiel."
-            },
-            "intensity_high_intensity_high": {
-              "title_de": "Vulkan-Duo",
-              "description_de": "Wenn's losgeht, dann richtig.",
-              "icon": "🌋🌋",
-              "strength_de": "Legendäre Peaks.",
-              "tip_de": "Achtet auf Erholung."
-            },
-            "intensity_high_intensity_low": {
-              "title_de": "Feuer & Glut",
-              "description_de": "Du Explosion, er beständige Wärme.",
-              "icon": "🌋🕯️",
-              "strength_de": "Perfekte Balance.",
-              "tip_de": "Schätzt beide Arten."
-            },
-            "intensity_low_intensity_low": {
-              "title_de": "Ewige Glut",
-              "description_de": "Langsam und stetig.",
-              "icon": "🕯️🕯️",
-              "strength_de": "Seltene Beständigkeit.",
-              "tip_de": "Bewusster Peak zur Feier."
-            }
+            "expressor_expressor": { "title_de": "Offenes Feuer", "description_de": "Ihr sagt alles direkt.", "icon": "💬💬", "strength_de": "Klarheit", "tip_de": "Raum lassen" },
+            "expressor_initiator": { "title_de": "Worte & Taten", "description_de": "Du sagst, er tut.", "icon": "💬🔥", "strength_de": "Kurz", "tip_de": "Vorspiel genießen" },
+            "expressor_receiver": { "title_de": "Sender & Empfänger", "description_de": "Du sendest klar.", "icon": "💬🌙", "strength_de": "Kommt an", "tip_de": "Auch nachfragen" },
+            "initiator_receiver": { "title_de": "Impuls & Aufnahme", "description_de": "Deine Berührungen sprechen.", "icon": "🔥🌙", "strength_de": "Non-verbal", "tip_de": "Worte helfen" },
+            "intensity_high_intensity_high": { "title_de": "Vulkan-Duo", "description_de": "Wenn's losgeht, richtig.", "icon": "🌋🌋", "strength_de": "Legendär", "tip_de": "Erholung" },
+            "intensity_high_intensity_low": { "title_de": "Feuer & Glut", "description_de": "Explosion + Beständigkeit.", "icon": "🌋🕯️", "strength_de": "Balance", "tip_de": "Beide Arten" },
+            "intensity_low_intensity_low": { "title_de": "Ewige Glut", "description_de": "Langsam und stetig.", "icon": "🕯️🕯️", "strength_de": "Beständig", "tip_de": "Peak zur Feier" },
+            "receiver_receiver": { "title_de": "Stille Tiefe", "description_de": "Ihr empfangt beide.", "icon": "🌙🌙", "strength_de": "Kein Show", "tip_de": "Impuls geben" },
+            "balanced_balanced": { "title_de": "Chamäleons", "description_de": "Passt euch an.", "icon": "🎭", "strength_de": "Vielseitig", "tip_de": "Feiern" }
           }
         },
         {
@@ -160,10 +79,10 @@
           "icon": "✨",
           "question_de": "Wenn Partner Energie mitbringt – was passiert?",
           "options": [
-            { "text_de": "Ich steige ein und bringe eigene Energie.", "type": "initiator", "score": 3 },
-            { "text_de": "Ich nehme auf und verstärke.", "type": "responder", "score": 3 },
+            { "text_de": "Ich steige ein.", "type": "initiator", "score": 3 },
+            { "text_de": "Ich verstärke.", "type": "responder", "score": 3 },
             { "text_de": "Ich sage, wie es mich bewegt.", "type": "expressor", "score": 3 },
-            { "text_de": "Ich absorbiere und verarbeite innerlich.", "type": "receiver", "score": 3 }
+            { "text_de": "Ich verarbeite innerlich.", "type": "receiver", "score": 3 }
           ]
         },
         {
@@ -194,26 +113,14 @@
           "icon": "⚓",
           "question_de": "Wenn es stürmt – wer ist Anker?",
           "options": [
-            { "text_de": "Ich bin der Fels – ruhig, beständig.", "type": "anchor", "score": 3 },
+            { "text_de": "Ich bin der Fels.", "type": "anchor", "score": 3 },
             { "text_de": "Ich analysiere und finde Lösungen.", "type": "architect", "score": 3 },
             { "text_de": "Ich halte an Ritualen fest.", "type": "routine_keeper", "score": 3 },
-            { "text_de": "Ich rede darüber zusammen.", "type": "communicator", "score": 3 }
+            { "text_de": "Ich rede darüber.", "type": "communicator", "score": 3 }
           ],
           "result_pairs": {
-            "anchor_anchor": {
-              "title_de": "Doppel-Fels",
-              "description_de": "Ihr beide gebt Ruhe.",
-              "icon": "⚓⚓",
-              "strength_de": "Euch kann nichts erschüttern.",
-              "tip_de": "Ruhe nicht zu Stillstand."
-            },
-            "anchor_architect": {
-              "title_de": "Ruhe & Strategie",
-              "description_de": "Emotionale Stabilität + praktische Lösungen.",
-              "icon": "⚓📐",
-              "strength_de": "Herz und Kopf perfekt.",
-              "tip_de": "Beide Beiträge würdigen."
-            }
+            "anchor_anchor": { "title_de": "Doppel-Fels", "description_de": "Ihr beide gebt Ruhe.", "icon": "⚓⚓", "strength_de": "Unerschütterlich", "tip_de": "Nicht stilllegen" },
+            "anchor_architect": { "title_de": "Ruhe & Strategie", "description_de": "Stabilität + Lösungen.", "icon": "⚓📐", "strength_de": "Herz + Kopf", "tip_de": "Beide würdigen" }
           }
         },
         {
@@ -222,7 +129,7 @@
           "icon": "📐",
           "question_de": "Wie organisiert ihr Alltag?",
           "options": [
-            { "text_de": "Ich plane gerne – Listen, Struktur.", "type": "architect", "score": 3 },
+            { "text_de": "Ich plane gerne.", "type": "architect", "score": 3 },
             { "text_de": "Ich setze um.", "type": "executor", "score": 3 },
             { "text_de": "Ich mache es gemütlich.", "type": "nester", "score": 3 },
             { "text_de": "Ich achte auf Überlastung.", "type": "guardian", "score": 3 }
@@ -234,8 +141,8 @@
           "icon": "📅",
           "question_de": "Welche Rolle spielen gemeinsame Rituale?",
           "options": [
-            { "text_de": "Sehr wichtig – Fundament.", "type": "ritual_lover", "score": 3 },
-            { "text_de": "Schön, aber Flexibilität wichtiger.", "type": "flexible", "score": 3 },
+            { "text_de": "Sehr wichtig.", "type": "ritual_lover", "score": 3 },
+            { "text_de": "Schön, aber flexibel.", "type": "flexible", "score": 3 },
             { "text_de": "Ich erfinde gerne neue.", "type": "ritual_creator", "score": 3 }
           ]
         },
@@ -246,8 +153,8 @@
           "question_de": "Wenn es knirscht – wie findet ihr zurück?",
           "options": [
             { "text_de": "Ich spreche sofort an.", "type": "direct", "score": 3 },
-            { "text_de": "Ich brauche Zeit zum Nachdenken.", "type": "reflective", "score": 3 },
-            { "text_de": "Ich versuche Perspektive zu verstehen.", "type": "empathic", "score": 3 }
+            { "text_de": "Ich brauche Zeit.", "type": "reflective", "score": 3 },
+            { "text_de": "Ich versuche zu verstehen.", "type": "empathic", "score": 3 }
           ]
         },
         {
@@ -256,7 +163,7 @@
           "icon": "⚖️",
           "question_de": "Wie geht ihr bei wichtigen Entscheidungen vor?",
           "options": [
-            { "text_de": "Ich recherchiere und analysiere.", "type": "analyst", "score": 3 },
+            { "text_de": "Ich recherchiere.", "type": "analyst", "score": 3 },
             { "text_de": "Ich höre auf Bauchgefühl.", "type": "intuitive", "score": 3 },
             { "text_de": "Ich suche Konsens.", "type": "consensus", "score": 3 }
           ]
@@ -270,8 +177,128 @@
       "buff_name": "Future-Forward",
       "buff_description": "Ihr blickt gemeinsam nach vorn.",
       "quiz_count": 5,
-      "quizzes": [],
-      "_note": "Future cluster not yet generated - Claude output was truncated"
+      "quizzes": [
+        {
+          "id": "future_01_vision",
+          "name_de": "Wer träumt von der Zukunft?",
+          "icon": "🔮",
+          "question_de": "Wer malt die großen Bilder?",
+          "options": [
+            { "text_de": "Ich träume groß.", "type": "visionary", "score": 3 },
+            { "text_de": "Ich denke in konkreten Schritten.", "type": "builder", "score": 3 },
+            { "text_de": "Ich lebe im Jetzt.", "type": "present_focused", "score": 3 },
+            { "text_de": "Ich plane Sicherheit.", "type": "security_focused", "score": 3 },
+            { "text_de": "Wir träumen gemeinsam.", "type": "co_creator", "score": 3 }
+          ],
+          "result_pairs": {
+            "visionary_visionary": { "title_de": "Doppel-Träumer", "description_de": "Ihr träumt beide groß!", "icon": "🔮🔮", "strength_de": "Kraftvoll", "tip_de": "Umsetzen" },
+            "visionary_builder": { "title_de": "Traum & Tat", "description_de": "Einer träumt, einer baut.", "icon": "🔮🔨", "strength_de": "Realität", "tip_de": "Beide würdigen" },
+            "builder_builder": { "title_de": "Macher-Duo", "description_de": "Ihr setzt um.", "icon": "🔨🔨", "strength_de": "Umsetzungskraft", "tip_de": "Träumen gönnen" },
+            "present_focused_present_focused": { "title_de": "Im-Jetzt-Meister", "description_de": "Ihr lebt im Moment.", "icon": "☀️☀️", "strength_de": "Genießen", "tip_de": "Planen" },
+            "security_focused_security_focused": { "title_de": "Sicherheits-Team", "description_de": "Ihr plant Basis.", "icon": "🏰🏰", "strength_de": "Abgesichert", "tip_de": "Träume wagen" },
+            "visionary_security_focused": { "title_de": "Traum & Fundament", "description_de": "Hoch + Boden.", "icon": "🔮🏰", "strength_de": "Bodenhaftung", "tip_de": "Beide wichtig" },
+            "co_creator_co_creator": { "title_de": "Gemeinsame Vision", "description_de": "Dialog-Träume.", "icon": "✨✨", "strength_de": "Beide Handschrift", "tip_de": "Genießen" },
+            "builder_present_focused": { "title_de": "Aktion & Augenblick", "description_de": "Planen + Genießen.", "icon": "🔨☀️", "strength_de": "Balance", "tip_de": "Voneinander" },
+            "balanced_balanced": { "title_de": "Chamäleons", "description_de": "Passt euch an.", "icon": "🎯", "strength_de": "Flexibel", "tip_de": "Feiern" }
+          }
+        },
+        {
+          "id": "future_02_building",
+          "name_de": "Wer setzt Pläne um?",
+          "icon": "🔨",
+          "question_de": "Wer macht den ersten Schritt?",
+          "options": [
+            { "text_de": "Ich lege los.", "type": "action_first", "score": 3 },
+            { "text_de": "Ich erstelle Plan.", "type": "systematic", "score": 3 },
+            { "text_de": "Ich recherchiere erst.", "type": "researcher", "score": 3 },
+            { "text_de": "Ich warte auf Moment.", "type": "opportunist", "score": 3 },
+            { "text_de": "Wir entscheiden gemeinsam.", "type": "collaborative", "score": 3 }
+          ],
+          "result_pairs": {
+            "action_first_action_first": { "title_de": "Doppel-Starter", "description_de": "Ihr legt beide los!", "icon": "🚀🚀", "strength_de": "Tempo", "tip_de": "Koordinieren" },
+            "action_first_systematic": { "title_de": "Sprint & Marathon", "description_de": "Schnell + Nachhaltig.", "icon": "🚀📋", "strength_de": "Effektiv", "tip_de": "Beide Stile" },
+            "systematic_systematic": { "title_de": "Plan-Profis", "description_de": "Ihr plant gründlich.", "icon": "📋📋", "strength_de": "Wasserdicht", "tip_de": "Starten" },
+            "researcher_researcher": { "title_de": "Wissens-Sammler", "description_de": "Ihr recherchiert.", "icon": "📚📚", "strength_de": "Informiert", "tip_de": "Deadlines" },
+            "opportunist_opportunist": { "title_de": "Moment-Surfer", "description_de": "Ihr wartet auf Moment.", "icon": "🌊🌊", "strength_de": "Gute Gelegenheiten", "tip_de": "Moment erschaffen" },
+            "collaborative_collaborative": { "title_de": "Team-Starter", "description_de": "Gemeinsam starten.", "icon": "🤝🤝", "strength_de": "Partnerschaft", "tip_de": "Genießen" },
+            "action_first_researcher": { "title_de": "Testen & Lernen", "description_de": "Probieren + Recherche.", "icon": "🚀📚", "strength_de": "Praxis + Theorie", "tip_de": "Rollen tauschen" },
+            "systematic_opportunist": { "title_de": "Plan & Timing", "description_de": "Vorbereitet + Richtig.", "icon": "📋🌊", "strength_de": "Optimal", "tip_de": "Beide Instinkte" },
+            "balanced_balanced": { "title_de": "Chamäleons", "description_de": "Passt an.", "icon": "🎯", "strength_de": "Flexibel", "tip_de": "Feiern" }
+          }
+        },
+        {
+          "id": "future_03_ambition",
+          "name_de": "Wie hoch sind eure Ziele?",
+          "icon": "🎯",
+          "question_de": "Wie groß dürfen Ziele sein?",
+          "options": [
+            { "text_de": "Je größer, desto besser!", "type": "high_ambition", "score": 3 },
+            { "text_de": "Realistische Ziele.", "type": "realistic", "score": 3 },
+            { "text_de": "Kleine Schritte.", "type": "incremental", "score": 3 },
+            { "text_de": "Ich bin zufrieden.", "type": "content", "score": 3 },
+            { "text_de": "Wir finden Größe gemeinsam.", "type": "adaptive", "score": 3 }
+          ],
+          "result_pairs": {
+            "high_ambition_high_ambition": { "title_de": "Himmelsstürmer", "description_de": "Ihr zielt hoch!", "icon": "🚀🚀", "strength_de": "Bewegt Berge", "tip_de": "Kleine feiern" },
+            "high_ambition_realistic": { "title_de": "Traum & Realität", "description_de": "Groß + Erreichbar.", "icon": "🚀⚓", "strength_de": "Ambitioniert", "tip_de": "Beide Perspektiven" },
+            "realistic_realistic": { "title_de": "Bodenhaftung", "description_de": "Realistische Ziele.", "icon": "⚓⚓", "strength_de": "Zuverlässig", "tip_de": "Groß trauen" },
+            "incremental_incremental": { "title_de": "Schritt-für-Schritt", "description_de": "Kleine Schritte.", "icon": "👣👣", "strength_de": "Ausdauer", "tip_de": "Sprint gönnen" },
+            "content_content": { "title_de": "Zufriedenheits-Meister", "description_de": "Glücklich wie es ist.", "icon": "☀️☀️", "strength_de": "Nicht an Ziele gebunden", "tip_de": "Projekt kann Spaß machen" },
+            "adaptive_adaptive": { "title_de": "Flexible Zielsetzung", "description_de": "Passende Ziele.", "icon": "🎯🎯", "strength_de": "Passend", "tip_de": "Instinkt vertrauen" },
+            "high_ambition_content": { "title_de": "Antrieb & Genügsamkeit", "description_de": "Mehr + Zufrieden.", "icon": "🚀☀️", "strength_de": "Lernen", "tip_de": "Respekt" },
+            "realistic_incremental": { "title_de": "Plan & Schritt", "description_de": "Realistisch + Klein.", "icon": "⚓👣", "strength_de": "Stetig", "tip_de": "Fortschritte feiern" },
+            "balanced_balanced": { "title_de": "Chamäleons", "description_de": "Passt an.", "icon": "🎯", "strength_de": "Flexibel", "tip_de": "Feiern" }
+          }
+        },
+        {
+          "id": "future_04_security",
+          "name_de": "Wie viel Sicherheit braucht ihr?",
+          "icon": "🛡️",
+          "question_de": "Wie wichtig ist Sicherheit?",
+          "options": [
+            { "text_de": "Sehr wichtig.", "type": "security_high", "score": 3 },
+            { "text_de": "Ausreichend.", "type": "security_moderate", "score": 3 },
+            { "text_de": "Weniger wichtig.", "type": "security_low", "score": 3 },
+            { "text_de": "Ich vertraue dem Weg.", "type": "trusting", "score": 3 },
+            { "text_de": "Wir balancieren.", "type": "balanced", "score": 3 }
+          ],
+          "result_pairs": {
+            "security_high_security_high": { "title_de": "Sicherheits-Festung", "description_de": "Solides Fundament.", "icon": "🏰🏰", "strength_de": "Abgesichert", "tip_de": "Abenteuer" },
+            "security_high_security_low": { "title_de": "Anker & Abenteurer", "description_de": "Sicherheit + Risiko.", "icon": "🏰🎢", "strength_de": "Ergänzung", "tip_de": "Respekt" },
+            "security_moderate_security_moderate": { "title_de": "Goldene Mitte", "description_de": "Genug + Freiheit.", "icon": "⚖️⚖️", "strength_de": "Ideal", "tip_de": "Gut getroffen" },
+            "security_low_security_low": { "title_de": "Freigeister", "description_de": "Risiko ist okay.", "icon": "🎢🎢", "strength_de": "Abenteuer", "tip_de": "Notfallplan" },
+            "trusting_trusting": { "title_de": "Vertrauens-Meister", "description_de": "Vertraut dem Leben.", "icon": "🙏🙏", "strength_de": "Zuversicht", "tip_de": "Planung schadet nicht" },
+            "balanced_balanced": { "title_de": "Flexibles Netz", "description_de": "Balance nach Bedarf.", "icon": "🎯🎯", "strength_de": "Passt an", "tip_de": "Genießen" },
+            "security_high_trusting": { "title_de": "Plan & Vertrauen", "description_de": "Vorbereitet + Entspannt.", "icon": "🏰🙏", "strength_de": "Beides", "tip_de": "Beide wertvoll" },
+            "security_moderate_security_low": { "title_de": "Basis & Freiheit", "description_de": "Solidarisch + Frei.", "icon": "⚖️🎢", "strength_de": "Abgesichert", "tip_de": "Komfortzone" },
+            "trusting_balanced": { "title_de": "Flow & Anpassung", "description_de": "Leichtigkeit.", "icon": "🙏🎯", "strength_de": "Nicht verrückt", "tip_de": "Inspierend" }
+          }
+        },
+        {
+          "id": "future_05_growth",
+          "name_de": "Wie wollt ihr euch entwickeln?",
+          "icon": "🌱",
+          "question_de": "Was bedeutet Wachstum für euch?",
+          "options": [
+            { "text_de": "Gemeinsam wachsen.", "type": "together", "score": 3 },
+            { "text_de": "Individuell + teilen.", "type": "individual_share", "score": 3 },
+            { "text_de": "Passiert von allein.", "type": "organic_growth", "score": 3 },
+            { "text_de": "Aktiv lernen.", "type": "active_learning", "score": 3 },
+            { "text_de": "Durch Herausforderungen.", "type": "challenge_driven", "score": 3 }
+          ],
+          "result_pairs": {
+            "together_together": { "title_de": "Wachstums-Team", "description_de": "Gemeinsam entwickeln.", "icon": "🌱🌱", "strength_de": "Synchron", "tip_de": "Individuell lassen" },
+            "together_individual_share": { "title_de": "Gemeinsam & Individuell", "description_de": "Team + Solo.", "icon": "🌱✨", "strength_de": "Bereicherung", "tip_de": "Beide wertvoll" },
+            "individual_share_individual_share": { "title_de": "Zwei Wege, ein Ziel", "description_de": "Individuell + teilen.", "icon": "✨✨", "strength_de": "Neues einbringen", "tip_de": "Gemeinsam erleben" },
+            "organic_growth_organic_growth": { "title_de": "Natürlicher Flow", "description_de": "Passiert von allein.", "icon": "🌿🌿", "strength_de": "Authentisch", "tip_de": "Impuls helfen" },
+            "active_learning_active_learning": { "title_de": "Lern-Enthusiasten", "description_de": "Aktiv lernen.", "icon": "📚📚", "strength_de": "Weiterentwicklung", "tip_de": "Integrieren" },
+            "challenge_driven_challenge_driven": { "title_de": "Herausforderungs-Sucher", "description_de": "Wachsen durch Hindernisse.", "icon": "💪💪", "strength_de": "Stärker", "tip_de": "Erholung" },
+            "together_active_learning": { "title_de": "Team-Studenten", "description_de": "Gemeinsam lernen.", "icon": "🌱📚", "strength_de": "Paarevent", "tip_de": "Genießen" },
+            "organic_growth_challenge_driven": { "title_de": "Flow & Kraft", "description_de": "Natürlich + Stark.", "icon": "🌿💪", "strength_de": "Balance", "tip_de": "Beide Wege" },
+            "balanced_balanced": { "title_de": "Wachstums-Chamäleons", "description_de": "Passt an.", "icon": "🎯", "strength_de": "Flexibel", "tip_de": "Feiern" }
+          }
+        }
+      ]
     }
   }
 }
