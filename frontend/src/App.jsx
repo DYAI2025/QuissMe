@@ -1,18 +1,18 @@
-import { useState, useEffect } from 'react'
-import QuizData from './data/quizzes_complete.json'
-import './App.css'
-import { calculateBazi, getElementCompatibility, getYinYangBalance, combineAnswerTypes } from './utils/bazi'
+import { useState, useEffect } from "react"
+import QuizData from "./data/quizzes_complete.json"
+import "./App.css"
+import { calculateBazi, getElementCompatibility, getYinYangBalance, combineAnswerTypes } from "./utils/bazi"
 
 // Pages
-import BaziInput from './pages/BaziInput'
-import ClusterSelect from './pages/ClusterSelect'
-import QuizSwipe from './pages/QuizSwipe'
-import Results from './pages/Results'
-import Dashboard from './pages/Dashboard'
-import PairQuiz from './pages/PairQuiz'
+import BaziInput from "./pages/BaziInput"
+import ClusterSelect from "./pages/ClusterSelect"
+import QuizSwipe from "./pages/QuizSwipe"
+import Results from "./pages/Results"
+import Dashboard from "./pages/Dashboard"
+import PairQuiz from "./pages/PairQuiz"
 
 function App() {
-  const [page, setPage] = useState('bazi')
+  const [page, setPage] = useState("bazi")
   const [userBazi, setUserBazi] = useState(null)
   const [partnerBazi, setPartnerBazi] = useState(null)
   const [selectedCluster, setSelectedCluster] = useState(null)
@@ -21,20 +21,34 @@ function App() {
   
   // Paar-Quiz State
   const [coupleAnswers, setCoupleAnswers] = useState({})
-  const [quizStep, setQuizStep] = useState('user') // 'user' oder 'partner'
+  const [quizStep, setQuizStep] = useState("user") // "user" oder "partner"
 
   const quizzes = QuizData.clusters
 
   // Bazi berechnen beim Absenden
   const handleBaziSubmit = (data, isPartner = false) => {
-    const bazi = calculateBazi(data.year, data.month, data.day, data.hour)
+    // Pass location data to calculateBazi for accurate local solar time calculation
+    const locationData = data.location ? {
+      name: data.locationName,
+      latitude: data.latitude,
+      longitude: data.longitude,
+      timezone: data.timezone
+    } : null
+    
+    const bazi = calculateBazi(
+      data.year, 
+      data.month, 
+      data.day, 
+      data.hour,
+      locationData
+    )
     
     if (isPartner) {
       setPartnerBazi(bazi)
-      setPage('dashboard')
+      setPage("dashboard")
     } else {
       setUserBazi(bazi)
-      setPage('bazi-partner')
+      setPage("bazi-partner")
     }
   }
 
@@ -43,18 +57,18 @@ function App() {
     setSelectedCluster(clusterId)
     setCurrentQuiz(0)
     setCoupleAnswers({})
-    setQuizStep('user')
-    setPage('pair-quiz')
+    setQuizStep("user")
+    setPage("pair-quiz")
   }
 
   // Antwort speichern
   const handlePairAnswer = (questionIndex, answerType, isUser = true) => {
-    const key = `${selectedCluster}_${questionIndex}`
+    const key = selectedCluster + "_" + questionIndex
     setCoupleAnswers(prev => ({
       ...prev,
       [key]: {
         ...prev[key],
-        [isUser ? 'user' : 'partner']: answerType
+        [isUser ? "user" : "partner"]: answerType
       }
     }))
   }
@@ -63,18 +77,18 @@ function App() {
   const handleNextStep = () => {
     const clusterQuizzes = quizzes[selectedCluster]?.quizzes || []
     
-    if (quizStep === 'user') {
+    if (quizStep === "user") {
       // Zum Partner wechseln
-      setQuizStep('partner')
+      setQuizStep("partner")
     } else {
       // Frage beantwortet, zur nächsten
       if (currentQuiz < clusterQuizzes.length - 1) {
         setCurrentQuiz(prev => prev + 1)
-        setQuizStep('user')
+        setQuizStep("user")
       } else {
         // Quiz fertig
         setDailyQuizzes(prev => Math.max(0, prev - 1))
-        setPage('results')
+        setPage("results")
       }
     }
   }
@@ -85,7 +99,7 @@ function App() {
     const clusterQuizzes = quizzes[selectedCluster]?.quizzes || []
     
     clusterQuizzes.forEach((quiz, index) => {
-      const key = `${selectedCluster}_${index}`
+      const key = selectedCluster + "_" + index
       const answers = coupleAnswers[key]
       
       if (answers?.user && answers?.partner) {
@@ -116,44 +130,44 @@ function App() {
 
   return (
     <div className="app">
-      {page === 'bazi' && (
+      {page === "bazi" && (
         <BaziInput 
           onSubmit={(data) => handleBaziSubmit(data, false)}
           title="Dein Bazi"
         />
       )}
       
-      {page === 'bazi-partner' && (
+      {page === "bazi-partner" && (
         <BaziInput 
           onSubmit={(data) => handleBaziSubmit(data, true)}
           title="Bazi deines Partners"
         />
       )}
       
-      {page === 'dashboard' && (
+      {page === "dashboard" && (
         <Dashboard 
           userBazi={userBazi}
           partnerBazi={partnerBazi}
           dailyQuizzes={dailyQuizzes}
           onQuiz={startPairQuiz}
-          onBack={() => setPage('bazi')}
+          onBack={() => setPage("bazi")}
           compatibility={getBaziCompatibility()}
         />
       )}
       
-      {page === 'pair-quiz' && (
+      {page === "pair-quiz" && (
         <PairQuiz
           quiz={quizzes[selectedCluster]?.quizzes[currentQuiz]}
           quizIndex={currentQuiz}
           totalQuizzes={quizzes[selectedCluster]?.quizzes.length || 0}
           step={quizStep}
-          onAnswer={(type) => handlePairAnswer(currentQuiz, type, quizStep === 'user')}
+          onAnswer={(type) => handlePairAnswer(currentQuiz, type, quizStep === "user")}
           onNext={handleNextStep}
           clusterName={quizzes[selectedCluster]?.name_de}
         />
       )}
       
-      {page === 'results' && (
+      {page === "results" && (
         <Results 
           clusterId={selectedCluster}
           coupleAnswers={coupleAnswers}
@@ -164,7 +178,7 @@ function App() {
           onContinue={() => {
             setCurrentQuiz(0)
             setCoupleAnswers({})
-            setPage('dashboard')
+            setPage("dashboard")
           }}
         />
       )}
