@@ -172,9 +172,9 @@ docker run -p 50001:80 agent0ai/agent-zero
 - **UI:** `webui/` ist die modulare Oberfläche; `run_ui.py` stellt die API und das UI bereit.【F:docs/architecture.md†L73-L84】【F:run_ui.py†L1-L25】
 
 ### Konflikte & Lücken (aktuell beobachtbar)
-- **Dokumentations-/Repo-Drift:** Die Architektur-Doku listet `run_cli.py`, `example.env`, `/api`, `/extensions` und `/work_dir`, die in diesem Repo-Tree nicht vorhanden sind.【F:docs/architecture.md†L95-L113】
+- **Dokumentations-/Repo-Drift:** Die Architektur-Doku listet `run_cli.py`, `example.env`, `/api`, `/extensions` und `/work_dir`, die in diesem Repo-Tree nicht vorhanden sind.【F:docs/architecture.md†L62-L74】
 - **Verzeichnis-Mapping unstetig:** Die Architektur-Doku beschreibt die `/tmp`- und `/work_dir`-Struktur im Container-Layout; lokal existiert `tmp/`, aber kein `work_dir/`.【F:docs/architecture.md†L53-L93】
-- **Konfigurationspfad-Unsicherheit:** Die Doku verweist auf `.env`/`example.env`, ohne klarzustellen, welche Variante für lokale Dev vs. Container zwingend ist (oder ob `.env` nur exemplarisch ist).【F:docs/architecture.md†L95-L113】
+- **Konfigurationspfad-Unsicherheit:** Die Doku verweist auf `.env`/`example.env`, ohne klarzustellen, welche Variante für lokale Dev vs. Container zwingend ist (oder ob `.env` nur exemplarisch ist).【F:docs/architecture.md†L62-L74】
 
 ### Iterativer Plan zur Vollständigkeits-Implementierung
 1. **Inventarisieren & angleichen**
