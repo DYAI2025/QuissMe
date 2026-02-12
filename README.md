@@ -195,7 +195,7 @@ docker run -p 50001:80 agent0ai/agent-zero
 
 ### Plan: Webapp extrahieren und als eigenständiges Repo betreiben
 1. **Scope festlegen**
-   - Klären, welche App extrahiert wird (z. B. `frontend/`), und welche Abhängigkeiten zu Agent Zero bestehen.
+   - Klären, welche App extrahiert wird: das bestehende, bereits als Standalone ausgelegte `frontend/`-Projekt, die `webui/`-App oder beide. Abhängigkeiten zu Agent Zero und ggf. zueinander explizit dokumentieren.
 2. **Abhängigkeiten trennen**
    - API-Endpunkte, Konfigs und Umgebungsvariablen dokumentieren.
    - Lokale Stub-/Mock-Backends definieren, falls Agent-Zero-Services vorausgesetzt werden.
