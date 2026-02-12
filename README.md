@@ -166,7 +166,7 @@ docker run -p 50001:80 agent0ai/agent-zero
 ## 🧭 Systemdokumentation & Fehleranalyse (Deep Dive)
 
 ### Systemüberblick (kompakt)
-- **Kernstartpunkte:** `agent.py` (CLI-Agent) und `run_ui.py` (Flask API + Web UI).【F:agent.py†L1-L30】【F:run_ui.py†L1-L25】
+- **Kernkomponenten & Einstiegspunkte:** `agent.py` (Core-Agent-Implementierung) und `run_ui.py` (Flask API + Web UI-Einstiegspunkt).【F:agent.py†L1-L30】【F:run_ui.py†L1-L25】
 - **Verhaltensschicht:** `prompts/` steuert System- und Tool-Prompts; `agents/` enthält Agentenlogik; `instruments/` kapselt erweiterbare Tool-Assets; `python/`/`lib/` bündeln Shared Utilities.【F:docs/architecture.md†L53-L93】
 - **Datenpersistenz:** `memory/`, `knowledge/`, `logs/` als persistente Speicherebenen; `tmp/` für temporäre Daten.【F:docs/architecture.md†L53-L93】
 - **UI:** `webui/` ist die modulare Oberfläche; `run_ui.py` stellt die API und das UI bereit.【F:docs/architecture.md†L73-L84】【F:run_ui.py†L1-L25】
