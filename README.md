@@ -163,6 +163,55 @@ docker run -p 50001:80 agent0ai/agent-zero
 | [Contributing](./docs/contribution.md) | How to contribute |
 | [Troubleshooting](./docs/troubleshooting.md) | Common issues and their solutions |
 
+## 🧭 Systemdokumentation & Fehleranalyse (Deep Dive)
+
+### Systemüberblick (kompakt)
+- **Kernkomponenten & Einstiegspunkte:** `agent.py` (Core-Agent-Implementierung) und `run_ui.py` (Flask API + Web UI-Einstiegspunkt).【F:agent.py†L1-L30】【F:run_ui.py†L1-L25】
+- **Verhaltensschicht:** `prompts/` steuert System- und Tool-Prompts; `agents/` enthält Agentenlogik; `instruments/` kapselt erweiterbare Tool-Assets; `python/`/`lib/` bündeln Shared Utilities.【F:docs/architecture.md†L53-L93】
+- **Datenpersistenz:** `memory/`, `knowledge/`, `logs/` als persistente Speicherebenen; `tmp/` für temporäre Daten.【F:docs/architecture.md†L53-L93】
+- **UI:** `webui/` ist die modulare Oberfläche; `run_ui.py` stellt die API und das UI bereit.【F:docs/architecture.md†L73-L84】【F:run_ui.py†L1-L25】
+
+### Konflikte & Lücken (aktuell beobachtbar)
+- **Dokumentations-/Repo-Drift:** Die Architektur-Doku listet `run_cli.py`, `example.env`, `/api`, `/extensions` und `/work_dir`, die in diesem Repo-Tree nicht vorhanden sind.【F:docs/architecture.md†L62-L74】
+- **Verzeichnis-Mapping unstetig:** Die Architektur-Doku beschreibt die `/tmp`- und `/work_dir`-Struktur im Container-Layout; lokal existiert `tmp/`, aber kein `work_dir/`.【F:docs/architecture.md†L53-L93】
+- **Konfigurationspfad-Unsicherheit:** Die Doku verweist auf `.env`/`example.env`, ohne klarzustellen, welche Variante für lokale Dev vs. Container zwingend ist (oder ob `.env` nur exemplarisch ist).【F:docs/architecture.md†L62-L74】
+
+### Iterativer Plan zur Vollständigkeits-Implementierung
+1. **Inventarisieren & angleichen**
+   - Doku-Tabelle gegen Repo-Tree diffen (Datei- und Ordnerliste).
+   - Fehlende Referenzen entweder entfernen oder als „Container-only“ markieren.
+2. **Systempfade konsolidieren**
+   - Einheitliche Begriffe für Datenpfade (`tmp/`, `work_dir/`) definieren.
+   - Konfigurationstemplates (`example.env` vs. `.env`) explizit dokumentieren.
+3. **Erwartungsabgleich für Startpfade**
+   - Startskripte (`agent.py`, `run_ui.py`, `start.sh`, Docker) im README als „Source of Truth“ listen.
+4. **Sichtbarkeit der Modulgrenzen**
+   - Kurzdiagramm/Mapping für `agents/`, `prompts/`, `instruments/`, `python/`, `webui/`.
+5. **Qualitätsrückkopplung**
+   - Automatischer Doku-Check in CI: Verweise auf nicht vorhandene Dateien/Ordner warnen.
+
+### Nachhaltig wirksame Verbesserungsidee
+**„Doc↔Repo Sync Gate“**: Ein CI-Job, der bei jeder Änderung die in `docs/architecture.md` aufgeführten Dateien/Verzeichnisse mit dem Repo-Tree abgleicht und bei Drift fehlschlägt oder Warnungen erzeugt. Das senkt langfristig Wissensverlust, hält Onboarding-Dokumente aktuell und verhindert „stille“ Breaking Changes im Setup.【F:docs/architecture.md†L53-L113】
+
+### Plan: Webapp extrahieren und als eigenständiges Repo betreiben
+1. **Scope festlegen**
+   - Klären, welche App extrahiert wird: das bestehende, bereits als Standalone ausgelegte `frontend/`-Projekt, die `webui/`-App oder beide. Abhängigkeiten zu Agent Zero und ggf. zueinander explizit dokumentieren.
+2. **Abhängigkeiten trennen**
+   - API-Endpunkte, Konfigs und Umgebungsvariablen dokumentieren.
+   - Lokale Stub-/Mock-Backends definieren, falls Agent-Zero-Services vorausgesetzt werden.
+3. **Repo-Struktur etablieren**
+   - Neues Git-Repo mit minimalem `README`, `LICENSE`, `package.json`, `src/`, `public/`.
+   - Build-/Dev-Skripte (z. B. Vite `dev`, `build`, `preview`) übernehmen.
+4. **Konfiguration entkoppeln**
+   - `.env.example` anlegen und alle notwendigen Variablen dokumentieren.
+   - Default-Settings hinter Flags oder Konfig-Dateien kapseln.
+5. **CI/CD & Qualität**
+   - Lint/Test/Build in CI integrieren.
+   - Release-Prozess definieren (z. B. GitHub Releases + artifacts).
+6. **Migration & Cutover**
+   - Historie per `git subtree`/`filter-repo` übertragen.
+   - Verweise im Haupt-Repo auf das neue Webapp-Repo aktualisieren.
+
 
 ## 🎯 Changelog
 
